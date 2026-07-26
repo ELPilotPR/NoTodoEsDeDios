@@ -80,12 +80,13 @@ main{position:relative;z-index:5}
 .sunglow{position:absolute;top:-14%;right:-8%;width:44vw;height:44vw;z-index:1;pointer-events:none;border-radius:50%;
   background:radial-gradient(circle,rgba(255,244,214,.55) 0%,rgba(255,244,214,.18) 42%,transparent 70%)}
 
-.hero-content{position:relative;z-index:3;width:100%;padding:clamp(96px,15vh,150px) 0 120px}
-/* placa del título — como etiqueta pegada sobre el cielo */
-.plate{display:inline-block;max-width:680px;background:var(--cream);border:3px solid var(--ink);box-shadow:var(--shadow);
-  padding:clamp(26px,4vw,44px) clamp(26px,4.5vw,50px);transform:rotate(-1.4deg)}
-.plate .eyebrow{margin-bottom:16px}
-.plate h1{font-family:var(--display);font-weight:600;font-size:clamp(42px,7.4vw,86px);line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
+.hero-content{position:relative;z-index:3;width:100%;max-width:none;margin:0;
+  padding:clamp(96px,15vh,150px) clamp(20px,4vw,52px) 120px 0}
+/* placa del título — angosta y pegada a la izquierda para no tapar a Jesús */
+.plate{display:inline-block;max-width:440px;background:var(--cream);border:3px solid var(--ink);box-shadow:var(--shadow);
+  padding:clamp(22px,3vw,34px) clamp(22px,3vw,34px);transform:rotate(-1.4deg)}
+.plate .eyebrow{margin-bottom:14px}
+.plate h1{font-family:var(--display);font-weight:600;font-size:clamp(36px,4.6vw,58px);line-height:1.04;letter-spacing:-.01em;color:var(--ink)}
 .plate h1 .q{color:var(--terra)}
 .plate .thesis{margin-top:20px;font-size:clamp(15px,1.9vw,18px);font-weight:500;color:var(--ink-soft);max-width:46ch}
 .plate .thesis b{color:var(--ink);font-weight:900}
