@@ -4,246 +4,224 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Qué es un Apóstol? — Nadie cumple los requisitos · RVR1960</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Sora:wght@300;400;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0b1526;
-  --ink2:#0e1c33;
-  --panel:#101f3a;
-  --gold:#e6b34d;
-  --gold-hi:#f4cd7a;
-  --crimson:#e05252;
-  --crimson-deep:#c0392b;
-  --cream:#f2ead8;
-  --muted:#8fa3c4;
-  --display:'Syne',sans-serif;
-  --body:'Sora',sans-serif;
+  --page:#e8e7e5;
+  --ink:#003934;
+  --ink-soft:#44514e;
+  --teal:#2ba89a;
+  --pine:#0e3a33;
+  --pine-deep:#062a24;
+  --gray-txt:#9aa0a0;
+  --line:rgba(0,57,52,.14);
+  --sans:'Satoshi',system-ui,-apple-system,sans-serif;
   --verse:'Newsreader',Georgia,serif;
-  --mono:'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--ink);
-  color:var(--cream);
-  font-family:var(--body);
-  font-weight:300;
-  font-size:16px;
-  line-height:1.75;
+  font-family:var(--sans);
+  font-weight:400;
+  background:var(--page);
+  color:var(--ink);
+  line-height:1.7;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
-::selection{background:var(--gold);color:var(--ink)}
+::selection{background:var(--teal);color:#fff}
 
-/* ── ambient layered background ── */
-#dust{position:fixed;inset:0;z-index:0;pointer-events:none}
-.glow{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(900px 600px at 12% -6%, rgba(230,179,77,.13), transparent 60%),
-    radial-gradient(800px 620px at 96% 104%, rgba(192,57,43,.14), transparent 60%),
-    radial-gradient(700px 500px at 80% 8%, rgba(230,179,77,.05), transparent 55%);
-}
-.grid-dots{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
-  background-image:radial-gradient(rgba(143,163,196,.13) 1px, transparent 1px);
-  background-size:34px 34px;
-  mask-image:radial-gradient(ellipse at 50% 30%, #000 0%, transparent 75%);
-  -webkit-mask-image:radial-gradient(ellipse at 50% 30%, #000 0%, transparent 75%);
-}
-.ray{position:fixed;top:-30%;left:-20%;width:70%;height:160%;z-index:0;pointer-events:none;
-  background:linear-gradient(105deg, transparent 40%, rgba(230,179,77,.045) 50%, transparent 60%);
-  transform:rotate(8deg);animation:raydrift 16s ease-in-out infinite alternate;
-}
-@keyframes raydrift{from{transform:rotate(8deg) translateX(0)}to{transform:rotate(8deg) translateX(14vw)}}
+/* ── barra de progreso ── */
+#progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:60;background:var(--teal)}
 
-/* ── progress bar ── */
-#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
-  background:linear-gradient(90deg,var(--gold),var(--crimson));
-  box-shadow:0 0 12px rgba(230,179,77,.7);
-}
-
-/* ── top bar ── */
-.topbar{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;
-  padding:18px clamp(20px,4vw,48px);border-bottom:1px solid rgba(230,179,77,.22);
-  font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);
-}
-.topbar b{color:var(--gold)}
-.topbar .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--crimson);margin-right:9px;vertical-align:1px;animation:pulse 1.8s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(224,82,82,.5)}50%{opacity:.55;box-shadow:0 0 0 6px rgba(224,82,82,0)}}
+/* ══════════ NAV CÁPSULA (como el original) ══════════ */
+.nav{position:fixed;top:20px;right:clamp(16px,3.5vw,44px);z-index:50;display:flex;align-items:center;gap:clamp(16px,2.4vw,30px);
+  padding:10px 12px 10px clamp(20px,2.6vw,32px);border-radius:999px;
+  background:rgba(255,255,255,.66);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.85);box-shadow:0 8px 30px rgba(6,42,36,.12);
+  transition:background .4s,box-shadow .4s}
+.nav.scrolled{background:rgba(255,255,255,.92);box-shadow:0 10px 36px rgba(6,42,36,.18)}
+.nav a{font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .3s}
+.nav a:hover{color:var(--teal)}
+.nav .solid{background:var(--pine);color:#fff;padding:9px 20px;border-radius:8px;letter-spacing:.16em;transition:background .3s,transform .3s}
+.nav .solid:hover{background:var(--teal);color:#fff;transform:translateY(-1px)}
 
 main{position:relative;z-index:5}
-.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
 
-/* ── opening: the word itself ── */
-.opening{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:60px 0 40px;position:relative}
-.greek{font-family:var(--display);font-style:normal;font-weight:800;text-transform:uppercase;
-  font-size:clamp(58px,12vw,140px);line-height:1;color:var(--gold);white-space:nowrap;
-  text-shadow:0 0 44px rgba(230,179,77,.35);letter-spacing:.03em;
-}
-.greek span{display:inline-block;opacity:0;transform:translateY(40px) rotate(4deg)}
-.greek span.on{animation:letterIn .7s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*70ms)}
+/* ══════════ HERO: EL CIELO ══════════ */
+.hero{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:center}
+#sky{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.peaks{position:absolute;right:-6%;bottom:0;width:82%;height:72%;z-index:1;pointer-events:none;will-change:transform}
+.peaks-inner{position:absolute;inset:0;animation:peakbob 9s ease-in-out infinite alternate}
+@keyframes peakbob{from{transform:translateY(0)}to{transform:translateY(-12px)}}
+.peaks svg{position:absolute;inset:0;width:100%;height:100%}
+.fog{position:absolute;left:0;right:0;bottom:0;height:44%;z-index:2;pointer-events:none;
+  background:linear-gradient(to top,var(--page) 10%,rgba(232,231,229,.55) 46%,transparent)}
+
+.hero-content{position:relative;z-index:3;width:100%;padding:130px 0 150px}
+.brand{max-width:640px}
+/* isotipo: triángulo de puntos (como el original) */
+.dots{display:inline-grid;grid-template-columns:repeat(3,6px);gap:4px;margin-bottom:18px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--pine)}
+.dots i:nth-child(4),.dots i:nth-child(6){opacity:.55}
+.dots i:nth-child(7),.dots i:nth-child(8),.dots i:nth-child(9){opacity:.28}
+.wordmark{font-weight:300;font-size:clamp(40px,7.2vw,84px);line-height:1.05;color:var(--ink);
+  letter-spacing:.3em;text-transform:uppercase;white-space:nowrap;
+  text-shadow:0 2px 26px rgba(255,255,255,.85)}
+.wordmark span{display:inline-block;opacity:0;transform:translateY(40px)}
+.wordmark span.on{animation:letterIn 1s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*80ms)}
 @keyframes letterIn{to{opacity:1;transform:none}}
-.phon{font-family:var(--body);font-weight:400;font-size:13px;letter-spacing:.28em;color:var(--muted);margin-top:14px;text-transform:uppercase}
-.meaning{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
-.meaning .eq{font-family:var(--display);font-weight:800;font-size:clamp(22px,3.4vw,34px);color:var(--crimson)}
-.meaning .word{font-family:var(--display);font-weight:800;font-size:clamp(22px,3.4vw,34px);color:var(--cream);letter-spacing:.04em;text-transform:uppercase;
-  border-bottom:3px solid var(--gold);padding-bottom:2px}
-.meaning .word i{font-style:normal;color:var(--gold)}
+.brand-cat{margin-top:18px;font-weight:700;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--pine)}
+.brand-tag{margin-top:7px;font-weight:400;font-size:14px;color:var(--ink-soft)}
+.brand-rule{width:56px;height:2px;background:var(--teal);margin:26px 0}
+.brand-cta{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:14px;color:var(--teal);
+  text-decoration:none;transition:gap .3s,color .3s}
+.brand-cta span{transition:transform .3s}
+.brand-cta:hover{color:var(--pine);gap:16px}
+.brand-cta:hover span{transform:translateX(4px)}
 
-.q{font-family:var(--display);font-weight:800;font-size:clamp(44px,8.4vw,96px);line-height:1.02;letter-spacing:-.01em;margin-top:52px;text-transform:uppercase}
-.q .w{display:inline-block;overflow:hidden;vertical-align:top}
-.q .w i{display:inline-block;font-style:normal;transform:translateY(112%)}
-.q .w i.on{animation:wordUp .8s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*90ms)}
-@keyframes wordUp{to{transform:none}}
-.q .gold{color:var(--gold)}
-.claim{font-family:var(--body);font-weight:400;font-size:clamp(16px,2.2vw,20px);color:var(--muted);margin-top:24px;max-width:52ch}
-.claim b{color:var(--cream);font-weight:600}
-.claim .c{color:var(--crimson);font-weight:600}
+.scrollcue{position:absolute;left:clamp(22px,5vw,56px);bottom:34px;z-index:3;display:flex;align-items:center;gap:12px;
+  font-weight:500;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);
+  animation:bob 2.4s ease-in-out infinite}
+.scrollcue b{font-weight:400;font-size:15px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+.orb{position:absolute;right:clamp(22px,5vw,56px);bottom:30px;z-index:3;width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  border:1px solid rgba(0,57,52,.45);color:var(--ink);font-size:17px;font-weight:300;
+  background:rgba(255,255,255,.4);backdrop-filter:blur(6px);transition:background .3s,color .3s,transform .3s}
+.orb:hover{background:var(--pine);color:#fff;transform:translateY(-3px)}
 
-/* terminal digital */
-.term{margin-top:44px;font-family:var(--mono);font-size:clamp(13px,2vw,17px);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.term .prompt{color:var(--gold);font-weight:700}
-.term .typeout{color:var(--cream)}
-.term .typeout b,.term .typeout .val{color:var(--gold-hi)}
-.cursor{display:inline-block;width:.6em;height:1.15em;background:var(--gold);vertical-align:-.18em;animation:blink 1s step-end infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.termsub{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:18px}
-.termsub b{color:var(--gold)}
+/* ══════════ CUERPO: gris editorial ══════════ */
+.block{position:relative;padding:clamp(90px,14vh,160px) 0}
+.block .num{position:absolute;top:clamp(40px,7vh,80px);right:clamp(10px,4vw,56px);z-index:0;
+  font-weight:300;font-size:clamp(110px,18vw,220px);line-height:1;color:rgba(0,57,52,.06);
+  user-select:none;pointer-events:none;letter-spacing:.02em}
+.block .wrap{position:relative;z-index:1}
+.eyebrow{font-weight:700;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--teal);
+  display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.eyebrow::before{content:"";width:40px;height:1px;background:var(--teal)}
+h2{font-weight:300;font-size:clamp(30px,4.6vw,52px);line-height:1.14;color:var(--ink);letter-spacing:.01em;max-width:20ch}
+h2 .g{color:var(--teal)}
+h2 .c{color:#b04a4a}
+.lead{color:var(--ink-soft);font-size:16.5px;font-weight:400;max-width:56ch;margin-top:20px}
+.lead b{color:var(--ink);font-weight:700}
 
-/* bloque terminal del cierre */
-.termblock{margin-top:52px;max-width:560px;border:1px solid rgba(143,163,196,.28);background:rgba(11,20,40,.7);backdrop-filter:blur(6px);box-shadow:0 24px 60px rgba(0,0,0,.4)}
-.tb-head{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid rgba(143,163,196,.18)}
-.tb-head .dot{width:11px;height:11px;border-radius:50%}
-.tb-head .dot.r{background:#e05252}.tb-head .dot.y{background:#e6b34d}.tb-head .dot.g{background:#7fae6a}
-.tb-title{margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
-.tb-body{padding:20px 18px 24px;font-family:var(--mono);font-size:clamp(13px,1.9vw,16px)}
-.tb-line{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
-.tb-line:last-child{margin-bottom:0}
-.tb-line .prompt{color:var(--gold);font-weight:700}
-.tb-line .typeout{color:var(--cream)}
+/* tarjeta de versículo */
+.verse{position:relative;background:#fff;border:1px solid var(--line);padding:30px 34px 26px;max-width:700px;margin:32px 0;
+  box-shadow:0 4px 20px rgba(6,42,36,.06);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.verse::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal)}
+.verse:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(6,42,36,.12)}
+.verse .t{font-family:var(--verse);font-style:italic;font-size:19px;line-height:1.7;color:var(--ink-soft)}
+.verse .t b{font-style:normal;font-weight:600;color:var(--teal)}
+.ref{display:inline-block;margin-top:16px;font-weight:700;font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--pine);border:1px solid rgba(0,57,52,.35);border-radius:999px;padding:5px 16px;
+  transition:background .3s,color .3s,transform .3s}
+.ref:hover{background:var(--pine);color:#fff;transform:translateY(-1px)}
 
-.scrollcue{position:absolute;bottom:26px;left:0;font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);animation:bob 2.2s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
-
-/* ── marquee ── */
-.marquee{border-top:1px solid rgba(230,179,77,.22);border-bottom:1px solid rgba(230,179,77,.22);
-  overflow:hidden;padding:16px 0;background:rgba(16,31,58,.5)}
-.mtrack{display:flex;gap:56px;width:max-content;animation:mscroll 26s linear infinite}
-.marquee:hover .mtrack{animation-play-state:paused}
-@keyframes mscroll{to{transform:translateX(-50%)}}
-.mtrack span{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.mtrack span i{font-style:normal;color:var(--gold)}
-.mtrack span em{font-style:normal;color:var(--crimson)}
-
-/* ── sections ── */
-section{padding:clamp(70px,11vh,120px) 0;position:relative}
-/* ritmo alternado claro/oscuro entre secciones (estilo Hillsong) */
-section.alt{background:linear-gradient(180deg, rgba(16,31,58,.62), rgba(16,31,58,.3));border-top:1px solid rgba(143,163,196,.12);border-bottom:1px solid rgba(143,163,196,.12)}
-/* halo atmosférico detrás de la palabra del hero (estilo Elevation) */
-.opening::before{content:"";position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
-  width:min(86vw,820px);height:min(86vw,820px);z-index:-1;pointer-events:none;border-radius:50%;
-  background:radial-gradient(circle, rgba(230,179,77,.14) 0%, rgba(230,179,77,.05) 38%, transparent 68%);
-  animation:halo 9s ease-in-out infinite alternate;
-}
-@keyframes halo{from{opacity:.7;transform:translate(-50%,-50%) scale(1)}to{opacity:1;transform:translate(-50%,-50%) scale(1.07)}}
-.eyebrow{font-family:var(--body);font-weight:600;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--crimson);display:flex;align-items:center;gap:14px;margin-bottom:20px}
-.eyebrow::before{content:"";width:34px;height:1px;background:var(--crimson)}
-h2{font-family:var(--display);font-weight:800;font-size:clamp(32px,5.4vw,56px);line-height:1.06;text-transform:uppercase;letter-spacing:-.01em}
-h2 .g{color:var(--gold)}
-h2 .c{color:var(--crimson)}
-.lead{color:var(--muted);font-size:17px;max-width:60ch;margin-top:18px}
-.lead b{color:var(--cream);font-weight:600}
-
-/* verse block */
-.v{border-left:3px solid var(--gold);background:linear-gradient(90deg, rgba(230,179,77,.08), rgba(230,179,77,.015));
-  padding:24px 28px;margin:26px 0;position:relative;transition:transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s, border-color .35s}
-.v:hover{transform:translateX(8px);border-color:var(--gold-hi);box-shadow:0 8px 34px rgba(0,0,0,.4), 0 0 24px rgba(230,179,77,.12)}
-.v .t{font-family:var(--verse);font-style:italic;font-size:19px;line-height:1.65;color:var(--cream)}
-.v .t b{font-style:normal;font-weight:500;color:var(--gold-hi)}
-.v .r{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--crimson);margin-top:14px;display:block}
-
-/* referencia como chip píldora (estilo Hillsong) */
-.chip{display:inline-block;font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--gold-hi);border:1px solid rgba(230,179,77,.45);border-radius:999px;padding:4px 14px;margin-top:14px;
-  transition:background .3s,color .3s,box-shadow .3s,transform .3s;cursor:default}
-.chip:hover{background:rgba(230,179,77,.14);box-shadow:0 0 16px rgba(230,179,77,.25);transform:translateY(-1px)}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*95ms)}
+/* reveal (fade + slide-up, como el original) */
+.rv{opacity:0;transform:translateY(42px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*110ms)}
 .rv.on{opacity:1;transform:none}
 
-/* ── requirements ── */
-.req{margin-top:44px;border-top:1px solid rgba(143,163,196,.18)}
-.req-row{display:grid;grid-template-columns:120px 1fr;gap:clamp(20px,4vw,48px);padding:40px 0;border-bottom:1px solid rgba(143,163,196,.18);transition:background .3s,padding-left .3s}
-.req-row:hover{background:rgba(230,179,77,.04);padding-left:14px}
-.req-row .num{font-family:var(--display);font-weight:800;font-size:clamp(48px,7vw,76px);line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--gold);text-stroke:1.5px var(--gold)}
-.req-row h3{font-family:var(--display);font-weight:700;font-size:clamp(20px,3vw,28px);text-transform:uppercase;margin-bottom:10px}
-.req-row h3 i{font-style:normal;color:var(--gold)}
-.req-row p{color:var(--muted);font-size:15.5px;max-width:56ch}
-.req-row p b{color:var(--cream);font-weight:600}
+/* ── requisitos: layout editorial asimétrico ── */
+.req{margin-top:56px;display:flex;flex-direction:column;gap:clamp(48px,8vh,90px)}
+.req-card{display:grid;grid-template-columns:110px 1fr;gap:clamp(24px,4vw,52px);align-items:start;max-width:820px}
+.req-card:nth-child(2){margin-left:auto}
+.req-card .rn{font-weight:300;font-size:clamp(52px,7vw,80px);line-height:.9;color:transparent;
+  -webkit-text-stroke:1.5px var(--teal);letter-spacing:.02em}
+.req-card h3{font-weight:400;font-size:clamp(21px,3vw,29px);color:var(--ink);letter-spacing:.01em;margin-bottom:10px}
+.req-card h3 i{font-style:normal;color:var(--teal)}
+.req-card p{color:var(--ink-soft);font-size:15.5px;max-width:52ch}
+.req-card p b{color:var(--ink);font-weight:700}
 
-/* ── counters + appearances ── */
-.counters{display:flex;gap:clamp(28px,6vw,80px);flex-wrap:wrap;margin:48px 0 8px}
-.counter .n{font-family:var(--display);font-weight:800;font-size:clamp(52px,8vw,88px);line-height:1;color:var(--gold);text-shadow:0 0 34px rgba(230,179,77,.3)}
-.counter .n em{font-style:normal;color:var(--crimson)}
-.counter .l{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:10px}
-.appear{margin-top:36px}
-.ap-row{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(143,163,196,.16)}
-.ap-row .o{font-family:var(--display);font-weight:800;font-size:22px;color:var(--crimson)}
-.ap-row .d{font-size:16px;color:var(--cream)}
-.ap-row .d b{color:var(--gold-hi);font-weight:600}
-.ap-row .rf{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.ap-row.last{background:linear-gradient(90deg, rgba(192,57,43,.14), transparent);border-left:3px solid var(--crimson);padding-left:18px;margin-left:-21px}
-.ap-row.last .tag{display:inline-block;font-family:var(--body);font-weight:600;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);background:var(--crimson);padding:3px 10px;margin-left:12px;vertical-align:2px}
+/* ── contadores + apariciones ── */
+.counters{display:flex;gap:clamp(36px,7vw,100px);flex-wrap:wrap;margin:56px 0 12px}
+.counter .n{font-weight:300;font-size:clamp(56px,8vw,94px);line-height:1;color:var(--ink);letter-spacing:.01em}
+.counter .n em{font-style:normal;color:var(--teal)}
+.counter .l{font-weight:700;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gray-txt);margin-top:12px}
+.appear{margin-top:44px;max-width:760px}
+.ap-row{display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:baseline;padding:18px 22px;
+  border-bottom:1px solid var(--line);transition:background .3s}
+.ap-row:hover{background:rgba(255,255,255,.8)}
+.ap-row .o{font-weight:300;font-size:24px;color:var(--teal)}
+.ap-row .d{font-size:16px;color:var(--ink-soft)}
+.ap-row .d b{color:var(--ink);font-weight:700}
+.ap-row .rf{font-weight:700;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray-txt)}
+.ap-row.last{background:#fff;border-left:3px solid #b04a4a;box-shadow:0 8px 26px rgba(6,42,36,.09)}
+.ap-row.last .tag{display:inline-block;font-weight:700;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:#fff;background:#b04a4a;padding:3px 12px;margin-left:12px;vertical-align:2px}
+.verdictline{margin-top:52px;background:#fff;border:1px solid var(--line);border-left:3px solid #b04a4a;
+  box-shadow:0 4px 20px rgba(6,42,36,.06);padding:36px 40px;max-width:720px}
+.verdictline h3{font-weight:400;font-size:clamp(23px,3.4vw,33px);color:var(--ink);line-height:1.25;letter-spacing:.01em}
+.verdictline h3 i{font-style:normal;color:#b04a4a}
+.verdictline p{color:var(--ink-soft);margin-top:14px;max-width:58ch;font-size:15.5px}
+.verdictline p b{color:var(--ink);font-weight:700}
 
-/* verdict */
-.verdict{margin-top:52px;background:linear-gradient(135deg, rgba(230,179,77,.1), rgba(192,57,43,.08));border:1px solid rgba(230,179,77,.35);padding:clamp(30px,5vw,52px);position:relative;overflow:hidden}
-.verdict::before{content:"§";position:absolute;top:-10px;right:18px;font-family:var(--verse);font-size:120px;color:rgba(230,179,77,.12);line-height:1}
-.verdict h3{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.8vw,40px);text-transform:uppercase;line-height:1.15}
-.verdict h3 i{font-style:normal;color:var(--crimson)}
-.verdict p{color:var(--muted);margin-top:16px;max-width:62ch}
-.verdict p b{color:var(--cream);font-weight:600}
+/* ── efesios: el corte ── */
+.cutwrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:52px;align-items:stretch;max-width:900px}
+.cut{background:#fff;border:1px solid var(--line);padding:32px 34px;position:relative;display:flex;flex-direction:column;
+  box-shadow:0 4px 20px rgba(6,42,36,.06);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.cut:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(6,42,36,.12)}
+.cut .lab{font-weight:700;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px;display:block}
+.cut .lab.bad{color:#b04a4a}
+.cut .lab.good{color:var(--teal)}
+.cut .txt{font-family:var(--verse);font-style:italic;font-size:17.5px;line-height:1.7;color:var(--ink-soft);flex:1}
+.cut .txt b{font-style:normal;font-weight:600;color:var(--ink)}
+.cut .txt .hasta{font-style:normal;font-weight:600;color:var(--pine);background:rgba(43,168,154,.2);padding:1px 8px;
+  animation:hastaPulse 2.6s ease-in-out infinite}
+@keyframes hastaPulse{0%,100%{background:rgba(43,168,154,.2);box-shadow:0 0 0 0 rgba(43,168,154,0)}50%{background:rgba(43,168,154,.36);box-shadow:0 0 18px 2px rgba(43,168,154,.3)}}
+.cut .scissors{position:absolute;top:-13px;right:22px;color:#b04a4a;background:var(--page);padding:0 8px}
+.cut .cref{font-weight:700;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gray-txt);margin-top:18px;display:block}
 
-/* ── efesios cut ── */
-.cutwrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
-.cut{border:1px solid rgba(143,163,196,.25);padding:28px;position:relative;background:rgba(16,31,58,.55);display:flex;flex-direction:column}
-.cutwrap{align-items:stretch}
-.cut .lab{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:16px;display:block}
-.cut .lab.bad{color:var(--crimson)}
-.cut .lab.good{color:var(--gold)}
-.cut .txt{font-family:var(--verse);font-style:italic;font-size:17.5px;line-height:1.65;color:var(--muted);flex:1}
-.cut .txt b{font-style:normal;font-weight:500;color:var(--cream)}
-.cut .txt .hasta{font-style:normal;font-weight:500;color:var(--gold-hi);background:rgba(230,179,77,.16);padding:1px 7px;animation:hastaPulse 2.4s ease-in-out infinite}
-@keyframes hastaPulse{0%,100%{background:rgba(230,179,77,.16);box-shadow:0 0 0 0 rgba(230,179,77,0)}50%{background:rgba(230,179,77,.3);box-shadow:0 0 18px 2px rgba(230,179,77,.25)}}
-.cut .scissors{position:absolute;top:-13px;right:22px;font-size:20px;color:var(--crimson);background:var(--ink);padding:0 8px}
-.cut .ref{font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:16px;display:block}
+/* ── advertencia ── */
+.warn{background:#fff;border:1px solid var(--line);border-left:3px solid #b04a4a;
+  box-shadow:0 4px 20px rgba(6,42,36,.06);padding:38px 42px;margin-top:44px;max-width:780px}
+.warn .t{font-family:var(--verse);font-style:italic;font-size:clamp(19px,2.6vw,24px);line-height:1.65;color:var(--ink-soft)}
+.warn .t b{font-style:normal;font-weight:600;color:var(--ink)}
+.warn .t .hl{font-style:normal;font-weight:700;color:#b04a4a;background:rgba(176,74,74,.13);padding:1px 9px}
 
-/* ── warning ── */
-.warn{border:1px solid rgba(224,82,82,.4);background:linear-gradient(135deg, rgba(192,57,43,.12), rgba(192,57,43,.03));padding:clamp(30px,5vw,52px);margin-top:40px;position:relative}
-.warn::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--crimson);box-shadow:0 0 20px rgba(224,82,82,.6)}
-.warn .t{font-family:var(--verse);font-style:italic;font-size:clamp(19px,2.6vw,24px);line-height:1.6;color:var(--cream)}
-.warn .t b{font-style:normal;font-weight:500;color:var(--crimson);text-shadow:0 0 20px rgba(224,82,82,.45)}
-.warn .r{font-family:var(--body);font-weight:600;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--crimson);margin-top:18px;display:block}
-.warn .t .hl{font-style:normal;font-weight:600;color:var(--crimson);background:rgba(224,82,82,.18);padding:1px 8px;box-shadow:0 0 16px rgba(224,82,82,.35)}
+/* ══════════ BLOQUE OSCURO FINAL (banda pine del original) ══════════ */
+.dark{position:relative;background:var(--pine-deep);color:#cfe0da;padding:clamp(95px,15vh,175px) 0 clamp(85px,12vh,145px);overflow:hidden}
+.dark .num{position:absolute;top:clamp(40px,7vh,80px);right:clamp(10px,4vw,56px);z-index:0;
+  font-weight:300;font-size:clamp(110px,18vw,220px);line-height:1;color:rgba(255,255,255,.05);user-select:none;pointer-events:none}
+.dark .stars{position:absolute;inset:0;pointer-events:none;z-index:0}
+.dark .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:twinkle 3.2s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.12}50%{opacity:.85}}
+.dark .wrap{position:relative;z-index:1}
+.dark .eyebrow{color:var(--teal)}
+.dark .big{font-weight:300;font-size:clamp(34px,6vw,66px);line-height:1.12;color:#f2f6f4;letter-spacing:.01em;max-width:18ch}
+.dark .big i{font-style:normal;color:var(--teal)}
+.dark .p{color:#9dbcb2;max-width:56ch;margin-top:26px;font-size:16.5px}
+.dark .p b{color:#f2f6f4;font-weight:700}
+.verdict{margin-top:60px;max-width:620px;border:1px solid rgba(43,168,154,.42);background:rgba(255,255,255,.045)}
+.verdict .vh{padding:16px 28px;border-bottom:1px solid rgba(43,168,154,.35);
+  font-weight:700;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--teal)}
+.vrow{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 28px;border-bottom:1px solid rgba(255,255,255,.09)}
+.vrow:last-child{border-bottom:0}
+.vrow span{font-weight:500;font-size:13px;letter-spacing:.1em;color:#9dbcb2;text-transform:uppercase}
+.vrow b{font-weight:500;font-size:16px;letter-spacing:.08em;color:var(--teal);text-transform:uppercase;white-space:nowrap}
+.vrow b.zero{color:#f2f6f4}
+.vrow b.nadie{color:#e08a7a}
 
-/* ── closing ── */
-.closing{text-align:left;padding-bottom:60px}
-.closing .big{font-family:var(--display);font-weight:800;font-size:clamp(36px,6.6vw,72px);line-height:1.05;text-transform:uppercase}
-.closing .big i{font-style:normal;color:var(--gold)}
-.closing .p{color:var(--muted);max-width:58ch;margin-top:22px;font-size:17px}
-.closing .p b{color:var(--cream);font-weight:600}
+footer{background:#041f1a;color:#5f7d74;padding:34px clamp(22px,5vw,56px);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  font-weight:500;font-size:10px;letter-spacing:.28em;text-transform:uppercase;position:relative;z-index:5}
+footer b{color:var(--teal)}
 
-/* footer */
-footer{border-top:1px solid rgba(230,179,77,.22);padding:34px clamp(20px,4vw,48px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-  font-family:var(--body);font-weight:600;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);position:relative;z-index:5}
-footer b{color:var(--gold)}
-
-@media(max-width:760px){
-  .req-row{grid-template-columns:1fr;gap:10px}
+@media(max-width:820px){
+  .nav a:not(.solid){display:none}
+  .nav{padding:8px 10px}
+  .req-card{grid-template-columns:1fr;gap:14px}
+  .req-card:nth-child(2){margin-left:0}
   .cutwrap{grid-template-columns:1fr}
-  .ap-row{grid-template-columns:44px 1fr;gap:12px}
+  .ap-row{grid-template-columns:40px 1fr;gap:12px}
   .ap-row .rf{grid-column:2}
+  .peaks{width:115%;opacity:.8}
+  .wordmark{white-space:normal;letter-spacing:.18em}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -252,186 +230,198 @@ footer b{color:var(--gold)}
 </head>
 <body>
 
-<canvas id="dust"></canvas>
-<div class="glow"></div>
-<div class="grid-dots"></div>
-<div class="ray"></div>
 <div id="progress"></div>
 
-<div class="topbar">
-  <span><span class="live"></span>Estudio doctrinal · <b>RVR1960</b></span>
-  <span>El oficio apostólico</span>
-</div>
+<nav class="nav" id="nav">
+  <a href="#palabra">La Palabra</a>
+  <a href="#requisitos">Requisitos</a>
+  <a href="#testigo">El Testigo</a>
+  <a href="#veredicto" class="solid">Veredicto</a>
+</nav>
 
 <main>
-  <!-- APERTURA: la palabra misma -->
-  <div class="wrap opening">
-    <div class="greek" id="greek" aria-label="apóstol"></div>
-    <div class="phon">sustantivo masculino</div>
-    <div class="meaning">
-      <span class="eq">=</span>
-      <span class="word">Envi<i>a</i>do</span>
+
+  <!-- ══════════ HERO: EL CIELO ══════════ -->
+  <section class="hero" id="top">
+    <canvas id="sky"></canvas>
+    <div class="peaks" id="peaks">
+      <div class="peaks-inner">
+        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <path d="M0,400 L0,300 L60,210 L110,260 L170,150 L230,230 L290,110 L350,210 L410,80 L470,190 L530,130 L590,220 L650,150 L710,240 L770,180 L800,220 L800,400 Z" fill="#a9b8c4"/>
+          <path d="M290,110 L270,142 L281,136 L290,147 L300,134 L311,142 Z" fill="#eef2f5" opacity=".9"/>
+          <path d="M410,80 L387,114 L400,107 L410,120 L421,105 L433,114 Z" fill="#eef2f5" opacity=".92"/>
+          <path d="M170,150 L152,177 L162,172 L170,181 L178,170 L188,177 Z" fill="#eef2f5" opacity=".85"/>
+          <path d="M530,130 L512,157 L522,152 L530,161 L538,150 L548,157 Z" fill="#eef2f5" opacity=".88"/>
+          <path d="M650,150 L633,176 L642,171 L650,180 L658,169 L667,176 Z" fill="#eef2f5" opacity=".85"/>
+        </svg>
+        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+          <path d="M0,400 L0,330 L80,252 L150,300 L230,202 L310,290 L390,222 L470,310 L550,242 L630,320 L710,262 L800,330 L800,400 Z" fill="#8297a8"/>
+          <path d="M230,202 L213,228 L222,223 L230,232 L238,221 L247,228 Z" fill="#dfe7ec" opacity=".8"/>
+          <path d="M390,222 L374,246 L382,241 L390,250 L398,239 L406,246 Z" fill="#dfe7ec" opacity=".75"/>
+        </svg>
+      </div>
+    </div>
+    <div class="fog"></div>
+
+    <div class="wrap hero-content">
+      <div class="brand">
+        <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="wordmark" id="wordmark" aria-label="Apóstol"></div>
+        <p class="brand-cat">Estudio doctrinal · Reina-Valera 1960</p>
+        <p class="brand-tag">«Enviado» — pero no cualquiera.</p>
+        <div class="brand-rule"></div>
+        <a class="brand-cta" href="#requisitos">Abrir el expediente — los tres requisitos <span>→</span></a>
+      </div>
     </div>
 
-    <h1 class="q" id="q">
-      <span class="w"><i>¿Qué</i></span>
-      <span class="w"><i>es</i></span>
-      <span class="w"><i>un</i></span>
-      <span class="w gold"><i>apóstol?</i></span>
-    </h1>
-    <p class="claim">Y por qué <b>nadie se puede ungir como apóstol</b>: <span class="c">nadie va a cumplir con los requisitos.</span> Ni en estos tiempos, ni nunca.</p>
+    <span class="scrollcue"><b>↓</b> Desliza para descubrir</span>
+    <a class="orb" href="#veredicto" aria-label="Ir al veredicto">−</a>
+  </section>
 
-    <div class="term rv" id="term1">
-      <span class="prompt">&gt;</span>
-      <span class="typeout" id="type1" data-text="oficio_apostolico.estado = &quot;CERRADO&quot;"></span>
-      <span class="cursor" aria-hidden="true"></span>
-    </div>
-    <div class="termsub">El argumento completo · <b>1 Corintios 15:8</b></div>
-
-    <span class="scrollcue">Desliza para abrir el expediente ↓</span>
-  </div>
-
-  <!-- MARQUESINA -->
-  <div class="marquee" aria-hidden="true">
-    <div class="mtrack" id="mtrack">
-      <span>apóstol <i>→</i> enviado</span>
-      <span><em>✦</em> los doce</span>
-      <span><em>✦</em> testigos de la resurrección</span>
-      <span><em>✦</em> 1 Corintios 15:8</span>
-      <span><em>✦</em> el oficio está cerrado</span>
-      <span>apóstol <i>→</i> enviado</span>
-      <span><em>✦</em> los doce</span>
-      <span><em>✦</em> testigos de la resurrección</span>
-      <span><em>✦</em> 1 Corintios 15:8</span>
-      <span><em>✦</em> el oficio está cerrado</span>
-    </div>
-  </div>
-
-  <!-- LA PALABRA -->
-  <section>
+  <!-- 01 · LA PALABRA -->
+  <section class="block" id="palabra">
+    <span class="num" aria-hidden="true">01</span>
     <div class="wrap">
-      <div class="eyebrow rv">§ 1 · La palabra</div>
+      <p class="eyebrow rv">La palabra</p>
       <h2 class="rv" style="--i:1">«Enviado» — <span class="g">pero no cualquiera</span></h2>
       <p class="lead rv" style="--i:2">La palabra <b>apóstol</b> significa «enviado». Pero la palabra no define el oficio. El oficio apostólico — el de los doce y el de Pablo — exige credenciales que la Escritura enumera con precisión, y que <b>ninguna persona viva hoy puede cumplir</b>.</p>
-      <div class="v rv" style="--i:3">
-        <div class="t">«Y estableció a doce, para que estuviesen con él, y <b>para enviarlos a predicar</b>.»<span class="r chip">Marcos 3:14</span></div>
+      <div class="verse rv" style="--i:3">
+        <p class="t">«Y estableció a doce, para que estuviesen con él, y <b>para enviarlos a predicar</b>.»</p>
+        <span class="ref">Marcos 3:14</span>
       </div>
     </div>
   </section>
 
-  <!-- LOS TRES REQUISITOS -->
-  <section class="alt">
+  <!-- 02 · LOS TRES REQUISITOS -->
+  <section class="block" id="requisitos">
+    <span class="num" aria-hidden="true">02</span>
     <div class="wrap">
-      <div class="eyebrow rv">§ 2 · Los tres requisitos</div>
+      <p class="eyebrow rv">Los tres requisitos</p>
       <h2 class="rv" style="--i:1">Lo que la Escritura <span class="c">exige</span></h2>
       <p class="lead rv" style="--i:2">No los define una convención ni una imposición de manos. Los define la Palabra — y <b>los tres son imposibles hoy</b>.</p>
 
-      <div class="req" data-stagger>
-        <div class="req-row rv">
-          <div class="num">I</div>
+      <div class="req">
+        <div class="req-card rv">
+          <div class="rn">I</div>
           <div>
             <h3>Testigo ocular de la <i>resurrección</i></h3>
             <p>El criterio de Pedro para llenar la vacante de Judas: <b>haber visto al Señor resucitado</b>.</p>
-            <div class="v"><div class="t">«…comenzando desde el bautismo de Juan hasta el día en que de entre nosotros fue recibido arriba, <b>uno sea hecho testigo con nosotros, de su resurrección</b>.»<span class="r chip">Hechos 1:22</span></div></div>
+            <div class="verse" style="margin-bottom:0">
+              <p class="t">«…comenzando desde el bautismo de Juan hasta el día en que de entre nosotros fue recibido arriba, <b>uno sea hecho testigo con nosotros, de su resurrección</b>.»</p>
+              <span class="ref">Hechos 1:22</span>
+            </div>
           </div>
         </div>
-        <div class="req-row rv">
-          <div class="num">II</div>
+        <div class="req-card rv">
+          <div class="rn">II</div>
           <div>
             <h3>Señales y <i>milagros</i> comprobables</h3>
             <p>Las señales eran las credenciales del oficio. Pablo las llama, literalmente, <b>«las señales de apóstol»</b>.</p>
-            <div class="v"><div class="t">«Con todo, <b>las señales de apóstol</b> han sido hechas entre vosotros en toda paciencia, por señales, prodigios y milagros.»<span class="r chip">2 Corintios 12:12</span></div></div>
+            <div class="verse" style="margin-bottom:0">
+              <p class="t">«Con todo, <b>las señales de apóstol</b> han sido hechas entre vosotros en toda paciencia, por señales, prodigios y milagros.»</p>
+              <span class="ref">2 Corintios 12:12</span>
+            </div>
           </div>
         </div>
-        <div class="req-row rv">
-          <div class="num">III</div>
+        <div class="req-card rv">
+          <div class="rn">III</div>
           <div>
             <h3>Escogido por <i>Cristo mismo</i></h3>
             <p>Ni congregación, ni concilio, ni otro apóstol: <b>Cristo mismo eligió a cada uno</b>.</p>
-            <div class="v"><div class="t">«Pablo, apóstol (<b>no de hombres ni por hombre</b>, sino por Jesucristo y por Dios el Padre que lo resucitó de los muertos).»<span class="r chip">Gálatas 1:1</span></div></div>
+            <div class="verse" style="margin-bottom:0">
+              <p class="t">«Pablo, apóstol (<b>no de hombres ni por hombre</b>, sino por Jesucristo y por Dios el Padre que lo resucitó de los muertos).»</p>
+              <span class="ref">Gálatas 1:1</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PABLO, EL ÚLTIMO -->
-  <section>
+  <!-- 03 · EL TESTIGO FINAL -->
+  <section class="block" id="testigo">
+    <span class="num" aria-hidden="true">03</span>
     <div class="wrap">
-      <div class="eyebrow rv">§ 3 · El testigo final</div>
+      <p class="eyebrow rv">El testigo final</p>
       <h2 class="rv" style="--i:1">Pablo, el <span class="c">último</span> de todos</h2>
       <p class="lead rv" style="--i:2">Pablo registra la lista completa de apariciones del Cristo resucitado <b>y se coloca al final</b>. La lista está cerrada.</p>
 
-      <div class="counters" data-stagger>
+      <div class="counters">
         <div class="counter rv"><div class="n" data-count="12">0</div><div class="l">Los doce</div></div>
         <div class="counter rv"><div class="n"><span data-count="500">0</span><em>+</em></div><div class="l">Hermanos que le vieron</div></div>
         <div class="counter rv"><div class="n" data-count="1">0</div><div class="l">El último testigo</div></div>
       </div>
 
-      <div class="appear" data-stagger>
+      <div class="appear">
         <div class="ap-row rv"><span class="o">1</span><span class="d">Apareció a <b>Cefas</b>, y después a los doce.</span><span class="rf">1 Co 15:5</span></div>
         <div class="ap-row rv"><span class="o">2</span><span class="d">Apareció a más de <b>quinientos hermanos</b> a la vez.</span><span class="rf">1 Co 15:6</span></div>
         <div class="ap-row rv"><span class="o">3</span><span class="d">Apareció a <b>Jacobo</b>; después a todos los apóstoles.</span><span class="rf">1 Co 15:7</span></div>
         <div class="ap-row last rv"><span class="o">4</span><span class="d">«Y <b>al último de todos</b>, como a un abortivo, <b>me apareció a mí</b>.»<span class="tag">El último</span></span><span class="rf">1 Co 15:8</span></div>
       </div>
 
-      <div class="verdict rv">
+      <div class="verdictline rv">
         <h3>El requisito de testigo ocular <i>se agotó en Pablo.</i></h3>
         <p>Si la lista de apariciones que legitiman el oficio terminó con él, <b>el oficio apostólico está cerrado</b> — y ninguna «unción» moderna puede reabrirlo.</p>
       </div>
     </div>
   </section>
 
-  <!-- EFESIOS 4:11 -->
-  <section class="alt">
+  <!-- 04 · EL VERSÍCULO TRUNCADO -->
+  <section class="block">
+    <span class="num" aria-hidden="true">04</span>
     <div class="wrap">
-      <div class="eyebrow rv">§ 4 · El versículo truncado</div>
+      <p class="eyebrow rv">El versículo truncado</p>
       <h2 class="rv" style="--i:1">Efesios 4:11, <span class="g">cortado en dos</span></h2>
       <p class="lead rv" style="--i:2">Se cita en cada «consagración apostólica», pero <b>esconden el «hasta»</b> del versículo 13: los dones fueron dados para el período fundacional, <b>hasta</b> que la iglesia llegara a la madurez.</p>
 
-      <div class="cutwrap" data-stagger>
+      <div class="cutwrap">
         <div class="cut rv">
           <span class="scissors" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
           <span class="lab bad">Lo que citan</span>
           <div class="txt">«Y él mismo constituyó a unos, <b>apóstoles</b>; a otros, profetas; a otros, evangelistas; a otros, pastores y maestros…»</div>
-          <span class="ref">Efesios 4:11 — y ahí cortan</span>
+          <span class="cref">Efesios 4:11 — y ahí cortan</span>
         </div>
         <div class="cut rv">
           <span class="lab good">Lo que esconden</span>
           <div class="txt">«…a fin de perfeccionar a los santos para la obra del ministerio, para la edificación del cuerpo de Cristo, <span class="hasta">hasta que todos lleguemos</span> a la unidad de la fe y del conocimiento del Hijo de Dios…»</div>
-          <span class="ref">Efesios 4:12-13 — el «hasta» que lo cambia todo</span>
+          <span class="cref">Efesios 4:12-13 — el «hasta» que lo cambia todo</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LA ADVERTENCIA -->
-  <section>
+  <!-- 05 · LA ADVERTENCIA -->
+  <section class="block">
+    <span class="num" aria-hidden="true">05</span>
     <div class="wrap">
-      <div class="eyebrow rv">§ 5 · La advertencia</div>
+      <p class="eyebrow rv">La advertencia</p>
       <h2 class="rv" style="--i:1">La iglesia que <span class="c">probó</span> a los apóstoles</h2>
       <div class="warn rv" style="--i:2">
-        <div class="t">«Yo conozco tus obras… y <b>has probado a los que se dicen ser apóstoles, y no lo son, y los has hallado <span class="hl">mentirosos</span></b>.»<span class="r chip">Apocalipsis 2:2</span></div>
+        <p class="t">«Yo conozco tus obras… y <b>has probado a los que se dicen ser apóstoles, y no lo son, y los has hallado <span class="hl">mentirosos</span></b>.»</p>
+        <span class="ref" style="margin-top:20px">Apocalipsis 2:2</span>
       </div>
     </div>
   </section>
 
-  <!-- CIERRE -->
-  <section class="closing">
+  <!-- 06 · RESOLUCIÓN (banda oscura) -->
+  <section class="dark" id="veredicto">
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <span class="num" aria-hidden="true">06</span>
     <div class="wrap">
-      <div class="eyebrow rv">§ 6 · Resolución</div>
+      <p class="eyebrow rv">Resolución</p>
       <h2 class="big rv" style="--i:1">El rebaño no necesita <i>apóstoles nuevos.</i></h2>
       <p class="p rv" style="--i:2">Necesita <b>pastores fieles</b> que apacienten la grey de Dios siendo ejemplos, no teniendo señorío <b>(1 Pedro 5:1-3)</b>. El pastor fiel no necesita llamarse apóstol: necesita ser hallado fiel.</p>
-      <div class="termblock rv" style="--i:3" id="term2">
-        <div class="tb-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="tb-title">veredicto.sh</span></div>
-        <div class="tb-body">
-          <div class="tb-line"><span class="prompt">&gt;</span> <span class="typeout" data-text="requisitos_cumplidos = 0"></span></div>
-          <div class="tb-line"><span class="prompt">&gt;</span> <span class="typeout" data-text="nuevos_apostoles = NADIE"></span></div>
-          <div class="tb-line"><span class="prompt">&gt;</span> <span class="typeout" data-text="texto = &quot;Reina-Valera 1960&quot; ✓"></span></div>
-        </div>
+
+      <div class="verdict rv" style="--i:3">
+        <div class="vh">Veredicto del expediente</div>
+        <div class="vrow"><span>Requisitos cumplidos</span><b class="zero">0</b></div>
+        <div class="vrow"><span>Nuevos apóstoles</span><b class="nadie">Nadie</b></div>
+        <div class="vrow"><span>Último testigo ocular</span><b>Pablo · 1 Co 15:8</b></div>
+        <div class="vrow"><span>Texto verificado</span><b>Reina-Valera 1960 ✓</b></div>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -440,88 +430,94 @@ footer b{color:var(--gold)}
 </footer>
 
 <script>
-/* ── polvo de luz ambiental ── */
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ══════════ CIELO VIVO (solo en el hero) ══════════ */
 (function(){
-  const c=document.getElementById('dust'),x=c.getContext('2d');
-  let W,H,P=[];
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const c=document.getElementById('sky'),x=c.getContext('2d');
+  let W,H,scrollY=0;
   function size(){W=c.width=innerWidth;H=c.height=innerHeight}
   size();addEventListener('resize',size);
-  const N=Math.min(80,Math.floor(innerWidth/16));
-  for(let i=0;i<N;i++)P.push({
-    x:Math.random()*innerWidth,y:Math.random()*innerHeight,
-    r:Math.random()*1.8+.4,s:Math.random()*.35+.08,
-    o:Math.random()*.5+.15,ph:Math.random()*Math.PI*2,
-    g:Math.random()>.82
-  });
-  function tick(t){
-    x.clearRect(0,0,W,H);
-    for(const p of P){
-      p.y-=p.s;p.x+=Math.sin(t/1800+p.ph)*.18;
-      if(p.y<-6){p.y=H+6;p.x=Math.random()*W}
-      const tw=p.o*(0.65+0.35*Math.sin(t/900+p.ph));
-      x.beginPath();x.arc(p.x,p.y,p.r,0,7);
-      x.fillStyle=p.g?`rgba(230,179,77,${tw})`:`rgba(143,163,196,${tw*.7})`;
-      x.shadowColor=p.g?'rgba(230,179,77,.8)':'transparent';
-      x.shadowBlur=p.g?8:0;
-      x.fill();x.shadowBlur=0;
-    }
-    if(!reduce)requestAnimationFrame(tick);
+
+  const clouds=[];
+  for(let i=0;i<11;i++){
+    const puffs=[],n=4+Math.floor(Math.random()*4);
+    for(let j=0;j<n;j++)puffs.push({dx:(Math.random()-.5)*190,dy:(Math.random()-.5)*50,r:38+Math.random()*60});
+    clouds.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight*.55,s:.55+Math.random()*1.25,v:.1+Math.random()*.32,a:.5+Math.random()*.4,puffs,par:.06+Math.random()*.12});
   }
-  requestAnimationFrame(tick);
+
+  function draw(){
+    const g=x.createLinearGradient(0,0,0,H);
+    g.addColorStop(0,'#8fbde6');
+    g.addColorStop(.42,'#aecdea');
+    g.addColorStop(.72,'#d7e2ec');
+    g.addColorStop(1,'#e8e7e5');
+    x.fillStyle=g;x.fillRect(0,0,W,H);
+
+    for(const cl of clouds){
+      cl.x+=cl.v*cl.s;
+      if(cl.x-270*cl.s>W)cl.x=-270*cl.s;
+      const py=cl.y + scrollY*cl.par;
+      x.save();x.translate(cl.x,py);x.scale(cl.s,cl.s);
+      for(const pf of cl.puffs){
+        const rg=x.createRadialGradient(pf.dx,pf.dy,0,pf.dx,pf.dy,pf.r);
+        rg.addColorStop(0,`rgba(255,255,255,${.85*cl.a})`);
+        rg.addColorStop(1,'rgba(255,255,255,0)');
+        x.fillStyle=rg;x.beginPath();x.arc(pf.dx,pf.dy,pf.r,0,7);x.fill();
+      }
+      x.restore();
+    }
+    if(!reduceMotion)requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+
+  const peaks=document.getElementById('peaks');
+  addEventListener('scroll',()=>{
+    scrollY=window.scrollY;
+    const h=document.documentElement;
+    const p=scrollY/Math.max(1,h.scrollHeight-h.clientHeight);
+    document.getElementById('progress').style.width=(p*100)+'%';
+    document.getElementById('nav').classList.toggle('scrolled',scrollY>40);
+    if(peaks)peaks.style.transform=`translateY(${Math.min(scrollY,innerHeight)*.28}px)`;
+  },{passive:true});
 })();
 
-/* ── palabra de apertura + palabras cinéticas ── */
+/* ── wordmark letra por letra ── */
 (function(){
-  const g=document.getElementById('greek');
-  'apóstol'.split('').forEach((ch,i)=>{
-    const s=document.createElement('span');s.textContent=ch;s.style.setProperty('--i',i);g.appendChild(s);
+  const w=document.getElementById('wordmark');
+  'APÓSTOL'.split('').forEach((ch,i)=>{
+    const s=document.createElement('span');s.textContent=ch;s.style.setProperty('--i',i);w.appendChild(s);
   });
-  addEventListener('load',()=>{
-    g.querySelectorAll('span').forEach(s=>s.classList.add('on'));
-    document.querySelectorAll('#q .w i').forEach((w,i)=>{w.style.setProperty('--i',i);w.classList.add('on')});
-  });
+  addEventListener('load',()=>w.querySelectorAll('span').forEach(s=>s.classList.add('on')));
 })();
 
-/* ── barra de progreso ── */
-addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
-},{passive:true});
+/* ── estrellas del bloque final ── */
+(function(){
+  const box=document.getElementById('stars');
+  for(let i=0;i<70;i++){
+    const s=document.createElement('i');
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*100+'%';
+    s.style.animationDelay=(Math.random()*3.2)+'s';
+    s.style.width=s.style.height=(Math.random()*1.6+1)+'px';
+    box.appendChild(s);
+  }
+})();
 
-/* ── revelado al hacer scroll ── */
+/* ── revelado al hacer scroll (fade + slide-up escalonado) ── */
 const io=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}
 }),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-/* ── máquina de escribir (líneas digitales) ── */
-const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function typeLine(el){
-  const full=el.dataset.text||'';
-  if(reduceMotion){el.textContent=full;return}
-  let i=0;el.textContent='';
-  (function step(){
-    el.textContent=full.slice(0,++i);
-    if(i<full.length)setTimeout(step,28+Math.random()*40);
-  })();
-}
-const tIO=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;
-  const lines=e.target.querySelectorAll('.typeout');
-  lines.forEach((ln,idx)=>setTimeout(()=>typeLine(ln),idx*650));
-  tIO.unobserve(e.target);
-}),{threshold:.5});
-document.querySelectorAll('.term, .termblock').forEach(z=>tIO.observe(z));
-
 /* ── contadores animados ── */
 const cIO=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting)return;
-  const el=e.target,target=+el.dataset.count,t0=performance.now(),dur=1400;
+  const el=e.target,target=+el.dataset.count,t0=performance.now(),dur=1500;
   (function step(t){
-    const p=Math.min((t-t0)/dur,1),ease=1-Math.pow(1-p,3);
+    const pr=Math.min((t-t0)/dur,1),ease=1-Math.pow(1-pr,3);
     el.textContent=Math.round(target*ease);
-    if(p<1)requestAnimationFrame(step);
+    if(pr<1)requestAnimationFrame(step);
   })(t0);
   cIO.unobserve(el);
 }),{threshold:.6});
