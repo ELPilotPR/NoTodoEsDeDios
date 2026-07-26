@@ -62,9 +62,9 @@ main{position:relative;z-index:5}
 .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
 
 /* ══════════ HERO: LA ESCENA ══════════ */
-.hero{position:relative;min-height:132vh;min-height:132svh;overflow:hidden;display:flex;align-items:flex-start;
-  background:linear-gradient(180deg,#2E8DBA 0%,#57A9CC 55%,#8FC6DD 100%)}
-.hero-img{position:absolute;top:34px;left:0;width:100%;height:162%;object-fit:cover;object-position:50% 0;z-index:0;will-change:transform}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#2E8DBA 0%,#57A9CC 55%,#8FC6DD 100%)}
+/* imagen original a tamaño real — sin zoom ni recorte; ella define la altura del hero */
+.hero-img{display:block;position:relative;width:100%;height:auto;z-index:0;will-change:transform}
 /* velo superior para legibilidad del título + fundido inferior a la página */
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(to bottom,rgba(46,141,186,.42) 0%,rgba(46,141,186,.16) 26%,rgba(46,141,186,0) 46%),
@@ -81,12 +81,13 @@ main{position:relative;z-index:5}
 .sunglow{position:absolute;top:-14%;right:-8%;width:44vw;height:44vw;z-index:1;pointer-events:none;border-radius:50%;
   background:radial-gradient(circle,rgba(255,244,214,.55) 0%,rgba(255,244,214,.18) 42%,transparent 70%)}
 
-.hero-content{position:relative;z-index:3;width:100%;max-width:none;margin:0;text-align:center;
-  padding:clamp(72px,9vh,100px) clamp(20px,4vw,52px) 40px}
-/* placa del título — centrada arriba, compacta, flotando sobre la montaña; Jesús queda visible debajo */
-.plate{display:inline-block;max-width:560px;margin:0 auto;text-align:center;
-  background:var(--cream);border:3px solid var(--ink);box-shadow:var(--shadow);
-  padding:clamp(18px,2.6vw,28px) clamp(22px,3.2vw,36px);transform:rotate(-1.2deg)}
+.hero-content{position:absolute;top:0;left:0;right:0;z-index:3;text-align:center;
+  padding:clamp(64px,8vh,88px) clamp(20px,4vw,52px) 0}
+/* placa del título — transparente, sin caja; solo el texto flotando sobre el cielo con un halo de luz */
+.plate{display:inline-block;max-width:640px;margin:0 auto;text-align:center;position:relative;
+  background:transparent;border:none;box-shadow:none;padding:0;transform:none}
+.plate::before{content:"";position:absolute;inset:-48px -64px -34px;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 30%,rgba(255,250,238,.92) 0%,rgba(255,250,238,.55) 42%,rgba(255,250,238,0) 78%)}
 .plate .eyebrow{margin-bottom:10px;justify-content:center}
 .plate h1{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.8vw,46px);line-height:1.04;letter-spacing:-.01em;color:var(--ink)}
 .plate h1 .q{color:var(--terra)}
@@ -272,7 +273,8 @@ footer b{color:var(--ochre)}
   .cutwrap{grid-template-columns:1fr}
   .ap-row{grid-template-columns:40px 1fr;gap:12px}
   .ap-row .rf{grid-column:2}
-  .plate{transform:rotate(-1deg)}
+  .hero{min-height:100svh}
+  .hero-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -358,14 +360,12 @@ footer b{color:var(--ochre)}
         </div>
 
         <!-- Requisito II -->
-        <div class="req-card rv">
-          <div class="req-fig" aria-hidden="true">
+        <div class="req-card photo rv">
+          <figure class="req-fig">
+            <img src="img/req2.jpg" alt="Jesús extendiendo la mano para sanar a un hombre herido sentado a sus pies, junto al mar de Galilea, mientras los apóstoles observan con asombro llevándose la mano al pecho" loading="lazy">
             <span class="rn">II</span>
-            <svg viewBox="0 0 120 96" fill="none">
-              <path d="M60 8 L66 34 L92 28 L72 46 L96 60 L68 62 L74 90 L60 68 L46 90 L52 62 L24 60 L48 46 L28 28 L54 34 Z" fill="#D2A45F" stroke="#2E2114" stroke-width="4.5" stroke-linejoin="round"/>
-              <circle cx="60" cy="50" r="9" fill="#C25E22" stroke="#2E2114" stroke-width="4"/>
-            </svg>
-          </div>
+            <figcaption>Jesús sana junto al mar de Galilea — los apóstoles, testigos de las señales</figcaption>
+          </figure>
           <div class="req-body">
             <h3>Señales y <i>milagros</i> comprobables</h3>
             <p>Las señales no eran un accesorio del ministerio: eran <b>las credenciales del oficio</b>. Pablo las llama, literalmente, «las señales de apóstol». La iglesia primitiva las vio hechas <b>por mano de los apóstoles</b>.</p>
@@ -530,7 +530,7 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
       document.getElementById('progress').style.width=(p*100)+'%';
       document.getElementById('nav').classList.toggle('scrolled',y>40);
       if(heroImg&&!reduceMotion&&y<innerHeight*1.2){
-        heroImg.style.transform=`translateY(${y*0.22}px) scale(1.04)`;
+        heroImg.style.transform=`translateY(${y*0.16}px)`;
       }
       ticking=false;
     });
