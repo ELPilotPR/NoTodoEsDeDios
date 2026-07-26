@@ -4,224 +4,264 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Qué es un Apóstol? — Nadie cumple los requisitos · RVR1960</title>
+<meta name="description" content="Estudio doctrinal con la Reina-Valera 1960: el oficio apostólico está cerrado. Nadie puede ungirse apóstol hoy — nadie cumple los requisitos, ni en estos tiempos ni nunca.">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --page:#e8e7e5;
-  --ink:#003934;
-  --ink-soft:#44514e;
-  --teal:#2ba89a;
-  --pine:#0e3a33;
-  --pine-deep:#062a24;
-  --gray-txt:#9aa0a0;
-  --line:rgba(0,57,52,.14);
+  /* paleta extraída de la ilustración */
+  --cream:#F5EEDF;
+  --cream-2:#EDE2C8;
+  --ink:#2E2114;
+  --ink-soft:#5C4A36;
+  --ink-faint:rgba(46,33,20,.16);
+  --sky:#2E8DBA;
+  --sky-light:#57A9CC;
+  --teal:#3E89A0;
+  --terra:#C25E22;
+  --brick:#9A4330;
+  --ochre:#D2A45F;
+  --green:#6E9A3F;
+  --night:#221812;
+  --display:'Fraunces',Georgia,serif;
   --sans:'Satoshi',system-ui,-apple-system,sans-serif;
   --verse:'Newsreader',Georgia,serif;
+  --shadow:7px 7px 0 rgba(46,33,20,.9);
+  --shadow-sm:4px 4px 0 rgba(46,33,20,.85);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   font-family:var(--sans);
-  font-weight:400;
-  background:var(--page);
+  background:var(--cream);
   color:var(--ink);
   line-height:1.7;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
-::selection{background:var(--teal);color:#fff}
+::selection{background:var(--terra);color:var(--cream)}
 
 /* ── barra de progreso ── */
-#progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:60;background:var(--teal)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:var(--terra)}
 
-/* ══════════ NAV CÁPSULA (como el original) ══════════ */
-.nav{position:fixed;top:20px;right:clamp(16px,3.5vw,44px);z-index:50;display:flex;align-items:center;gap:clamp(16px,2.4vw,30px);
-  padding:10px 12px 10px clamp(20px,2.6vw,32px);border-radius:999px;
-  background:rgba(255,255,255,.66);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,.85);box-shadow:0 8px 30px rgba(6,42,36,.12);
-  transition:background .4s,box-shadow .4s}
-.nav.scrolled{background:rgba(255,255,255,.92);box-shadow:0 10px 36px rgba(6,42,36,.18)}
-.nav a{font-weight:500;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .3s}
-.nav a:hover{color:var(--teal)}
-.nav .solid{background:var(--pine);color:#fff;padding:9px 20px;border-radius:8px;letter-spacing:.16em;transition:background .3s,transform .3s}
-.nav .solid:hover{background:var(--teal);color:#fff;transform:translateY(-1px)}
+/* ══════════ NAV ══════════ */
+.nav{position:fixed;top:18px;right:clamp(16px,3.5vw,44px);z-index:50;display:flex;align-items:center;gap:clamp(14px,2.2vw,26px);
+  padding:9px 12px 9px clamp(18px,2.4vw,30px);border-radius:999px;
+  background:var(--cream);border:2px solid var(--ink);box-shadow:var(--shadow-sm);
+  transition:transform .35s,box-shadow .35s}
+.nav.scrolled{transform:translateY(-2px);box-shadow:6px 6px 0 rgba(46,33,20,.9)}
+.nav a{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .25s}
+.nav a:hover{color:var(--terra)}
+.nav .solid{background:var(--terra);color:var(--cream);padding:8px 18px;border-radius:8px;border:2px solid var(--ink);transition:background .25s,transform .25s}
+.nav .solid:hover{background:var(--brick);color:var(--cream);transform:translateY(-1px)}
 
 main{position:relative;z-index:5}
 .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
 
-/* ══════════ HERO: EL CIELO ══════════ */
-.hero{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:center}
-#sky{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.peaks{position:absolute;right:-6%;bottom:0;width:82%;height:72%;z-index:1;pointer-events:none;will-change:transform}
-.peaks-inner{position:absolute;inset:0;animation:peakbob 9s ease-in-out infinite alternate}
-@keyframes peakbob{from{transform:translateY(0)}to{transform:translateY(-12px)}}
-.peaks svg{position:absolute;inset:0;width:100%;height:100%}
-.fog{position:absolute;left:0;right:0;bottom:0;height:44%;z-index:2;pointer-events:none;
-  background:linear-gradient(to top,var(--page) 10%,rgba(232,231,229,.55) 46%,transparent)}
+/* ══════════ HERO: LA ESCENA ══════════ */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex;align-items:flex-start}
+.hero-img{position:absolute;inset:-6% 0 0 0;width:100%;height:106%;object-fit:cover;object-position:center 22%;z-index:0;will-change:transform}
+/* velo superior para legibilidad del título + fundido inferior a la página */
+.hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(46,141,186,.42) 0%,rgba(46,141,186,.16) 26%,rgba(46,141,186,0) 46%),
+             linear-gradient(to top,var(--cream) 4%,rgba(245,238,223,.55) 16%,transparent 34%)}
+/* nubes a la deriva (vida sutil) */
+.cloud{position:absolute;z-index:1;background:rgba(255,255,255,.75);border-radius:999px;filter:blur(2px);pointer-events:none}
+.cloud::before,.cloud::after{content:"";position:absolute;background:inherit;border-radius:inherit}
+.cloud.c1{width:150px;height:44px;top:9%;left:-12%;animation:drift 46s linear infinite}
+.cloud.c1::before{width:70px;height:34px;top:-16px;left:24px}
+.cloud.c2{width:110px;height:34px;top:20%;left:-20%;animation:drift 62s linear infinite;animation-delay:-24s;opacity:.8}
+.cloud.c2::before{width:52px;height:26px;top:-12px;left:20px}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(130vw)}}
+/* resplandor de sol */
+.sunglow{position:absolute;top:-14%;right:-8%;width:44vw;height:44vw;z-index:1;pointer-events:none;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,244,214,.55) 0%,rgba(255,244,214,.18) 42%,transparent 70%)}
 
-.hero-content{position:relative;z-index:3;width:100%;padding:130px 0 150px}
-.brand{max-width:640px}
-/* isotipo: triángulo de puntos (como el original) */
-.dots{display:inline-grid;grid-template-columns:repeat(3,6px);gap:4px;margin-bottom:18px}
-.dots i{width:6px;height:6px;border-radius:50%;background:var(--pine)}
-.dots i:nth-child(4),.dots i:nth-child(6){opacity:.55}
-.dots i:nth-child(7),.dots i:nth-child(8),.dots i:nth-child(9){opacity:.28}
-.wordmark{font-weight:300;font-size:clamp(40px,7.2vw,84px);line-height:1.05;color:var(--ink);
-  letter-spacing:.3em;text-transform:uppercase;white-space:nowrap;
-  text-shadow:0 2px 26px rgba(255,255,255,.85)}
-.wordmark span{display:inline-block;opacity:0;transform:translateY(40px)}
-.wordmark span.on{animation:letterIn 1s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(var(--i)*80ms)}
-@keyframes letterIn{to{opacity:1;transform:none}}
-.brand-cat{margin-top:18px;font-weight:700;font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--pine)}
-.brand-tag{margin-top:7px;font-weight:400;font-size:14px;color:var(--ink-soft)}
-.brand-rule{width:56px;height:2px;background:var(--teal);margin:26px 0}
-.brand-cta{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:14px;color:var(--teal);
-  text-decoration:none;transition:gap .3s,color .3s}
-.brand-cta span{transition:transform .3s}
-.brand-cta:hover{color:var(--pine);gap:16px}
-.brand-cta:hover span{transform:translateX(4px)}
+.hero-content{position:relative;z-index:3;width:100%;padding:clamp(96px,15vh,150px) 0 120px}
+/* placa del título — como etiqueta pegada sobre el cielo */
+.plate{display:inline-block;max-width:680px;background:var(--cream);border:3px solid var(--ink);box-shadow:var(--shadow);
+  padding:clamp(26px,4vw,44px) clamp(26px,4.5vw,50px);transform:rotate(-1.4deg)}
+.plate .eyebrow{margin-bottom:16px}
+.plate h1{font-family:var(--display);font-weight:600;font-size:clamp(42px,7.4vw,86px);line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
+.plate h1 .q{color:var(--terra)}
+.plate .thesis{margin-top:20px;font-size:clamp(15px,1.9vw,18px);font-weight:500;color:var(--ink-soft);max-width:46ch}
+.plate .thesis b{color:var(--ink);font-weight:900}
+.plate .thesis .no{color:var(--brick);font-weight:900}
+.plate-rule{width:64px;height:4px;background:var(--terra);margin:24px 0 20px}
+.plate-cta{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cream);background:var(--sky);border:2.5px solid var(--ink);box-shadow:var(--shadow-sm);
+  padding:12px 24px;text-decoration:none;transition:transform .25s,box-shadow .25s,background .25s}
+.plate-cta:hover{background:var(--teal);transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(46,33,20,.9)}
+.plate-cta span{transition:transform .3s}
+.plate-cta:hover span{transform:translateY(3px)}
 
-.scrollcue{position:absolute;left:clamp(22px,5vw,56px);bottom:34px;z-index:3;display:flex;align-items:center;gap:12px;
-  font-weight:500;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);
+.scrollcue{position:absolute;left:clamp(22px,5vw,56px);bottom:30px;z-index:3;display:flex;align-items:center;gap:12px;
+  font-weight:900;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);
+  background:var(--cream);border:2px solid var(--ink);box-shadow:var(--shadow-sm);padding:9px 16px;
   animation:bob 2.4s ease-in-out infinite}
 .scrollcue b{font-weight:400;font-size:15px}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-.orb{position:absolute;right:clamp(22px,5vw,56px);bottom:30px;z-index:3;width:40px;height:40px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;text-decoration:none;
-  border:1px solid rgba(0,57,52,.45);color:var(--ink);font-size:17px;font-weight:300;
-  background:rgba(255,255,255,.4);backdrop-filter:blur(6px);transition:background .3s,color .3s,transform .3s}
-.orb:hover{background:var(--pine);color:#fff;transform:translateY(-3px)}
 
-/* ══════════ CUERPO: gris editorial ══════════ */
-.block{position:relative;padding:clamp(90px,14vh,160px) 0}
-.block .num{position:absolute;top:clamp(40px,7vh,80px);right:clamp(10px,4vw,56px);z-index:0;
-  font-weight:300;font-size:clamp(110px,18vw,220px);line-height:1;color:rgba(0,57,52,.06);
-  user-select:none;pointer-events:none;letter-spacing:.02em}
+/* ══════════ CUERPO ══════════ */
+.block{position:relative;padding:clamp(90px,14vh,160px) 0;background:var(--cream)}
+.block.alt{background:var(--cream-2)}
+.block .num{position:absolute;top:clamp(36px,7vh,76px);right:clamp(10px,4vw,56px);z-index:0;
+  font-family:var(--display);font-weight:600;font-size:clamp(110px,18vw,220px);line-height:1;
+  color:transparent;-webkit-text-stroke:2px rgba(46,33,20,.13);user-select:none;pointer-events:none}
 .block .wrap{position:relative;z-index:1}
-.eyebrow{font-weight:700;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--teal);
-  display:flex;align-items:center;gap:16px;margin-bottom:22px}
-.eyebrow::before{content:"";width:40px;height:1px;background:var(--teal)}
-h2{font-weight:300;font-size:clamp(30px,4.6vw,52px);line-height:1.14;color:var(--ink);letter-spacing:.01em;max-width:20ch}
-h2 .g{color:var(--teal)}
-h2 .c{color:#b04a4a}
-.lead{color:var(--ink-soft);font-size:16.5px;font-weight:400;max-width:56ch;margin-top:20px}
-.lead b{color:var(--ink);font-weight:700}
+.eyebrow{font-weight:900;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--terra);
+  display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.eyebrow::before{content:"";width:40px;height:3px;background:var(--terra)}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.8vw,54px);line-height:1.12;color:var(--ink);letter-spacing:-.01em;max-width:20ch}
+h2 .t{color:var(--terra)}
+h2 .s{color:var(--sky)}
+h2 .c{color:var(--brick)}
+.lead{color:var(--ink-soft);font-size:17px;font-weight:400;max-width:60ch;margin-top:22px}
+.lead b{color:var(--ink);font-weight:900}
+.lead .hl{background:linear-gradient(transparent 62%,rgba(210,164,95,.55) 62%);padding:0 2px;font-weight:700;color:var(--ink)}
 
-/* tarjeta de versículo */
-.verse{position:relative;background:#fff;border:1px solid var(--line);padding:30px 34px 26px;max-width:700px;margin:32px 0;
-  box-shadow:0 4px 20px rgba(6,42,36,.06);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.verse::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal)}
-.verse:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(6,42,36,.12)}
-.verse .t{font-family:var(--verse);font-style:italic;font-size:19px;line-height:1.7;color:var(--ink-soft)}
-.verse .t b{font-style:normal;font-weight:600;color:var(--teal)}
-.ref{display:inline-block;margin-top:16px;font-weight:700;font-size:10px;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--pine);border:1px solid rgba(0,57,52,.35);border-radius:999px;padding:5px 16px;
-  transition:background .3s,color .3s,transform .3s}
-.ref:hover{background:var(--pine);color:#fff;transform:translateY(-1px)}
+/* tarjeta de versículo — estilo "cédula" con borde y sombra plana */
+.verse{position:relative;background:#FBF6EA;border:2.5px solid var(--ink);box-shadow:var(--shadow);
+  padding:30px 34px 26px;max-width:700px;margin:34px 0;
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.verse:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 rgba(46,33,20,.9)}
+.verse::before{content:"";position:absolute;left:-2.5px;top:-2.5px;bottom:-2.5px;width:8px;background:var(--sky);border:2.5px solid var(--ink);border-left:none}
+.verse .t{font-family:var(--verse);font-style:italic;font-size:19.5px;line-height:1.7;color:var(--ink-soft)}
+.verse .t b{font-style:normal;font-weight:600;color:var(--terra)}
+.ref{display:inline-block;margin-top:18px;font-weight:900;font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--cream);background:var(--ink);border:2px solid var(--ink);padding:6px 16px;
+  transition:background .25s,transform .25s}
+.ref:hover{background:var(--terra);transform:translateY(-1px)}
+/* versículo de apoyo, más pequeño */
+.support{margin-top:18px;padding-left:18px;border-left:3px solid var(--ochre);max-width:620px}
+.support .t{font-family:var(--verse);font-style:italic;font-size:16px;line-height:1.6;color:var(--ink-soft)}
+.support .t b{font-style:normal;font-weight:600;color:var(--ink)}
+.support .ref{margin-top:10px;background:transparent;color:var(--ink-soft);border-color:var(--ink-faint);font-size:9px}
+.support .ref:hover{color:var(--terra)}
 
-/* reveal (fade + slide-up, como el original) */
+/* reveal */
 .rv{opacity:0;transform:translateY(42px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*110ms)}
 .rv.on{opacity:1;transform:none}
 
-/* ── requisitos: layout editorial asimétrico ── */
-.req{margin-top:56px;display:flex;flex-direction:column;gap:clamp(48px,8vh,90px)}
-.req-card{display:grid;grid-template-columns:110px 1fr;gap:clamp(24px,4vw,52px);align-items:start;max-width:820px}
-.req-card:nth-child(2){margin-left:auto}
-.req-card .rn{font-weight:300;font-size:clamp(52px,7vw,80px);line-height:.9;color:transparent;
-  -webkit-text-stroke:1.5px var(--teal);letter-spacing:.02em}
-.req-card h3{font-weight:400;font-size:clamp(21px,3vw,29px);color:var(--ink);letter-spacing:.01em;margin-bottom:10px}
-.req-card h3 i{font-style:normal;color:var(--teal)}
-.req-card p{color:var(--ink-soft);font-size:15.5px;max-width:52ch}
-.req-card p b{color:var(--ink);font-weight:700}
+/* ── requisitos: filas alternas con figura ── */
+.req{margin-top:60px;display:flex;flex-direction:column;gap:clamp(44px,7vh,76px)}
+.req-card{display:grid;grid-template-columns:280px 1fr;gap:clamp(26px,4vw,56px);align-items:start;max-width:900px}
+.req-card:nth-child(2){grid-template-columns:1fr 280px}
+.req-card:nth-child(2) .req-fig{order:2}
+.req-fig{aspect-ratio:4/3.4;background:#FBF6EA;border:3px solid var(--ink);box-shadow:var(--shadow);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.req-card:hover .req-fig{transform:translate(-3px,-3px) rotate(-1deg);box-shadow:10px 10px 0 rgba(46,33,20,.9)}
+.req-fig svg{width:62%;height:auto}
+.req-fig .rn{position:absolute;top:10px;left:14px;font-family:var(--display);font-weight:600;font-size:34px;color:var(--ochre)}
+.req-body h3{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,30px);color:var(--ink);line-height:1.2;margin-bottom:12px}
+.req-body h3 i{font-style:normal;color:var(--terra)}
+.req-body p{color:var(--ink-soft);font-size:16px;max-width:56ch}
+.req-body p b{color:var(--ink);font-weight:900}
+.req-body .verse{margin:22px 0 0}
 
 /* ── contadores + apariciones ── */
-.counters{display:flex;gap:clamp(36px,7vw,100px);flex-wrap:wrap;margin:56px 0 12px}
-.counter .n{font-weight:300;font-size:clamp(56px,8vw,94px);line-height:1;color:var(--ink);letter-spacing:.01em}
-.counter .n em{font-style:normal;color:var(--teal)}
-.counter .l{font-weight:700;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gray-txt);margin-top:12px}
-.appear{margin-top:44px;max-width:760px}
+.counters{display:flex;gap:clamp(30px,6vw,84px);flex-wrap:wrap;margin:56px 0 12px}
+.counter{background:#FBF6EA;border:3px solid var(--ink);box-shadow:var(--shadow-sm);padding:22px 30px 18px;min-width:150px;
+  transition:transform .3s,box-shadow .3s}
+.counter:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(46,33,20,.9)}
+.counter .n{font-family:var(--display);font-weight:600;font-size:clamp(50px,7vw,80px);line-height:1;color:var(--ink)}
+.counter .n em{font-style:normal;color:var(--terra)}
+.counter .l{font-weight:900;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px}
+.appear{margin-top:44px;max-width:780px}
 .ap-row{display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:baseline;padding:18px 22px;
-  border-bottom:1px solid var(--line);transition:background .3s}
-.ap-row:hover{background:rgba(255,255,255,.8)}
-.ap-row .o{font-weight:300;font-size:24px;color:var(--teal)}
-.ap-row .d{font-size:16px;color:var(--ink-soft)}
-.ap-row .d b{color:var(--ink);font-weight:700}
-.ap-row .rf{font-weight:700;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray-txt)}
-.ap-row.last{background:#fff;border-left:3px solid #b04a4a;box-shadow:0 8px 26px rgba(6,42,36,.09)}
-.ap-row.last .tag{display:inline-block;font-weight:700;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;
-  color:#fff;background:#b04a4a;padding:3px 12px;margin-left:12px;vertical-align:2px}
-.verdictline{margin-top:52px;background:#fff;border:1px solid var(--line);border-left:3px solid #b04a4a;
-  box-shadow:0 4px 20px rgba(6,42,36,.06);padding:36px 40px;max-width:720px}
-.verdictline h3{font-weight:400;font-size:clamp(23px,3.4vw,33px);color:var(--ink);line-height:1.25;letter-spacing:.01em}
-.verdictline h3 i{font-style:normal;color:#b04a4a}
-.verdictline p{color:var(--ink-soft);margin-top:14px;max-width:58ch;font-size:15.5px}
-.verdictline p b{color:var(--ink);font-weight:700}
+  border:2px solid var(--ink-faint);border-bottom-width:2px;background:transparent;transition:background .25s,border-color .25s,transform .25s}
+.ap-row+.ap-row{border-top:none}
+.ap-row:hover{background:#FBF6EA;border-color:var(--ink);transform:translateX(4px)}
+.ap-row .o{font-family:var(--display);font-weight:600;font-size:26px;color:var(--sky)}
+.ap-row .d{font-size:16.5px;color:var(--ink-soft)}
+.ap-row .d b{color:var(--ink);font-weight:900}
+.ap-row .rf{font-weight:900;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.ap-row.last{background:#FBF6EA;border:3px solid var(--ink);box-shadow:var(--shadow-sm)}
+.ap-row.last .o{color:var(--brick)}
+.ap-row.last .tag{display:inline-block;font-weight:900;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--cream);background:var(--brick);border:2px solid var(--ink);padding:3px 12px;margin-left:12px;vertical-align:2px}
+.verdictline{margin-top:52px;background:#FBF6EA;border:3px solid var(--ink);border-left:10px solid var(--brick);
+  box-shadow:var(--shadow);padding:36px 40px;max-width:740px}
+.verdictline h3{font-family:var(--display);font-weight:600;font-size:clamp(23px,3.4vw,33px);color:var(--ink);line-height:1.25}
+.verdictline h3 i{font-style:normal;color:var(--brick)}
+.verdictline p{color:var(--ink-soft);margin-top:14px;max-width:60ch;font-size:16px}
+.verdictline p b{color:var(--ink);font-weight:900}
 
 /* ── efesios: el corte ── */
-.cutwrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:52px;align-items:stretch;max-width:900px}
-.cut{background:#fff;border:1px solid var(--line);padding:32px 34px;position:relative;display:flex;flex-direction:column;
-  box-shadow:0 4px 20px rgba(6,42,36,.06);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.cut:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(6,42,36,.12)}
-.cut .lab{font-weight:700;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px;display:block}
-.cut .lab.bad{color:#b04a4a}
+.cutwrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:52px;align-items:stretch;max-width:920px}
+.cut{background:#FBF6EA;border:3px solid var(--ink);box-shadow:var(--shadow);padding:32px 34px;position:relative;display:flex;flex-direction:column;
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.cut:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 rgba(46,33,20,.9)}
+.cut .lab{font-weight:900;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:16px;display:block}
+.cut .lab.bad{color:var(--brick)}
 .cut .lab.good{color:var(--teal)}
-.cut .txt{font-family:var(--verse);font-style:italic;font-size:17.5px;line-height:1.7;color:var(--ink-soft);flex:1}
+.cut .txt{font-family:var(--verse);font-style:italic;font-size:18px;line-height:1.7;color:var(--ink-soft);flex:1}
 .cut .txt b{font-style:normal;font-weight:600;color:var(--ink)}
-.cut .txt .hasta{font-style:normal;font-weight:600;color:var(--pine);background:rgba(43,168,154,.2);padding:1px 8px;
+.cut .txt .hasta{font-style:normal;font-weight:700;color:var(--cream);background:var(--teal);padding:1px 9px;border:2px solid var(--ink);
   animation:hastaPulse 2.6s ease-in-out infinite}
-@keyframes hastaPulse{0%,100%{background:rgba(43,168,154,.2);box-shadow:0 0 0 0 rgba(43,168,154,0)}50%{background:rgba(43,168,154,.36);box-shadow:0 0 18px 2px rgba(43,168,154,.3)}}
-.cut .scissors{position:absolute;top:-13px;right:22px;color:#b04a4a;background:var(--page);padding:0 8px}
-.cut .cref{font-weight:700;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gray-txt);margin-top:18px;display:block}
+@keyframes hastaPulse{0%,100%{box-shadow:0 0 0 0 rgba(62,137,160,0)}50%{box-shadow:0 0 0 6px rgba(62,137,160,.28)}}
+.cut .scissors{position:absolute;top:-15px;right:22px;color:var(--brick);background:var(--cream);padding:0 8px}
+.cut .cref{font-weight:900;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);margin-top:18px;display:block}
 
 /* ── advertencia ── */
-.warn{background:#fff;border:1px solid var(--line);border-left:3px solid #b04a4a;
-  box-shadow:0 4px 20px rgba(6,42,36,.06);padding:38px 42px;margin-top:44px;max-width:780px}
+.warn{background:#FBF6EA;border:3px solid var(--ink);border-left:10px solid var(--brick);
+  box-shadow:var(--shadow);padding:38px 42px;margin-top:40px;max-width:800px}
 .warn .t{font-family:var(--verse);font-style:italic;font-size:clamp(19px,2.6vw,24px);line-height:1.65;color:var(--ink-soft)}
 .warn .t b{font-style:normal;font-weight:600;color:var(--ink)}
-.warn .t .hl{font-style:normal;font-weight:700;color:#b04a4a;background:rgba(176,74,74,.13);padding:1px 9px}
+.warn .t .hl{font-style:normal;font-weight:700;color:var(--cream);background:var(--brick);padding:1px 9px;border:2px solid var(--ink)}
 
-/* ══════════ BLOQUE OSCURO FINAL (banda pine del original) ══════════ */
-.dark{position:relative;background:var(--pine-deep);color:#cfe0da;padding:clamp(95px,15vh,175px) 0 clamp(85px,12vh,145px);overflow:hidden}
-.dark .num{position:absolute;top:clamp(40px,7vh,80px);right:clamp(10px,4vw,56px);z-index:0;
-  font-weight:300;font-size:clamp(110px,18vw,220px);line-height:1;color:rgba(255,255,255,.05);user-select:none;pointer-events:none}
+/* ══════════ BANDA OSCURA FINAL ══════════ */
+.dark{position:relative;background:var(--night);color:#E8DCC4;padding:clamp(95px,15vh,175px) 0 clamp(85px,12vh,145px);overflow:hidden}
+.dark .num{position:absolute;top:clamp(36px,7vh,76px);right:clamp(10px,4vw,56px);z-index:0;
+  font-family:var(--display);font-weight:600;font-size:clamp(110px,18vw,220px);line-height:1;
+  color:transparent;-webkit-text-stroke:2px rgba(245,238,223,.12);user-select:none;pointer-events:none}
 .dark .stars{position:absolute;inset:0;pointer-events:none;z-index:0}
-.dark .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:twinkle 3.2s ease-in-out infinite}
+.dark .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#F5EEDF;animation:twinkle 3.2s ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:.12}50%{opacity:.85}}
 .dark .wrap{position:relative;z-index:1}
-.dark .eyebrow{color:var(--teal)}
-.dark .big{font-weight:300;font-size:clamp(34px,6vw,66px);line-height:1.12;color:#f2f6f4;letter-spacing:.01em;max-width:18ch}
-.dark .big i{font-style:normal;color:var(--teal)}
-.dark .p{color:#9dbcb2;max-width:56ch;margin-top:26px;font-size:16.5px}
-.dark .p b{color:#f2f6f4;font-weight:700}
-.verdict{margin-top:60px;max-width:620px;border:1px solid rgba(43,168,154,.42);background:rgba(255,255,255,.045)}
-.verdict .vh{padding:16px 28px;border-bottom:1px solid rgba(43,168,154,.35);
-  font-weight:700;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--teal)}
-.vrow{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 28px;border-bottom:1px solid rgba(255,255,255,.09)}
+.dark .eyebrow{color:var(--ochre)}
+.dark .eyebrow::before{background:var(--ochre)}
+.dark .big{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,66px);line-height:1.1;color:var(--cream);letter-spacing:-.01em;max-width:19ch}
+.dark .big i{font-style:normal;color:var(--ochre)}
+.dark .p{color:#C9B795;max-width:60ch;margin-top:26px;font-size:17px}
+.dark .p b{color:var(--cream);font-weight:900}
+.dark .verse{background:rgba(245,238,223,.05);border-color:rgba(245,238,223,.4);box-shadow:7px 7px 0 rgba(0,0,0,.5)}
+.dark .verse::before{background:var(--ochre);border-color:rgba(245,238,223,.4)}
+.dark .verse .t{color:#D8C9A8}
+.dark .verse .t b{color:var(--ochre)}
+.dark .ref{background:var(--ochre);color:var(--night);border-color:var(--ochre)}
+.dark .ref:hover{background:var(--cream)}
+.verdict{margin-top:60px;max-width:640px;border:3px solid var(--ochre);background:rgba(245,238,223,.05);box-shadow:7px 7px 0 rgba(0,0,0,.5)}
+.verdict .vh{padding:16px 28px;border-bottom:2px solid rgba(210,164,95,.5);
+  font-weight:900;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--ochre)}
+.vrow{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 28px;border-bottom:1px solid rgba(245,238,223,.12);transition:background .25s}
+.vrow:hover{background:rgba(245,238,223,.05)}
 .vrow:last-child{border-bottom:0}
-.vrow span{font-weight:500;font-size:13px;letter-spacing:.1em;color:#9dbcb2;text-transform:uppercase}
-.vrow b{font-weight:500;font-size:16px;letter-spacing:.08em;color:var(--teal);text-transform:uppercase;white-space:nowrap}
-.vrow b.zero{color:#f2f6f4}
-.vrow b.nadie{color:#e08a7a}
+.vrow span{font-weight:700;font-size:12.5px;letter-spacing:.1em;color:#C9B795;text-transform:uppercase}
+.vrow b{font-weight:900;font-size:16px;letter-spacing:.06em;color:var(--ochre);text-transform:uppercase;white-space:nowrap}
+.vrow b.zero{color:var(--cream)}
+.vrow b.nadie{color:#E08A7A}
 
-footer{background:#041f1a;color:#5f7d74;padding:34px clamp(22px,5vw,56px);
+footer{background:#1A120C;color:#8A7358;padding:36px clamp(22px,5vw,56px);
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-  font-weight:500;font-size:10px;letter-spacing:.28em;text-transform:uppercase;position:relative;z-index:5}
-footer b{color:var(--teal)}
+  font-weight:700;font-size:10px;letter-spacing:.26em;text-transform:uppercase;position:relative;z-index:5}
+footer b{color:var(--ochre)}
 
-@media(max-width:820px){
+@media(max-width:860px){
   .nav a:not(.solid){display:none}
   .nav{padding:8px 10px}
-  .req-card{grid-template-columns:1fr;gap:14px}
-  .req-card:nth-child(2){margin-left:0}
+  .req-card{grid-template-columns:1fr;gap:20px}
+  .req-card:nth-child(2){grid-template-columns:1fr;margin-left:0}
+  .req-card:nth-child(2) .req-fig{order:0}
+  .req-fig{max-width:320px}
   .cutwrap{grid-template-columns:1fr}
   .ap-row{grid-template-columns:40px 1fr;gap:12px}
   .ap-row .rf{grid-column:2}
-  .peaks{width:115%;opacity:.8}
-  .wordmark{white-space:normal;letter-spacing:.18em}
+  .plate{transform:rotate(-1deg)}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -241,41 +281,25 @@ footer b{color:var(--teal)}
 
 <main>
 
-  <!-- ══════════ HERO: EL CIELO ══════════ -->
+  <!-- ══════════ HERO: LA ESCENA ══════════ -->
   <section class="hero" id="top">
-    <canvas id="sky"></canvas>
-    <div class="peaks" id="peaks">
-      <div class="peaks-inner">
-        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-          <path d="M0,400 L0,300 L60,210 L110,260 L170,150 L230,230 L290,110 L350,210 L410,80 L470,190 L530,130 L590,220 L650,150 L710,240 L770,180 L800,220 L800,400 Z" fill="#a9b8c4"/>
-          <path d="M290,110 L270,142 L281,136 L290,147 L300,134 L311,142 Z" fill="#eef2f5" opacity=".9"/>
-          <path d="M410,80 L387,114 L400,107 L410,120 L421,105 L433,114 Z" fill="#eef2f5" opacity=".92"/>
-          <path d="M170,150 L152,177 L162,172 L170,181 L178,170 L188,177 Z" fill="#eef2f5" opacity=".85"/>
-          <path d="M530,130 L512,157 L522,152 L530,161 L538,150 L548,157 Z" fill="#eef2f5" opacity=".88"/>
-          <path d="M650,150 L633,176 L642,171 L650,180 L658,169 L667,176 Z" fill="#eef2f5" opacity=".85"/>
-        </svg>
-        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-          <path d="M0,400 L0,330 L80,252 L150,300 L230,202 L310,290 L390,222 L470,310 L550,242 L630,320 L710,262 L800,330 L800,400 Z" fill="#8297a8"/>
-          <path d="M230,202 L213,228 L222,223 L230,232 L238,221 L247,228 Z" fill="#dfe7ec" opacity=".8"/>
-          <path d="M390,222 L374,246 L382,241 L390,250 L398,239 L406,246 Z" fill="#dfe7ec" opacity=".75"/>
-        </svg>
-      </div>
-    </div>
-    <div class="fog"></div>
+    <img class="hero-img" id="heroImg" src="img/hero.jpg" alt="Jesús enseñando a los doce discípulos, sentados en círculo a sus pies en una ladera, con montañas y un lago al fondo">
+    <div class="sunglow" aria-hidden="true"></div>
+    <div class="cloud c1" aria-hidden="true"></div>
+    <div class="cloud c2" aria-hidden="true"></div>
+    <div class="hero-veil" aria-hidden="true"></div>
 
     <div class="wrap hero-content">
-      <div class="brand">
-        <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="wordmark" id="wordmark" aria-label="Apóstol"></div>
-        <p class="brand-cat">Estudio doctrinal · Reina-Valera 1960</p>
-        <p class="brand-tag">«Enviado» — pero no cualquiera.</p>
-        <div class="brand-rule"></div>
-        <a class="brand-cta" href="#requisitos">Abrir el expediente — los tres requisitos <span>→</span></a>
+      <div class="plate">
+        <p class="eyebrow">Estudio doctrinal · Reina-Valera 1960</p>
+        <h1>¿Qué es un <span class="q">Apóstol</span>?</h1>
+        <p class="thesis">Él eligió a doce y la lista quedó cerrada. <b>Nadie puede ungirse apóstol</b> — <span class="no">nadie</span> cumple los requisitos. Ni en estos tiempos, ni nunca.</p>
+        <div class="plate-rule"></div>
+        <a class="plate-cta" href="#palabra">Abrir el estudio <span>↓</span></a>
       </div>
     </div>
 
-    <span class="scrollcue"><b>↓</b> Desliza para descubrir</span>
-    <a class="orb" href="#veredicto" aria-label="Ir al veredicto">−</a>
+    <span class="scrollcue"><b>↓</b> Desliza para estudiar</span>
   </section>
 
   <!-- 01 · LA PALABRA -->
@@ -283,54 +307,92 @@ footer b{color:var(--teal)}
     <span class="num" aria-hidden="true">01</span>
     <div class="wrap">
       <p class="eyebrow rv">La palabra</p>
-      <h2 class="rv" style="--i:1">«Enviado» — <span class="g">pero no cualquiera</span></h2>
-      <p class="lead rv" style="--i:2">La palabra <b>apóstol</b> significa «enviado». Pero la palabra no define el oficio. El oficio apostólico — el de los doce y el de Pablo — exige credenciales que la Escritura enumera con precisión, y que <b>ninguna persona viva hoy puede cumplir</b>.</p>
+      <h2 class="rv" style="--i:1">«Enviado» — <span class="s">pero no cualquiera</span></h2>
+      <p class="lead rv" style="--i:2">La palabra <b>apóstol</b> significa, sencillamente, <span class="hl">enviado</span>. Pero que la palabra signifique enviado no convierte a cualquiera en apóstol. Jesús no llamó a una multitud: <b>eligió a doce</b>, los hizo estar con Él, y solo entonces los envió. El título no se toma — <b>se recibe de quien tiene autoridad para darlo</b>.</p>
       <div class="verse rv" style="--i:3">
         <p class="t">«Y estableció a doce, para que estuviesen con él, y <b>para enviarlos a predicar</b>.»</p>
-        <span class="ref">Marcos 3:14</span>
+        <span class="ref">S. Marcos 3:14</span>
       </div>
+      <p class="lead rv" style="--i:4">Hoy muchos quieren el título. Pocos se preguntan <b>quién tiene autoridad para darlo</b> — y qué exige la Escritura de quien lo lleva.</p>
     </div>
   </section>
 
   <!-- 02 · LOS TRES REQUISITOS -->
-  <section class="block" id="requisitos">
+  <section class="block alt" id="requisitos">
     <span class="num" aria-hidden="true">02</span>
     <div class="wrap">
       <p class="eyebrow rv">Los tres requisitos</p>
       <h2 class="rv" style="--i:1">Lo que la Escritura <span class="c">exige</span></h2>
-      <p class="lead rv" style="--i:2">No los define una convención ni una imposición de manos. Los define la Palabra — y <b>los tres son imposibles hoy</b>.</p>
+      <p class="lead rv" style="--i:2">El oficio apostólico no lo define una convención, una imposición de manos, ni una decisión humana. Lo define la Palabra de Dios — y <b>los tres requisitos que ella enumera son imposibles de cumplir hoy</b>.</p>
 
       <div class="req">
+        <!-- Requisito I -->
         <div class="req-card rv">
-          <div class="rn">I</div>
-          <div>
+          <div class="req-fig" aria-hidden="true">
+            <span class="rn">I</span>
+            <svg viewBox="0 0 120 96" fill="none">
+              <path d="M60 10 L60 2 M38 16 L32 8 M82 16 L88 8" stroke="#C25E22" stroke-width="5" stroke-linecap="round"/>
+              <ellipse cx="60" cy="56" rx="44" ry="27" fill="#F5EEDF" stroke="#2E2114" stroke-width="4.5"/>
+              <circle cx="60" cy="56" r="15" fill="#2E8DBA" stroke="#2E2114" stroke-width="4.5"/>
+              <circle cx="60" cy="56" r="6.5" fill="#2E2114"/>
+              <circle cx="64.5" cy="51.5" r="2.6" fill="#F5EEDF"/>
+            </svg>
+          </div>
+          <div class="req-body">
             <h3>Testigo ocular de la <i>resurrección</i></h3>
-            <p>El criterio de Pedro para llenar la vacante de Judas: <b>haber visto al Señor resucitado</b>.</p>
-            <div class="verse" style="margin-bottom:0">
+            <p>El criterio que puso Pedro para llenar la vacante de Judas no fue la elocuencia, la antigüedad ni el celo: fue <b>haber visto al Señor resucitado con sus propios ojos</b>. Nadie vivo hoy puede presentar esa credencial.</p>
+            <div class="verse">
               <p class="t">«…comenzando desde el bautismo de Juan hasta el día en que de entre nosotros fue recibido arriba, <b>uno sea hecho testigo con nosotros, de su resurrección</b>.»</p>
               <span class="ref">Hechos 1:22</span>
             </div>
-          </div>
-        </div>
-        <div class="req-card rv">
-          <div class="rn">II</div>
-          <div>
-            <h3>Señales y <i>milagros</i> comprobables</h3>
-            <p>Las señales eran las credenciales del oficio. Pablo las llama, literalmente, <b>«las señales de apóstol»</b>.</p>
-            <div class="verse" style="margin-bottom:0">
-              <p class="t">«Con todo, <b>las señales de apóstol</b> han sido hechas entre vosotros en toda paciencia, por señales, prodigios y milagros.»</p>
-              <span class="ref">2 Corintios 12:12</span>
+            <div class="support">
+              <p class="t">«¿No soy apóstol? ¿No soy libre? <b>¿No he visto a Jesús el Señor nuestro?</b>» <span class="ref">1 Corintios 9:1</span></p>
             </div>
           </div>
         </div>
+
+        <!-- Requisito II -->
         <div class="req-card rv">
-          <div class="rn">III</div>
-          <div>
+          <div class="req-fig" aria-hidden="true">
+            <span class="rn">II</span>
+            <svg viewBox="0 0 120 96" fill="none">
+              <path d="M60 8 L66 34 L92 28 L72 46 L96 60 L68 62 L74 90 L60 68 L46 90 L52 62 L24 60 L48 46 L28 28 L54 34 Z" fill="#D2A45F" stroke="#2E2114" stroke-width="4.5" stroke-linejoin="round"/>
+              <circle cx="60" cy="50" r="9" fill="#C25E22" stroke="#2E2114" stroke-width="4"/>
+            </svg>
+          </div>
+          <div class="req-body">
+            <h3>Señales y <i>milagros</i> comprobables</h3>
+            <p>Las señales no eran un accesorio del ministerio: eran <b>las credenciales del oficio</b>. Pablo las llama, literalmente, «las señales de apóstol». La iglesia primitiva las vio hechas <b>por mano de los apóstoles</b>.</p>
+            <div class="verse">
+              <p class="t">«Con todo, <b>las señales de apóstol</b> han sido hechas entre vosotros en toda paciencia, por señales, prodigios y milagros.»</p>
+              <span class="ref">2 Corintios 12:12</span>
+            </div>
+            <div class="support">
+              <p class="t">«Y muchas maravillas y <b>señales eran hechas por los apóstoles</b>.» <span class="ref">Hechos 2:43</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requisito III -->
+        <div class="req-card rv">
+          <div class="req-fig" aria-hidden="true">
+            <span class="rn">III</span>
+            <svg viewBox="0 0 120 96" fill="none">
+              <path d="M60 6 L60 24 M40 10 L47 26 M80 10 L73 26" stroke="#D2A45F" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="60" cy="48" r="9" fill="#C68A55" stroke="#2E2114" stroke-width="4"/>
+              <path d="M50 62 L38 44 M70 62 L82 44" stroke="#2E2114" stroke-width="4.5" stroke-linecap="round"/>
+              <path d="M46 90 Q46 60 60 60 Q74 60 74 90 Z" fill="#3E89A0" stroke="#2E2114" stroke-width="4" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="req-body">
             <h3>Escogido por <i>Cristo mismo</i></h3>
-            <p>Ni congregación, ni concilio, ni otro apóstol: <b>Cristo mismo eligió a cada uno</b>.</p>
-            <div class="verse" style="margin-bottom:0">
+            <p>Ni una congregación, ni un concilio, ni otro apóstol: <b>cada apóstol fue elegido directamente por Jesucristo</b>. Pablo defiende su apostolado precisamente con esto — no lo recibió de hombre alguno.</p>
+            <div class="verse">
               <p class="t">«Pablo, apóstol (<b>no de hombres ni por hombre</b>, sino por Jesucristo y por Dios el Padre que lo resucitó de los muertos).»</p>
               <span class="ref">Gálatas 1:1</span>
+            </div>
+            <div class="support">
+              <p class="t">«…pues yo <b>ni lo recibí ni lo aprendí de hombre alguno</b>, sino por revelación de Jesucristo.» <span class="ref">Gálatas 1:12</span></p>
             </div>
           </div>
         </div>
@@ -344,7 +406,7 @@ footer b{color:var(--teal)}
     <div class="wrap">
       <p class="eyebrow rv">El testigo final</p>
       <h2 class="rv" style="--i:1">Pablo, el <span class="c">último</span> de todos</h2>
-      <p class="lead rv" style="--i:2">Pablo registra la lista completa de apariciones del Cristo resucitado <b>y se coloca al final</b>. La lista está cerrada.</p>
+      <p class="lead rv" style="--i:2">Pablo registra la lista completa de apariciones del Cristo resucitado — y <b>se coloca al final de ella</b>. No como uno más, sino como el último. <span class="hl">La lista está cerrada.</span></p>
 
       <div class="counters">
         <div class="counter rv"><div class="n" data-count="12">0</div><div class="l">Los doce</div></div>
@@ -361,18 +423,18 @@ footer b{color:var(--teal)}
 
       <div class="verdictline rv">
         <h3>El requisito de testigo ocular <i>se agotó en Pablo.</i></h3>
-        <p>Si la lista de apariciones que legitiman el oficio terminó con él, <b>el oficio apostólico está cerrado</b> — y ninguna «unción» moderna puede reabrirlo.</p>
+        <p>Si la lista de apariciones que legitiman el oficio terminó con él, <b>el oficio apostólico está cerrado</b> — y ninguna «unción» moderna puede reabrirlo. El mismo Pablo lo resume en una pregunta: <b>«¿No he visto a Jesús el Señor nuestro?»</b> (1 Corintios 9:1). Sin esa visión, no hay apostolado.</p>
       </div>
     </div>
   </section>
 
   <!-- 04 · EL VERSÍCULO TRUNCADO -->
-  <section class="block">
+  <section class="block alt">
     <span class="num" aria-hidden="true">04</span>
     <div class="wrap">
       <p class="eyebrow rv">El versículo truncado</p>
-      <h2 class="rv" style="--i:1">Efesios 4:11, <span class="g">cortado en dos</span></h2>
-      <p class="lead rv" style="--i:2">Se cita en cada «consagración apostólica», pero <b>esconden el «hasta»</b> del versículo 13: los dones fueron dados para el período fundacional, <b>hasta</b> que la iglesia llegara a la madurez.</p>
+      <h2 class="rv" style="--i:1">Efesios 4:11, <span class="s">cortado en dos</span></h2>
+      <p class="lead rv" style="--i:2">Es el texto que se lee en cada «consagración apostólica» — pero <b>siempre se detienen antes del «hasta»</b>. Los dones fueron dados para el período fundacional, <b>hasta</b> que la iglesia llegara a la madurez.</p>
 
       <div class="cutwrap">
         <div class="cut rv">
@@ -387,6 +449,11 @@ footer b{color:var(--teal)}
           <span class="cref">Efesios 4:12-13 — el «hasta» que lo cambia todo</span>
         </div>
       </div>
+
+      <div class="support rv" style="margin-top:36px">
+        <p class="t">«…edificados sobre el <b>fundamento de los apóstoles y profetas</b>, siendo la principal piedra del ángulo Jesucristo mismo.» <span class="ref">Efesios 2:20</span></p>
+        <p style="font-size:15px;color:var(--ink-soft);margin-top:10px;max-width:58ch">Un fundamento <b>se pone una sola vez</b>. No se sigue poniendo. La iglesia ya está edificada sobre él.</p>
+      </div>
     </div>
   </section>
 
@@ -396,9 +463,13 @@ footer b{color:var(--teal)}
     <div class="wrap">
       <p class="eyebrow rv">La advertencia</p>
       <h2 class="rv" style="--i:1">La iglesia que <span class="c">probó</span> a los apóstoles</h2>
-      <div class="warn rv" style="--i:2">
-        <p class="t">«Yo conozco tus obras… y <b>has probado a los que se dicen ser apóstoles, y no lo son, y los has hallado <span class="hl">mentirosos</span></b>.»</p>
+      <p class="lead rv" style="--i:2">La Biblia no solo no anima a buscar nuevos apóstoles: <b>advierte que vendrán muchos diciéndolo ser</b>, y manda a la iglesia a probarlos — no a aplaudirlos.</p>
+      <div class="warn rv" style="--i:3">
+        <p class="t">«Yo conozco tus obras, y tu arduo trabajo y paciencia… y <b>has probado a los que se dicen ser apóstoles, y no lo son, y los has hallado <span class="hl">mentirosos</span></b>.»</p>
         <span class="ref" style="margin-top:20px">Apocalipsis 2:2</span>
+      </div>
+      <div class="support rv" style="--i:4">
+        <p class="t">«Porque éstos son <b>falsos apóstoles, obreros fraudulentos</b>, que se disfrazan como apóstoles de Cristo.» <span class="ref">2 Corintios 11:13</span></p>
       </div>
     </div>
   </section>
@@ -410,13 +481,21 @@ footer b{color:var(--teal)}
     <div class="wrap">
       <p class="eyebrow rv">Resolución</p>
       <h2 class="big rv" style="--i:1">El rebaño no necesita <i>apóstoles nuevos.</i></h2>
-      <p class="p rv" style="--i:2">Necesita <b>pastores fieles</b> que apacienten la grey de Dios siendo ejemplos, no teniendo señorío <b>(1 Pedro 5:1-3)</b>. El pastor fiel no necesita llamarse apóstol: necesita ser hallado fiel.</p>
+      <p class="p rv" style="--i:2">Necesita <b>pastores fieles</b> que apacienten la grey de Dios — no por fuerza ni por ganancia deshonesta, no como teniendo señorío, sino <b>siendo ejemplos de la grey</b> (1 Pedro 5:1-3). El pastor fiel no necesita llamarse apóstol: <b>necesita ser hallado fiel</b>.</p>
 
-      <div class="verdict rv" style="--i:3">
+      <div class="verse rv" style="--i:3">
+        <p class="t">«Pero vosotros <b>no queráis que os llamen Rabí</b>; porque uno es vuestro Maestro, el Cristo, y todos vosotros sois hermanos… Porque <b>el que se enaltece será humillado, y el que se humilla será enaltecido</b>.»</p>
+        <span class="ref">S. Mateo 23:8, 12</span>
+      </div>
+
+      <p class="p rv" style="--i:4">La fe fue <b>una vez dada a los santos</b> (Judas 1:3). No hay nueva revelación, nuevos apóstoles ni nuevos requisitos — solo la Palabra que ya fue entregada, y siervos fieles que la enseñan.</p>
+
+      <div class="verdict rv" style="--i:5">
         <div class="vh">Veredicto del expediente</div>
-        <div class="vrow"><span>Requisitos cumplidos</span><b class="zero">0</b></div>
+        <div class="vrow"><span>Requisitos cumplidos hoy</span><b class="zero">0</b></div>
         <div class="vrow"><span>Nuevos apóstoles</span><b class="nadie">Nadie</b></div>
         <div class="vrow"><span>Último testigo ocular</span><b>Pablo · 1 Co 15:8</b></div>
+        <div class="vrow"><span>Oficio apostólico</span><b class="nadie">Cerrado</b></div>
         <div class="vrow"><span>Texto verificado</span><b>Reina-Valera 1960 ✓</b></div>
       </div>
     </div>
@@ -425,103 +504,81 @@ footer b{color:var(--teal)}
 </main>
 
 <footer>
-  <span><b>¿Qué es un Apóstol?</b> · Expediente doctrinal</span>
+  <span><b>¿Qué es un Apóstol?</b> · Estudio doctrinal</span>
   <span>Texto <b>Reina-Valera 1960</b> · Cada cita verificada</span>
 </footer>
 
 <script>
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ══════════ CIELO VIVO (solo en el hero) ══════════ */
+/* ── scroll: progreso, nav, parallax del hero ── */
 (function(){
-  const c=document.getElementById('sky'),x=c.getContext('2d');
-  let W,H,scrollY=0;
-  function size(){W=c.width=innerWidth;H=c.height=innerHeight}
-  size();addEventListener('resize',size);
-
-  const clouds=[];
-  for(let i=0;i<11;i++){
-    const puffs=[],n=4+Math.floor(Math.random()*4);
-    for(let j=0;j<n;j++)puffs.push({dx:(Math.random()-.5)*190,dy:(Math.random()-.5)*50,r:38+Math.random()*60});
-    clouds.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight*.55,s:.55+Math.random()*1.25,v:.1+Math.random()*.32,a:.5+Math.random()*.4,puffs,par:.06+Math.random()*.12});
-  }
-
-  function draw(){
-    const g=x.createLinearGradient(0,0,0,H);
-    g.addColorStop(0,'#8fbde6');
-    g.addColorStop(.42,'#aecdea');
-    g.addColorStop(.72,'#d7e2ec');
-    g.addColorStop(1,'#e8e7e5');
-    x.fillStyle=g;x.fillRect(0,0,W,H);
-
-    for(const cl of clouds){
-      cl.x+=cl.v*cl.s;
-      if(cl.x-270*cl.s>W)cl.x=-270*cl.s;
-      const py=cl.y + scrollY*cl.par;
-      x.save();x.translate(cl.x,py);x.scale(cl.s,cl.s);
-      for(const pf of cl.puffs){
-        const rg=x.createRadialGradient(pf.dx,pf.dy,0,pf.dx,pf.dy,pf.r);
-        rg.addColorStop(0,`rgba(255,255,255,${.85*cl.a})`);
-        rg.addColorStop(1,'rgba(255,255,255,0)');
-        x.fillStyle=rg;x.beginPath();x.arc(pf.dx,pf.dy,pf.r,0,7);x.fill();
+  const heroImg=document.getElementById('heroImg');
+  let ticking=false;
+  function onScroll(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(()=>{
+      const y=window.scrollY;
+      const h=document.documentElement;
+      const p=y/Math.max(1,h.scrollHeight-h.clientHeight);
+      document.getElementById('progress').style.width=(p*100)+'%';
+      document.getElementById('nav').classList.toggle('scrolled',y>40);
+      if(heroImg&&!reduceMotion&&y<innerHeight*1.2){
+        heroImg.style.transform=`translateY(${y*0.22}px) scale(1.04)`;
       }
-      x.restore();
-    }
-    if(!reduceMotion)requestAnimationFrame(draw);
+      ticking=false;
+    });
   }
-  requestAnimationFrame(draw);
-
-  const peaks=document.getElementById('peaks');
-  addEventListener('scroll',()=>{
-    scrollY=window.scrollY;
-    const h=document.documentElement;
-    const p=scrollY/Math.max(1,h.scrollHeight-h.clientHeight);
-    document.getElementById('progress').style.width=(p*100)+'%';
-    document.getElementById('nav').classList.toggle('scrolled',scrollY>40);
-    if(peaks)peaks.style.transform=`translateY(${Math.min(scrollY,innerHeight)*.28}px)`;
-  },{passive:true});
+  addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
 })();
 
-/* ── wordmark letra por letra ── */
+/* ── reveals ── */
 (function(){
-  const w=document.getElementById('wordmark');
-  'APÓSTOL'.split('').forEach((ch,i)=>{
-    const s=document.createElement('span');s.textContent=ch;s.style.setProperty('--i',i);w.appendChild(s);
-  });
-  addEventListener('load',()=>w.querySelectorAll('span').forEach(s=>s.classList.add('on')));
+  const els=[...document.querySelectorAll('.rv')];
+  if(!('IntersectionObserver' in window)||reduceMotion){els.forEach(e=>e.classList.add('on'));return;}
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
 })();
 
-/* ── estrellas del bloque final ── */
+/* ── contadores ── */
+(function(){
+  const nums=[...document.querySelectorAll('[data-count]')];
+  if(reduceMotion){nums.forEach(n=>n.textContent=n.dataset.count);return;}
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      const el=e.target,end=+el.dataset.count,t0=performance.now(),dur=1400;
+      (function tick(t){
+        const k=Math.min(1,(t-t0)/dur),ease=1-Math.pow(1-k,3);
+        el.textContent=Math.round(end*ease);
+        if(k<1)requestAnimationFrame(tick);
+      })(t0);
+    });
+  },{threshold:0.5});
+  nums.forEach(n=>io.observe(n));
+})();
+
+/* ── estrellas de la banda final ── */
 (function(){
   const box=document.getElementById('stars');
-  for(let i=0;i<70;i++){
+  for(let i=0;i<46;i++){
     const s=document.createElement('i');
     s.style.left=Math.random()*100+'%';
     s.style.top=Math.random()*100+'%';
     s.style.animationDelay=(Math.random()*3.2)+'s';
-    s.style.width=s.style.height=(Math.random()*1.6+1)+'px';
+    s.style.animationDuration=(2.4+Math.random()*2.4)+'s';
     box.appendChild(s);
   }
 })();
 
-/* ── revelado al hacer scroll (fade + slide-up escalonado) ── */
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}
-}),{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
-/* ── contadores animados ── */
-const cIO=new IntersectionObserver(es=>es.forEach(e=>{
-  if(!e.isIntersecting)return;
-  const el=e.target,target=+el.dataset.count,t0=performance.now(),dur=1500;
-  (function step(t){
-    const pr=Math.min((t-t0)/dur,1),ease=1-Math.pow(1-pr,3);
-    el.textContent=Math.round(target*ease);
-    if(pr<1)requestAnimationFrame(step);
-  })(t0);
-  cIO.unobserve(el);
-}),{threshold:.6});
-document.querySelectorAll('[data-count]').forEach(el=>cIO.observe(el));
+/* ── forzar carga de fuentes (Fontshare es diferido) ── */
+if(document.fonts&&document.fonts.load){
+  document.fonts.load('900 16px Satoshi');
+  document.fonts.load('600 48px Fraunces');
+}
 </script>
 </body>
 </html>
