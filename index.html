@@ -3,453 +3,464 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¿Qué es un Apóstol? — Estudio Bíblico · RVR1960</title>
-<meta name="description" content="Estudio bíblico sobre el oficio apostólico: los tres requisitos bíblicos de un apóstol, por qué Pablo fue el último testigo del Cristo resucitado, por qué Efesios 4:11 no justifica apóstoles modernos, y por qué hoy nadie puede ser ungido apóstol. Texto bíblico Reina-Valera 1960.">
+<title>¿Qué es un Apóstol? — Caso Cerrado · RVR1960</title>
+<meta name="description" content="Expediente doctrinal sobre el oficio apostólico: los tres requisitos bíblicos, por qué Pablo fue el último testigo del Cristo resucitado, por qué Efesios 4:11 no justifica apóstoles modernos, y por qué hoy nadie puede ser ungido apóstol. Texto Reina-Valera 1960.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --parchment:#f6efe2;
-  --parchment-deep:#efe5d2;
-  --ink:#2b2118;
-  --ink-soft:#4a3c2e;
-  --wine:#7a2e2a;
-  --wine-deep:#5c201d;
-  --gold:#b8862c;
-  --gold-soft:#d9a84e;
-  --olive:#6b7a4a;
-  --line:rgba(43,33,24,.16);
-  --line-soft:rgba(43,33,24,.09);
-  --display:'Fraunces',Georgia,serif;
-  --body:'Lora',Georgia,serif;
+  --navy:#152238;
+  --navy-deep:#0d1728;
+  --navy-mid:#1d3050;
+  --gold:#e8a83d;
+  --gold-bright:#f5c15c;
+  --crimson:#b3342c;
+  --crimson-deep:#8f251f;
+  --paper:#f6f2e9;
+  --ink:#152238;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --bible:'Newsreader',Georgia,serif;
   --label:'Archivo',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--parchment);
-  color:var(--ink);
-  font-family:var(--body);
+  background:var(--navy-deep);
+  color:var(--paper);
+  font-family:var(--label);
   font-size:17px;
-  line-height:1.75;
+  line-height:1.7;
   overflow-x:hidden;
 }
-::selection{background:var(--gold-soft);color:var(--ink)}
+::selection{background:var(--gold);color:var(--navy-deep)}
 
-/* ---------- ambient grain ---------- */
-body::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.045;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+/* grain */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ---------- nav ---------- */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;gap:22px;
-  padding:14px clamp(18px,4vw,44px);
-  background:rgba(246,239,226,.92);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line-soft);
-  transition:box-shadow .3s;
-}
-nav.scrolled{box-shadow:0 4px 24px rgba(43,33,24,.1)}
-.nav-brand{
-  font-family:var(--display);font-weight:700;font-size:17px;
-  color:var(--wine);text-decoration:none;letter-spacing:.01em;white-space:nowrap;
-}
-.nav-brand em{font-style:italic;color:var(--gold)}
-.nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
-.nav-links a{
-  font-family:var(--label);font-size:11px;font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
-  padding:7px 11px;border-radius:3px;transition:all .25s;
-}
-.nav-links a:hover{color:var(--wine);background:rgba(122,46,42,.08)}
-.nav-rvr{
-  font-family:var(--label);font-size:10px;font-weight:700;letter-spacing:.16em;
-  color:var(--gold);border:1px solid var(--gold);padding:5px 10px;border-radius:2px;
-  white-space:nowrap;
-}
-@media(max-width:900px){.nav-links{display:none}}
+/* progress bar */
+#progress{position:fixed;top:0;left:0;height:4px;background:var(--gold);width:0%;z-index:200;transition:width .1s linear}
 
-/* ---------- reveal ---------- */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .rv.on{opacity:1;transform:none}
 .rv[data-d="1"]{transition-delay:.12s}
 .rv[data-d="2"]{transition-delay:.24s}
 .rv[data-d="3"]{transition-delay:.36s}
 
-/* ---------- shared ---------- */
-.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
 .kicker{
-  font-family:var(--label);font-size:11px;font-weight:700;letter-spacing:.26em;
-  text-transform:uppercase;color:var(--wine);display:flex;align-items:center;gap:12px;
-  margin-bottom:16px;
+  font-family:var(--label);font-weight:800;font-size:12px;letter-spacing:.3em;
+  text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;
 }
-.kicker::before{content:"";width:34px;height:2px;background:var(--wine);flex:none}
-h2.display{
-  font-family:var(--display);font-weight:640;font-size:clamp(30px,4.4vw,50px);
-  line-height:1.12;letter-spacing:-.015em;margin-bottom:18px;
-}
-h2.display em{font-style:italic;color:var(--wine)}
-h2.display .gd{color:var(--gold)}
-.lede{font-size:clamp(17px,2.1vw,20px);color:var(--ink-soft);max-width:64ch;line-height:1.7}
-.section-head{margin-bottom:clamp(30px,5vh,52px)}
+.kicker::before{content:"";width:36px;height:3px;background:currentColor;flex:none}
 
-/* verse block */
-.verse{
-  display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:16px;align-items:start;
-  padding:16px 18px;border-left:3px solid var(--gold);background:rgba(184,134,44,.06);
-  margin:14px 0;transition:background .3s,transform .3s;
+/* ============ NAV ============ */
+nav{
+  position:sticky;top:0;z-index:100;background:var(--navy-deep);
+  border-bottom:3px solid var(--gold);
+  display:flex;align-items:center;gap:20px;
+  padding:14px clamp(18px,4vw,48px);
 }
-.verse:hover{background:rgba(184,134,44,.12);transform:translateX(4px)}
-.vref{
-  font-family:var(--label);font-size:11px;font-weight:700;letter-spacing:.1em;
-  color:var(--wine);text-transform:uppercase;padding-top:3px;
+.nav-brand{font-family:var(--display);font-weight:800;font-size:18px;color:var(--paper);text-decoration:none;white-space:nowrap;letter-spacing:-.01em}
+.nav-brand b{color:var(--gold)}
+.nav-links{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{
+  font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--paper);text-decoration:none;padding:8px 12px;transition:all .25s;
+  border-bottom:3px solid transparent;
 }
-.vtext{font-family:var(--body);font-style:italic;font-size:16.5px;line-height:1.7;color:var(--ink-soft)}
-.vtext strong{color:var(--wine);font-weight:700;font-style:normal}
-.vtext .said{color:var(--wine);font-weight:600}
+.nav-links a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.nav-rvr{
+  font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.16em;
+  background:var(--gold);color:var(--navy-deep);padding:7px 13px;white-space:nowrap;
+}
+@media(max-width:960px){.nav-links{display:none}}
 
-/* highlight */
-.hl{
-  background:linear-gradient(transparent 58%,rgba(217,168,78,.5) 58%);
-  padding:0 .1em;font-weight:600;color:var(--ink);
+/* ============ PORTADA ============ */
+.portada{
+  background:var(--navy);
+  position:relative;overflow:hidden;
+  padding:clamp(56px,9vh,100px) 0 clamp(64px,10vh,110px);
 }
+.portada::before{
+  content:"ἀπόστολος";position:absolute;bottom:-40px;left:-20px;
+  font-family:var(--bible);font-style:italic;font-weight:500;
+  font-size:clamp(140px,24vw,300px);color:transparent;
+  -webkit-text-stroke:1px rgba(232,168,61,.14);pointer-events:none;line-height:1;
+}
+.exp-strip{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:clamp(30px,5vh,50px);
+}
+.exp-strip .dot{width:6px;height:6px;background:var(--crimson);border-radius:50%}
+.exp-strip .sep{color:rgba(246,242,233,.35)}
+.portada-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(36px,5vw,72px);align-items:center;position:relative;z-index:2}
+@media(max-width:920px){.portada-grid{grid-template-columns:1fr}}
+.portada h1{
+  font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:.95;
+  font-size:clamp(56px,10vw,132px);margin:18px 0 22px;
+}
+.portada h1 .q{color:var(--paper)}
+.portada h1 .word{color:var(--gold);display:block}
+.portada-sub{
+  font-family:var(--display);font-weight:700;font-size:clamp(20px,2.8vw,30px);
+  line-height:1.25;color:var(--paper);max-width:24ch;letter-spacing:-.01em;
+}
+.portada-sub b{color:var(--crimson);background:var(--paper);padding:0 .2em}
+.verdict-line{
+  margin-top:30px;display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap;
+  background:var(--navy-deep);border-left:5px solid var(--crimson);
+  padding:16px 22px;max-width:100%;
+}
+.verdict-line .tag{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.2em;color:var(--crimson);text-transform:uppercase}
+.verdict-line .txt{font-family:var(--bible);font-style:italic;font-size:16px;color:var(--paper)}
+.verdict-line .txt b{color:var(--gold);font-style:normal}
+.portada-img{position:relative}
+.portada-img .frame{
+  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;
+  border:4px solid var(--gold);box-shadow:16px 16px 0 var(--crimson);
+  transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s;
+}
+.portada-img:hover .frame{transform:translate(-6px,-6px);box-shadow:22px 22px 0 var(--crimson)}
+.stamp{
+  position:absolute;bottom:-24px;left:-24px;z-index:3;
+  border:4px solid var(--crimson);color:var(--crimson);
+  background:rgba(246,242,233,.94);
+  font-family:var(--display);font-weight:800;font-size:clamp(18px,2.4vw,26px);letter-spacing:.06em;
+  padding:12px 20px;transform:rotate(-7deg);
+  box-shadow:0 8px 30px rgba(0,0,0,.35);
+  text-transform:uppercase;
+}
+.stamp small{display:block;font-family:var(--label);font-weight:700;font-size:10px;letter-spacing:.2em;color:var(--navy)}
 
-/* figure / illustration */
-.illu{
-  position:relative;overflow:hidden;border-radius:6px;
-  box-shadow:0 20px 60px rgba(43,33,24,.22),0 2px 8px rgba(43,33,24,.12);
+/* marquee */
+.marquee{background:var(--gold);color:var(--navy-deep);overflow:hidden;padding:14px 0;border-top:4px solid var(--navy-deep);border-bottom:4px solid var(--navy-deep)}
+.marquee-track{display:flex;gap:0;width:max-content;animation:scroll 28s linear infinite}
+.marquee span{
+  font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.04em;white-space:nowrap;
+  padding:0 28px;text-transform:uppercase;
 }
-.illu img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
-.illu:hover img{transform:scale(1.035)}
-.illu::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.25),inset 0 0 80px rgba(43,33,24,.18);
-}
-.illu-cap{
-  font-family:var(--label);font-size:10.5px;font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-soft);opacity:.75;margin-top:12px;
-  display:flex;align-items:center;gap:10px;
-}
-.illu-cap::before{content:"";width:22px;height:1px;background:var(--gold)}
-
-/* ============ HERO ============ */
-.hero{
-  position:relative;min-height:100vh;display:flex;align-items:flex-end;
-  overflow:hidden;background:var(--ink);
-}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.hero-bg::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(43,33,24,.28) 0%,rgba(43,33,24,.1) 35%,rgba(43,33,24,.55) 72%,rgba(43,33,24,.88) 100%);
-}
-.hero-content{
-  position:relative;z-index:2;width:100%;
-  padding:0 clamp(20px,5vw,60px) clamp(48px,8vh,84px);
-  color:var(--parchment);
-}
-.hero-kicker{
-  font-family:var(--label);font-size:11px;font-weight:700;letter-spacing:.3em;
-  text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px;
-  display:flex;align-items:center;gap:14px;
-}
-.hero-kicker::before{content:"";width:44px;height:2px;background:var(--gold-soft)}
-.hero h1{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(46px,8vw,92px);line-height:1.02;letter-spacing:-.02em;
-  max-width:12ch;margin-bottom:22px;text-shadow:0 4px 40px rgba(0,0,0,.4);
-}
-.hero h1 em{font-style:italic;color:var(--gold-soft)}
-.hero-sub{
-  font-size:clamp(17px,2.2vw,21px);line-height:1.65;max-width:58ch;
-  color:rgba(246,239,226,.92);text-shadow:0 2px 20px rgba(0,0,0,.5);
-}
-.hero-sub strong{color:var(--gold-soft);font-weight:700}
-.hero-scroll{
-  position:absolute;bottom:22px;right:clamp(20px,5vw,60px);z-index:3;
-  font-family:var(--label);font-size:10px;font-weight:700;letter-spacing:.24em;
-  text-transform:uppercase;color:rgba(246,239,226,.7);text-decoration:none;
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  transition:color .3s;
-}
-.hero-scroll:hover{color:var(--gold-soft)}
-.hero-scroll span{display:block;width:1px;height:44px;background:currentColor;animation:drip 2s ease-in-out infinite}
-@keyframes drip{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+.marquee span i{font-family:var(--bible);font-style:italic;text-transform:none;font-weight:500}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ============ DEFINICIÓN ============ */
-.definicion{padding:clamp(70px,12vh,120px) 0;position:relative}
-.def-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:center}
-@media(max-width:880px){.def-grid{grid-template-columns:1fr}}
+.definicion{background:var(--paper);color:var(--ink);padding:clamp(70px,11vh,120px) 0}
+.definicion .kicker{color:var(--crimson)}
+.def-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+@media(max-width:920px){.def-grid{grid-template-columns:1fr}}
+.definicion h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1;
+  font-size:clamp(40px,6vw,72px);margin:16px 0 20px;
+}
+.definicion h2 b{color:var(--crimson)}
+.definicion .body p{font-size:17px;line-height:1.75;color:#33415c;margin-bottom:16px}
+.definicion .body p b{color:var(--ink)}
 .lexicon{
-  background:#fffdf7;border:1px solid var(--line);border-top:4px solid var(--wine);
-  padding:clamp(24px,3.5vw,36px);box-shadow:0 14px 44px rgba(43,33,24,.1);
-  position:relative;
+  background:var(--navy);color:var(--paper);padding:clamp(28px,4vw,42px);
+  border-top:8px solid var(--gold);position:relative;
+  box-shadow:14px 14px 0 var(--gold);transition:transform .4s,box-shadow .4s;
 }
-.lexicon::before{
-  content:"ἀπόστολος";position:absolute;top:-16px;right:20px;
-  font-family:var(--display);font-style:italic;font-size:15px;color:var(--gold);
-  background:var(--parchment);padding:0 10px;
-}
-.lex-word{font-family:var(--display);font-weight:700;font-size:clamp(30px,3.6vw,40px);color:var(--wine);line-height:1.1}
-.lex-translit{font-family:var(--label);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin:6px 0 14px}
-.lex-def{font-size:16px;color:var(--ink-soft);line-height:1.7;border-top:1px solid var(--line-soft);padding-top:14px}
-.lex-def strong{color:var(--wine)}
-.def-body p{margin-bottom:18px;color:var(--ink-soft)}
-.def-body p strong{color:var(--ink)}
+.lexicon:hover{transform:translate(-5px,-5px);box-shadow:19px 19px 0 var(--gold)}
+.lex-word{font-family:var(--bible);font-style:italic;font-weight:500;font-size:clamp(48px,7vw,76px);color:var(--gold);line-height:1.1}
+.lex-translit{font-family:var(--label);font-weight:800;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--paper);opacity:.7;margin:8px 0 18px}
+.lex-def{font-size:16px;line-height:1.7;color:rgba(246,242,233,.85);border-top:1px solid rgba(246,242,233,.2);padding-top:16px}
+.lex-def b{color:var(--gold)}
+.lex-ref{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.18em;color:var(--crimson);margin-top:14px;display:block;text-transform:uppercase}
 
 /* ============ REQUISITOS ============ */
-.requisitos{
-  background:var(--parchment-deep);
-  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:clamp(70px,12vh,120px) 0;
+.req-intro{background:var(--navy-deep);padding:clamp(70px,11vh,120px) 0 clamp(40px,6vh,60px)}
+.req-intro .kicker{color:var(--gold)}
+.req-intro h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1;
+  font-size:clamp(42px,7vw,84px);margin:16px 0 20px;max-width:18ch;
 }
-.req{
-  display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,4.5vw,64px);
-  align-items:center;padding:clamp(40px,7vh,70px) 0;
+.req-intro h2 b{color:var(--gold)}
+.req-intro .lede{font-size:clamp(17px,2.2vw,21px);color:rgba(246,242,233,.75);max-width:60ch}
+.req-intro .lede b{color:var(--paper)}
+
+/* each requirement = full color band */
+.req{padding:clamp(64px,10vh,110px) 0;position:relative;overflow:hidden}
+.req .ghost{
+  position:absolute;top:50%;transform:translateY(-50%);
+  font-family:var(--display);font-weight:800;font-size:clamp(200px,34vw,420px);
+  line-height:1;color:transparent;pointer-events:none;user-select:none;z-index:1;
 }
-.req + .req{border-top:1px solid var(--line)}
-.req:nth-child(even){grid-template-columns:1.1fr .9fr}
-.req:nth-child(even) .req-illu{order:2}
-@media(max-width:880px){.req,.req:nth-child(even){grid-template-columns:1fr}.req:nth-child(even) .req-illu{order:0}}
-.req-num{
-  font-family:var(--display);font-weight:800;font-size:clamp(64px,8vw,96px);
-  line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--gold);
-  margin-bottom:14px;
+.req:nth-child(odd) .ghost{right:-30px;-webkit-text-stroke:2px rgba(246,242,233,.12)}
+.req:nth-child(even) .ghost{left:-30px;-webkit-text-stroke:2px rgba(13,23,40,.14)}
+.req-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center;position:relative;z-index:2}
+@media(max-width:920px){.req-grid{grid-template-columns:1fr}}
+.req .num{
+  font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.3em;
+  display:inline-block;padding:8px 16px;margin-bottom:18px;text-transform:uppercase;
 }
 .req h3{
-  font-family:var(--display);font-weight:640;font-size:clamp(24px,3vw,34px);
-  line-height:1.2;margin-bottom:14px;letter-spacing:-.01em;
+  font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1.02;
+  font-size:clamp(34px,5vw,58px);margin-bottom:18px;
 }
-.req h3 em{font-style:italic;color:var(--wine)}
-.req-arg{font-size:16.5px;color:var(--ink-soft);margin-bottom:8px;max-width:56ch}
-.req-arg strong{color:var(--ink)}
-.req-illu{aspect-ratio:16/11}
+.req .arg{font-size:17px;line-height:1.75;max-width:56ch;margin-bottom:8px}
+.req .arg b{font-weight:800}
+.req .img{width:100%;aspect-ratio:16/11;object-fit:cover;display:block;border:4px solid currentColor;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.req .img:hover{transform:scale(1.02)}
+.req .cap{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:12px;opacity:.75}
+
+/* verse card (themed per band via CSS vars) */
+.vc{
+  display:grid;grid-template-columns:minmax(96px,130px) 1fr;gap:16px;align-items:start;
+  padding:16px 18px;margin:14px 0;border-left:5px solid var(--vc-accent);
+  background:var(--vc-bg);transition:transform .3s,background .3s;
+}
+.vc:hover{transform:translateX(6px)}
+.vc .ref{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--vc-accent);padding-top:3px}
+.vc .txt{font-family:var(--bible);font-style:italic;font-size:17px;line-height:1.65;color:var(--vc-text)}
+.vc .txt b{font-style:normal;font-weight:600;color:var(--vc-accent)}
+
+/* band themes */
+.req--crimson{background:var(--crimson);color:var(--paper)}
+.req--crimson .num{background:var(--paper);color:var(--crimson)}
+.req--crimson h3 b{color:var(--gold-bright)}
+.req--crimson .arg b{color:var(--gold-bright)}
+.req--crimson{--vc-accent:var(--gold-bright);--vc-bg:rgba(13,23,40,.35);--vc-text:rgba(246,242,233,.92)}
+.req--crimson .img{border-color:var(--paper)}
+
+.req--navy{background:var(--navy-mid);color:var(--paper)}
+.req--navy .num{background:var(--gold);color:var(--navy-deep)}
+.req--navy h3 b{color:var(--gold)}
+.req--navy .arg b{color:var(--gold)}
+.req--navy{--vc-accent:var(--gold);--vc-bg:rgba(13,23,40,.5);--vc-text:rgba(246,242,233,.9)}
+.req--navy .img{border-color:var(--gold)}
+
+.req--gold{background:var(--gold);color:var(--navy-deep)}
+.req--gold .num{background:var(--navy-deep);color:var(--gold)}
+.req--gold h3 b{color:var(--crimson)}
+.req--gold .arg b{color:var(--crimson)}
+.req--gold .ghost{-webkit-text-stroke:2px rgba(13,23,40,.16)}
+.req--gold{--vc-accent:var(--crimson);--vc-bg:rgba(246,242,233,.55);--vc-text:#26344e}
+.req--gold .vc .txt b{color:var(--crimson)}
+.req--gold .img{border-color:var(--navy-deep)}
+.req--gold .cap{color:var(--navy-deep)}
 
 /* ============ EL ÚLTIMO ============ */
-.ultimo{
-  background:var(--ink);color:var(--parchment);
-  padding:clamp(70px,12vh,120px) 0;position:relative;overflow:hidden;
-}
+.ultimo{background:var(--navy-deep);color:var(--paper);padding:clamp(70px,11vh,120px) 0;position:relative;overflow:hidden}
 .ultimo::before{
-  content:"ἔσχατος";position:absolute;top:30px;right:-20px;
-  font-family:var(--display);font-style:italic;font-weight:800;
-  font-size:clamp(120px,20vw,240px);color:transparent;
-  -webkit-text-stroke:1px rgba(217,168,78,.16);pointer-events:none;line-height:1;
+  content:"ἔσχατος";position:absolute;top:20px;right:-20px;
+  font-family:var(--bible);font-style:italic;font-weight:500;font-size:clamp(120px,20vw,240px);
+  color:transparent;-webkit-text-stroke:1px rgba(232,168,61,.16);pointer-events:none;line-height:1;
 }
-.ultimo .kicker{color:var(--gold-soft)}
-.ultimo .kicker::before{background:var(--gold-soft)}
-.ultimo h2.display{color:var(--parchment)}
-.ultimo h2.display em{color:var(--gold-soft)}
-.ultimo .lede{color:rgba(246,239,226,.75)}
+.ultimo .kicker{color:var(--gold)}
+.ultimo h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1;
+  font-size:clamp(42px,7vw,84px);margin:16px 0 20px;max-width:16ch;
+}
+.ultimo h2 b{color:var(--gold)}
+.ultimo .lede{font-size:clamp(17px,2.2vw,21px);color:rgba(246,242,233,.72);max-width:62ch;margin-bottom:clamp(36px,6vh,56px)}
+.ultimo .lede b{color:var(--paper)}
 .ultimo-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:start}
-@media(max-width:880px){.ultimo-grid{grid-template-columns:1fr}}
-.ultimo .verse{border-left-color:var(--gold-soft);background:rgba(217,168,78,.07)}
-.ultimo .verse:hover{background:rgba(217,168,78,.13)}
-.ultimo .vref{color:var(--gold-soft)}
-.ultimo .vtext{color:rgba(246,239,226,.8)}
-.ultimo .vtext strong,.ultimo .vtext .said{color:var(--gold-soft)}
-.timeline{margin-top:34px;border-top:1px solid rgba(246,239,226,.18)}
-.tl-item{
-  display:grid;grid-template-columns:minmax(90px,130px) 1fr;gap:18px;
-  padding:16px 0;border-bottom:1px solid rgba(246,239,226,.12);
-  transition:background .3s;
+@media(max-width:920px){.ultimo-grid{grid-template-columns:1fr}}
+.ultimo .img{width:100%;aspect-ratio:16/11;object-fit:cover;border:4px solid var(--gold);box-shadow:14px 14px 0 var(--crimson);display:block}
+.ultimo .cap{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,242,233,.6);margin-top:20px}
+.timeline{border-top:3px solid var(--gold)}
+.tl{
+  display:grid;grid-template-columns:minmax(96px,130px) 1fr;gap:18px;
+  padding:18px 0;border-bottom:1px solid rgba(246,242,233,.16);transition:background .3s,padding-left .3s;
 }
-.tl-item:hover{background:rgba(246,239,226,.04)}
-.tl-ref{font-family:var(--label);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--gold-soft);text-transform:uppercase;padding-top:2px}
-.tl-txt{font-size:16px;color:rgba(246,239,226,.85);font-style:italic;line-height:1.65}
-.tl-txt strong{color:var(--gold-soft);font-style:normal}
+.tl:hover{background:rgba(232,168,61,.07);padding-left:10px}
+.tl .ref{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase;padding-top:3px}
+.tl .txt{font-family:var(--bible);font-style:italic;font-size:17px;line-height:1.6;color:rgba(246,242,233,.85)}
+.tl .txt b{color:var(--gold);font-style:normal}
 .tl-final{
-  margin-top:26px;padding:22px 26px;border:1px solid var(--gold-soft);
-  background:rgba(217,168,78,.08);
+  margin-top:28px;background:var(--gold);color:var(--navy-deep);
+  padding:26px 30px;transform:rotate(-1.2deg);box-shadow:10px 10px 0 var(--crimson);
 }
-.tl-final p{font-family:var(--display);font-style:italic;font-size:clamp(18px,2.2vw,23px);line-height:1.55;color:var(--parchment)}
-.tl-final p strong{color:var(--gold-soft);font-style:normal}
-.ultimo-arg{margin-top:30px;font-size:17px;color:rgba(246,239,226,.82);line-height:1.75}
-.ultimo-arg strong{color:var(--parchment)}
-.ultimo-arg .gd{color:var(--gold-soft);font-weight:700}
+.tl-final p{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.6vw,27px);line-height:1.3;letter-spacing:-.01em}
+.tl-final .ref{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.22em;margin-top:10px;display:block;text-transform:uppercase;color:var(--crimson)}
+.ultimo-arg{margin-top:30px;font-size:17px;line-height:1.75;color:rgba(246,242,233,.82)}
+.ultimo-arg b{color:var(--paper)}
+.ultimo-arg .gd{color:var(--gold);font-weight:800}
 
-/* ============ EFESIOS 4:11 ============ */
-.efesios{
-  background:var(--wine-deep);color:var(--parchment);
-  padding:clamp(70px,12vh,120px) 0;position:relative;overflow:hidden;
-}
+/* ============ EFESIOS ============ */
+.efesios{background:var(--crimson);color:var(--paper);padding:clamp(70px,11vh,120px) 0;position:relative;overflow:hidden}
 .efesios::before{
-  content:"";position:absolute;top:0;left:0;right:0;height:5px;
-  background:linear-gradient(90deg,var(--gold) 0%,var(--gold) 50%,var(--parchment) 50%,var(--parchment) 100%);
+  content:"✂";position:absolute;top:40px;right:5%;font-size:clamp(80px,12vw,150px);
+  color:rgba(246,242,233,.1);pointer-events:none;transform:rotate(180deg);
 }
-.efesios .kicker{color:var(--gold-soft)}
-.efesios .kicker::before{background:var(--gold-soft)}
-.efesios h2.display{color:var(--parchment)}
-.efesios h2.display em{color:var(--gold-soft)}
-.efesios .lede{color:rgba(246,239,226,.72)}
-.ef-top{display:grid;grid-template-columns:1fr .9fr;gap:clamp(32px,4.5vw,60px);align-items:center;margin-bottom:clamp(40px,6vh,60px)}
-@media(max-width:880px){.ef-top{grid-template-columns:1fr}}
+.efesios .kicker{color:var(--gold-bright)}
+.efesios h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1;
+  font-size:clamp(40px,6.5vw,78px);margin:16px 0 20px;max-width:20ch;
+}
+.efesios h2 b{color:var(--gold-bright)}
+.efesios .lede{font-size:clamp(17px,2.2vw,21px);color:rgba(246,242,233,.8);max-width:62ch;margin-bottom:clamp(36px,6vh,56px)}
 .ef-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,32px);margin-bottom:clamp(36px,6vh,56px)}
-@media(max-width:760px){.ef-cards{grid-template-columns:1fr}}
-.ef-card{padding:26px 28px;position:relative;transition:transform .35s cubic-bezier(.22,1,.36,1)}
-.ef-card:hover{transform:translateY(-5px)}
-.ef-card.theirs{border:1px solid rgba(246,239,226,.22);background:rgba(0,0,0,.18)}
-.ef-card.truth{border:1px solid var(--gold-soft);background:rgba(217,168,78,.09)}
-.ef-tag{font-family:var(--label);font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;display:block}
-.ef-card.theirs .ef-tag{color:rgba(246,239,226,.55)}
-.ef-card.truth .ef-tag{color:var(--gold-soft)}
-.ef-quote{font-family:var(--display);font-style:italic;font-size:clamp(17px,2.2vw,22px);line-height:1.55}
-.ef-card.theirs .ef-quote{color:rgba(246,239,226,.62)}
-.ef-card.truth .ef-quote{color:var(--parchment)}
-.ef-card.truth .gold{background:rgba(217,168,78,.4);color:var(--ink);font-weight:700;font-style:normal;padding:0 .18em}
-.ef-foot{font-family:var(--label);font-size:10.5px;font-weight:700;letter-spacing:.16em;margin-top:14px;display:block}
-.ef-card.theirs .ef-foot{color:rgba(246,239,226,.45)}
-.ef-card.truth .ef-foot{color:var(--gold-soft)}
-.ef-arg{font-size:17px;color:rgba(246,239,226,.82);line-height:1.75;max-width:70ch;margin-bottom:clamp(36px,6vh,56px)}
-.ef-arg strong{color:var(--parchment)}
-.ef-arg .gd{color:var(--gold-soft);font-weight:700}
-.ef-pablo-head{margin-bottom:24px}
-.ef-pablo-head .kicker{color:var(--gold-soft)}
-.ef-pablo-head h3{font-family:var(--display);font-weight:640;font-size:clamp(24px,3.2vw,36px);color:var(--parchment)}
-.ef-pablo-head h3 em{font-style:italic;color:var(--gold-soft)}
-.ef-pablo-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;
-  border-top:1px solid rgba(246,239,226,.22);margin-bottom:clamp(36px,6vh,56px);
-}
-.ef-pcell{padding:24px 22px;border-right:1px solid rgba(246,239,226,.14);border-bottom:1px solid rgba(246,239,226,.14);transition:background .3s}
-.ef-pcell:hover{background:rgba(246,239,226,.05)}
-.ef-pcell .lab{font-family:var(--label);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px;display:block}
-.ef-pcell p{font-size:15.5px;line-height:1.7;color:rgba(246,239,226,.92);font-style:italic}
-.ef-pcell .ref{font-family:var(--label);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--gold-soft);margin-top:10px;display:block}
-.ef-others-head{margin-bottom:22px}
-.ef-others-head .kicker{color:var(--gold-soft)}
-.ef-others-head h3{font-family:var(--display);font-weight:640;font-size:clamp(22px,3vw,32px);color:var(--parchment)}
-.ef-others-head h3 em{font-style:italic;color:var(--gold-soft)}
+@media(max-width:820px){.ef-cards{grid-template-columns:1fr}}
+.ef-card{padding:28px 30px;position:relative;transition:transform .35s}
+.ef-card:hover{transform:translateY(-6px)}
+.ef-card.theirs{background:rgba(13,23,40,.4);border:2px dashed rgba(246,242,233,.4)}
+.ef-card.truth{background:var(--paper);color:var(--ink);border:4px solid var(--gold)}
+.ef-tag{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:16px;display:block}
+.ef-card.theirs .ef-tag{color:rgba(246,242,233,.6)}
+.ef-card.truth .ef-tag{color:var(--crimson)}
+.ef-quote{font-family:var(--bible);font-style:italic;font-size:clamp(18px,2.3vw,23px);line-height:1.5}
+.ef-card.theirs .ef-quote{color:rgba(246,242,233,.65)}
+.ef-card.truth .ef-quote{color:var(--ink)}
+.ef-card.truth .gold{background:var(--gold);color:var(--navy-deep);font-weight:600;font-style:normal;padding:0 .18em}
+.ef-foot{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.18em;margin-top:16px;display:block;text-transform:uppercase}
+.ef-card.theirs .ef-foot{color:rgba(246,242,233,.5)}
+.ef-card.truth .ef-foot{color:var(--crimson)}
+.ef-arg{font-size:17px;line-height:1.75;color:rgba(246,242,233,.85);max-width:70ch;margin-bottom:clamp(36px,6vh,56px)}
+.ef-arg b{color:var(--paper)}
+.ef-arg .gd{color:var(--gold-bright);font-weight:800}
+.ef-sub{margin-bottom:22px}
+.ef-sub .kicker{color:var(--gold-bright)}
+.ef-sub h3{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.6vw,42px);letter-spacing:-.02em;line-height:1.05;margin-top:12px}
+.ef-sub h3 b{color:var(--gold-bright)}
+.ef-pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2px;background:rgba(13,23,40,.4);margin-bottom:clamp(36px,6vh,56px)}
+.ef-pcell{background:var(--crimson-deep);padding:26px 24px;transition:background .3s}
+.ef-pcell:hover{background:var(--navy-deep)}
+.ef-pcell .lab{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:12px;display:block}
+.ef-pcell p{font-family:var(--bible);font-style:italic;font-size:16px;line-height:1.6;color:rgba(246,242,233,.9)}
+.ef-pcell .ref{font-family:var(--label);font-weight:800;font-size:10px;letter-spacing:.18em;color:var(--gold-bright);margin-top:12px;display:block;text-transform:uppercase}
 .ef-other{
   display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:16px;align-items:start;
-  padding:15px 18px;border-left:3px solid var(--gold-soft);background:rgba(217,168,78,.07);
-  margin:12px 0;transition:background .3s,transform .3s;
+  padding:15px 18px;margin:12px 0;border-left:5px solid var(--gold-bright);
+  background:rgba(13,23,40,.35);transition:transform .3s,background .3s;
 }
-.ef-other:hover{background:rgba(217,168,78,.13);transform:translateX(4px)}
-.ef-other .vref{color:var(--gold-soft)}
-.ef-other .vtext{color:rgba(246,239,226,.82)}
-.ef-other .vtext strong{color:var(--parchment)}
-.ef-other .vtext .said{color:var(--gold-soft)}
-.ef-close{margin-top:30px;font-size:17px;color:rgba(246,239,226,.85);line-height:1.75;max-width:72ch}
-.ef-close strong{color:var(--parchment)}
-.ef-close .gd{color:var(--gold-soft);font-weight:700}
+.ef-other:hover{transform:translateX(6px);background:rgba(13,23,40,.5)}
+.ef-other .ref{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.12em;color:var(--gold-bright);text-transform:uppercase;padding-top:3px}
+.ef-other .txt{font-family:var(--bible);font-style:italic;font-size:16.5px;line-height:1.6;color:rgba(246,242,233,.88)}
+.ef-other .txt b{color:var(--paper);font-style:normal}
+.ef-close{margin-top:30px;font-size:17px;line-height:1.75;color:rgba(246,242,233,.88);max-width:72ch}
+.ef-close b{color:var(--paper)}
+.ef-close .gd{color:var(--gold-bright);font-weight:800}
 
 /* ============ POR QUÉ HOY NO ============ */
-.porque{padding:clamp(70px,12vh,120px) 0}
-.porque-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,5vw,72px);align-items:start}
-@media(max-width:880px){.porque-grid{grid-template-columns:1fr}}
-.porque-sticky{position:sticky;top:90px}
-@media(max-width:880px){.porque-sticky{position:static}}
+.porque{background:var(--paper);color:var(--ink);padding:clamp(70px,11vh,120px) 0}
+.porque .kicker{color:var(--crimson)}
+.porque h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1;
+  font-size:clamp(40px,6.5vw,78px);margin:16px 0 20px;max-width:18ch;
+}
+.porque h2 b{color:var(--crimson)}
+.porque .lede{font-size:clamp(17px,2.2vw,21px);color:#33415c;max-width:64ch;margin-bottom:clamp(36px,6vh,56px)}
+.porque .lede b{color:var(--ink)}
 .razon{
-  display:grid;grid-template-columns:minmax(44px,60px) 1fr;gap:20px;align-items:start;
-  padding:26px 0;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:minmax(70px,110px) 1fr;gap:clamp(20px,3vw,40px);align-items:start;
+  padding:30px 0;border-top:3px solid var(--navy);transition:background .3s,padding-left .3s;
 }
-.razon:last-child{border-bottom:1px solid var(--line)}
-.razon-n{
-  font-family:var(--display);font-weight:800;font-size:34px;color:var(--gold);
-  line-height:1;transition:transform .3s;
+.razon:hover{background:rgba(232,168,61,.14);padding-left:14px}
+.razon:last-child{border-bottom:3px solid var(--navy)}
+.razon .n{
+  font-family:var(--display);font-weight:800;font-size:clamp(44px,6vw,72px);line-height:.9;
+  color:var(--crimson);letter-spacing:-.02em;transition:transform .3s;
 }
-.razon:hover .razon-n{transform:scale(1.18) rotate(-4deg)}
-.razon h4{font-family:var(--display);font-weight:640;font-size:clamp(18px,2.2vw,22px);line-height:1.3;margin-bottom:8px}
-.razon h4 em{font-style:italic;color:var(--wine)}
-.razon p{font-size:15.5px;color:var(--ink-soft);line-height:1.7;max-width:58ch}
-.razon p strong{color:var(--ink)}
-.razon .si-ref{font-family:var(--label);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--wine);text-transform:uppercase;margin-top:8px;display:inline-block}
+.razon:hover .n{transform:scale(1.12) rotate(-4deg)}
+.razon h4{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.8vw,28px);letter-spacing:-.015em;line-height:1.15;margin-bottom:10px}
+.razon h4 b{color:var(--crimson)}
+.razon p{font-size:16px;line-height:1.7;color:#33415c;max-width:62ch}
+.razon p b{color:var(--ink)}
+.razon .si{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.16em;color:var(--crimson);text-transform:uppercase;margin-top:10px;display:inline-block}
 
 /* ============ LA PRUEBA ============ */
-.prueba{
-  background:var(--parchment-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  padding:clamp(70px,12vh,120px) 0;
+.prueba{background:var(--navy);color:var(--paper);padding:clamp(70px,11vh,120px) 0}
+.prueba .kicker{color:var(--gold)}
+.prueba h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1;
+  font-size:clamp(40px,6.5vw,78px);margin:16px 0 20px;max-width:18ch;
 }
+.prueba h2 b{color:var(--gold)}
+.prueba .lede{font-size:clamp(17px,2.2vw,21px);color:rgba(246,242,233,.72);max-width:62ch;margin-bottom:clamp(36px,6vh,56px)}
+.prueba .lede b{color:var(--paper)}
 .check{
-  display:block;cursor:pointer;background:#fffdf7;border:1px solid var(--line);
-  padding:22px 26px;margin:16px 0;position:relative;overflow:hidden;
-  transition:border-color .3s,box-shadow .3s,transform .3s;
+  display:block;cursor:pointer;background:var(--navy-mid);border:2px solid rgba(246,242,233,.2);
+  padding:24px 28px;margin:16px 0;position:relative;overflow:hidden;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
 }
-.check:hover{border-color:var(--gold);box-shadow:0 10px 34px rgba(43,33,24,.12);transform:translateY(-3px)}
+.check:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:8px 8px 0 var(--crimson)}
 .check input{position:absolute;opacity:0;pointer-events:none}
 .check .box{
-  position:absolute;top:22px;left:26px;width:26px;height:26px;
-  border:2px solid var(--gold);border-radius:3px;background:var(--parchment);
+  position:absolute;top:24px;left:28px;width:30px;height:30px;
+  border:3px solid var(--gold);background:var(--navy-deep);
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--label);font-weight:700;font-size:16px;color:var(--wine);
-  transition:background .3s;
+  font-family:var(--label);font-weight:800;font-size:18px;color:var(--gold);transition:background .3s;
 }
-.check input:checked ~ .box{background:var(--gold)}
+.check input:checked ~ .box{background:var(--gold);color:var(--navy-deep)}
 .check input:checked ~ .box::after{content:"✓"}
-.check .c-body{padding-left:46px}
-.check .c-title{font-family:var(--display);font-weight:640;font-size:18px;margin-bottom:6px}
-.check .c-title em{font-style:italic;color:var(--wine)}
-.check .c-desc{font-size:15px;color:var(--ink-soft);line-height:1.65}
-.check .c-ref{font-family:var(--label);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--wine);text-transform:uppercase;margin-top:8px;display:block}
+.check .c-body{padding-left:52px}
+.check .c-title{font-family:var(--display);font-weight:800;font-size:clamp(18px,2.4vw,23px);letter-spacing:-.01em;margin-bottom:6px}
+.check .c-title b{color:var(--gold)}
+.check .c-desc{font-size:15.5px;color:rgba(246,242,233,.75);line-height:1.6}
+.check .c-ref{font-family:var(--label);font-weight:800;font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-top:10px;display:block}
 .verdict{
-  margin-top:34px;padding:clamp(26px,4vw,40px);border:2px solid var(--wine);
-  background:rgba(122,46,42,.06);text-align:center;
+  margin-top:36px;background:var(--crimson);padding:clamp(28px,4vw,44px);
+  border:4px solid var(--gold);transform:rotate(-.8deg);box-shadow:12px 12px 0 var(--navy-deep);
 }
-.verdict h3{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,32px);color:var(--wine);line-height:1.25}
-.verdict p{font-size:16px;color:var(--ink-soft);margin-top:12px;max-width:60ch;margin-left:auto;margin-right:auto}
+.verdict h3{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.4vw,38px);letter-spacing:-.02em;line-height:1.15}
+.verdict p{font-size:16.5px;line-height:1.7;color:rgba(246,242,233,.9);margin-top:14px;max-width:62ch}
+.verdict p b{color:var(--gold-bright)}
 
 /* ============ ADVERTENCIA ============ */
-.advertencia{
-  background:var(--ink);color:var(--parchment);
-  padding:clamp(70px,12vh,120px) 0;position:relative;overflow:hidden;
+.advertencia{background:var(--navy-deep);color:var(--paper);padding:clamp(70px,11vh,120px) 0;border-top:8px solid var(--crimson)}
+.advertencia .kicker{color:var(--crimson)}
+.advertencia h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.025em;line-height:1;
+  font-size:clamp(40px,6.5vw,78px);margin:16px 0 20px;max-width:18ch;
 }
-.advertencia::before{
-  content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--wine);
+.advertencia h2 b{color:var(--crimson)}
+.adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4.5vw,60px);align-items:start;margin-bottom:clamp(40px,7vh,64px)}
+@media(max-width:920px){.adv-grid{grid-template-columns:1fr}}
+.advertencia{--vc-accent:var(--crimson);--vc-bg:rgba(179,52,44,.14);--vc-text:rgba(246,242,233,.85)}
+.advertencia .vc .txt b{color:var(--gold)}
+.advertencia .vc{border-left-color:var(--crimson)}
+.adv-arg{font-size:17px;line-height:1.75;color:rgba(246,242,233,.82);margin-top:24px}
+.adv-arg b{color:var(--paper)}
+.adv-arg .gd{color:var(--gold);font-weight:800}
+.pastor{
+  background:var(--gold);color:var(--navy-deep);padding:clamp(30px,4.5vw,48px);
+  box-shadow:14px 14px 0 var(--crimson);
 }
-.advertencia .kicker{color:var(--gold-soft)}
-.advertencia .kicker::before{background:var(--gold-soft)}
-.advertencia h2.display{color:var(--parchment)}
-.advertencia h2.display em{color:var(--gold-soft)}
-.advertencia .lede{color:rgba(246,239,226,.72)}
-.adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4.5vw,60px);align-items:start}
-@media(max-width:880px){.adv-grid{grid-template-columns:1fr}}
-.advertencia .verse{border-left-color:var(--wine);background:rgba(122,46,42,.16)}
-.advertencia .verse:hover{background:rgba(122,46,42,.26)}
-.advertencia .vref{color:var(--gold-soft)}
-.advertencia .vtext{color:rgba(246,239,226,.82)}
-.advertencia .vtext strong,.advertencia .vtext .said{color:var(--gold-soft)}
-.adv-arg{font-size:17px;color:rgba(246,239,226,.82);line-height:1.75;margin-top:24px}
-.adv-arg strong{color:var(--parchment)}
-.adv-arg .gd{color:var(--gold-soft);font-weight:700}
-.pastor-call{
-  margin-top:clamp(40px,7vh,64px);padding:clamp(28px,4vw,44px);
-  border:1px solid var(--gold-soft);background:rgba(217,168,78,.07);
-}
-.pastor-call h3{font-family:var(--display);font-weight:640;font-size:clamp(22px,3vw,32px);color:var(--gold-soft);margin-bottom:14px}
-.pastor-call p{font-size:17px;color:rgba(246,239,226,.85);line-height:1.75;max-width:70ch}
-.pastor-call p strong{color:var(--parchment)}
-.pastor-call .verse{margin-top:20px;border-left-color:var(--gold-soft);background:rgba(217,168,78,.08)}
+.pastor h3{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.6vw,42px);letter-spacing:-.02em;line-height:1.05;margin-bottom:16px}
+.pastor p{font-size:17px;line-height:1.75;color:#26344e;max-width:70ch}
+.pastor p b{color:var(--crimson)}
+.pastor .vc{background:rgba(13,23,40,.12);border-left-color:var(--navy-deep);--vc-accent:var(--crimson);--vc-text:#26344e;margin-top:22px}
+.pastor .vc .txt b{color:var(--crimson)}
+.pastor .vc .ref{color:var(--navy-deep)}
 
 /* ============ FOOTER ============ */
-footer{background:#1f1811;color:rgba(246,239,226,.7);padding:clamp(50px,8vh,80px) 0 34px}
+footer{background:#0a111e;color:rgba(246,242,233,.7);padding:clamp(50px,8vh,80px) 0 34px;border-top:4px solid var(--gold)}
 .f-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(32px,5vw,64px);margin-bottom:40px}
-@media(max-width:760px){.f-grid{grid-template-columns:1fr}}
-.f-title{font-family:var(--display);font-weight:700;font-size:24px;color:var(--parchment);margin-bottom:14px}
-.f-title em{font-style:italic;color:var(--gold-soft)}
-.f-grid p{font-size:14px;line-height:1.8;color:rgba(246,239,226,.6)}
-.f-grid p strong{color:var(--gold-soft)}
-.f-note{font-family:var(--label);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px}
-.f-bottom{
-  border-top:1px solid rgba(246,239,226,.12);padding-top:24px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
-}
-.f-bottom span{font-family:var(--label);font-size:11px;letter-spacing:.12em;color:rgba(246,239,226,.45)}
-.f-top{
-  font-family:var(--label);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--gold-soft);text-decoration:none;transition:color .3s;
-}
-.f-top:hover{color:var(--parchment)}
+@media(max-width:820px){.f-grid{grid-template-columns:1fr}}
+.f-title{font-family:var(--display);font-weight:800;font-size:26px;color:var(--paper);letter-spacing:-.01em;margin-bottom:14px}
+.f-title b{color:var(--gold)}
+.f-grid p{font-size:14px;line-height:1.8;color:rgba(246,242,233,.55)}
+.f-grid p b{color:var(--gold)}
+.f-note{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.f-bottom{border-top:1px solid rgba(246,242,233,.12);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.f-bottom span{font-family:var(--label);font-weight:600;font-size:11px;letter-spacing:.14em;color:rgba(246,242,233,.4)}
+.f-top{font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:color .3s}
+.f-top:hover{color:var(--paper)}
+
+/* image bands */
+.def-img{margin-top:clamp(40px,6vh,60px);position:relative}
+.def-img img{width:100%;aspect-ratio:21/8;object-fit:cover;display:block;border:4px solid var(--navy);box-shadow:14px 14px 0 var(--gold);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.def-img:hover img{transform:translate(-5px,-5px)}
+.def-img .cap{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--crimson);margin-top:18px}
+.ef-pablo{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,56px);align-items:center;margin-bottom:clamp(36px,6vh,56px)}
+@media(max-width:820px){.ef-pablo{grid-template-columns:1fr}}
+.ef-pablo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:4px solid var(--gold-bright);box-shadow:12px 12px 0 var(--navy-deep);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.ef-pablo:hover img{transform:translate(-5px,-5px)}
+.ef-pablo .cap{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(246,242,233,.65);margin-top:16px}
 </style>
 </head>
 <body>
 
-<nav id="nav">
-  <a class="nav-brand" href="#top">¿Qué es un <em>Apóstol</em>?</a>
+<div id="progress"></div>
+
+<nav>
+  <a class="nav-brand" href="#top">¿QUÉ ES UN <b>APÓSTOL</b>?</a>
   <div class="nav-links">
     <a href="#definicion">Definición</a>
     <a href="#requisitos">Requisitos</a>
@@ -462,176 +473,201 @@ footer{background:#1f1811;color:rgba(246,239,226,.7);padding:clamp(50px,8vh,80px
   <span class="nav-rvr">RVR1960</span>
 </nav>
 
-<!-- ============ HERO ============ -->
-<header class="hero" id="top">
-  <div class="hero-bg">
-    <img src="img/hero.jpg" alt="Jesús enseñando a sus discípulos">
+<!-- ============ PORTADA ============ -->
+<header class="portada" id="top">
+  <div class="wrap">
+    <div class="exp-strip rv">
+      <span class="dot"></span>
+      <span>Expediente doctrinal</span>
+      <span class="sep">/</span>
+      <span>El oficio apostólico a examen</span>
+      <span class="sep">/</span>
+      <span>Texto Reina-Valera 1960</span>
+    </div>
+    <div class="portada-grid">
+      <div>
+        <h1 class="rv" data-d="1"><span class="q">¿Qué es un</span><span class="word">apóstol?</span></h1>
+        <p class="portada-sub rv" data-d="2">Y por qué <b>nadie</b> puede ser ungido apóstol hoy.</p>
+        <div class="verdict-line rv" data-d="3">
+          <span class="tag">Veredicto</span>
+          <span class="txt">El oficio quedó cerrado con el último testigo. <b>1 Corintios 15:8</b></span>
+        </div>
+      </div>
+      <div class="portada-img rv" data-d="2">
+        <img class="frame" src="img/d-portada.jpg" alt="Jesús enseñando a sus doce discípulos">
+        <div class="stamp">Caso cerrado<small>1 Corintios 15:8 · RVR1960</small></div>
+      </div>
+    </div>
   </div>
-  <div class="hero-content">
-    <div class="hero-kicker rv">Estudio bíblico · Texto Reina-Valera 1960</div>
-    <h1 class="rv" data-d="1">¿Qué es un <em>apóstol</em>?</h1>
-    <p class="hero-sub rv" data-d="2">
-      Hoy abundan los que se hacen llamar apóstoles sin serlo. Este estudio examina
-      <strong>los tres requisitos</strong> que la Escritura exige para el oficio — y por qué
-      <strong>ningún hombre vivo hoy puede cumplirlos</strong>.
-    </p>
-  </div>
-  <a class="hero-scroll" href="#definicion">Leer<span></span></a>
 </header>
+
+<!-- marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span><i>ἀπόστολος</i> — enviado — <i>ἀπόστολος</i> — enviado — <i>ἀπόστολος</i> — enviado — </span>
+    <span><i>ἀπόστολος</i> — enviado — <i>ἀπόστολος</i> — enviado — <i>ἀπόστολος</i> — enviado — </span>
+  </div>
+</div>
 
 <!-- ============ DEFINICIÓN ============ -->
 <section class="definicion" id="definicion">
   <div class="wrap">
     <div class="def-grid">
-      <div class="def-body">
+      <div class="body">
         <div class="kicker rv">Definición</div>
-        <h2 class="display rv" data-d="1">La palabra significa <em>«enviado»</em> — pero no cualquiera</h2>
+        <h2 class="rv" data-d="1">La palabra significa <b>«enviado»</b> — pero no cualquiera</h2>
         <p class="rv" data-d="2">
-          <span class="hl">ἀπόστολος</span> (<em>apóstolos</em>) proviene del griego y significa
-          <strong>enviado</strong>. Un apóstol es un propagador o un predicador de la doctrina bíblica
-          de la fe cristiana y del poder y del amor de Dios; es un evangelizador que tiene la misión
-          de predicar de Jesucristo y de su obra redentora: su vida, su muerte y su resurrección.
+          <b>ἀπόστολος</b> (<i>apóstolos</i>) proviene del griego y significa <b>enviado</b>.
+          Un apóstol es un propagador o un predicador de la doctrina bíblica de la fe cristiana y del
+          poder y del amor de Dios; es un evangelizador que tiene la misión de predicar de Jesucristo
+          y de su obra redentora: su vida, su muerte y su resurrección.
         </p>
         <p class="rv" data-d="3">
-          Pero la palabra por sí sola no define el <strong>oficio</strong>. En su sentido más amplio,
-          «apóstol» puede referirse a un mensajero (2 Corintios 8:23). El oficio apostólico — el de
-          los <strong>doce</strong> y de <strong>Pablo</strong> — es otra cosa: exige credenciales
-          que la Escritura enumera con precisión.
+          Pero la palabra por sí sola no define el <b>oficio</b>. En su sentido más amplio, «apóstol»
+          puede referirse a un mensajero (2 Corintios 8:23). El oficio apostólico — el de los <b>doce</b>
+          y de <b>Pablo</b> — es otra cosa: exige credenciales que la Escritura enumera con precisión.
         </p>
-        <div class="lexicon rv" data-d="3">
+      </div>
+      <div class="rv" data-d="2">
+        <div class="lexicon">
           <div class="lex-word">ἀπόστολος</div>
           <div class="lex-translit">apóstolos · sustantivo griego</div>
           <div class="lex-def">
             «Enviado.» El oficio fue instituido por Cristo mismo:
-            <strong>«Y estableció a doce, para que estuviesen con él, y para enviarlos a predicar»</strong>
-            (Marcos 3:14).
+            <b>«Y estableció a doce, para que estuviesen con él, y para enviarlos a predicar.»</b>
+            <span class="lex-ref">Marcos 3:14 · RVR1960</span>
           </div>
         </div>
       </div>
-      <div class="rv" data-d="2">
-        <div class="illu req-illu" style="aspect-ratio:4/5">
-          <img src="img/llamado.jpg" alt="Jesús llamando a sus discípulos junto al mar de Galilea">
-        </div>
-        <div class="illu-cap">«Y escogió a doce de ellos, a los cuales también llamó apóstoles» — Lucas 6:13</div>
-      </div>
+    </div>
+    <div class="def-img rv" data-d="3">
+      <img src="img/d-llamado.jpg" alt="Jesús llama a los pescadores junto al mar de Galilea">
+      <div class="cap">«Y estableció a doce, para que estuviesen con él, y para enviarlos a predicar.» — Marcos 3:14</div>
     </div>
   </div>
 </section>
 
 <!-- ============ REQUISITOS ============ -->
-<section class="requisitos" id="requisitos">
+<section class="req-intro" id="requisitos">
   <div class="wrap">
-    <div class="section-head">
-      <div class="kicker rv">La pregunta que pocos hacen</div>
-      <h2 class="display rv" data-d="1">¿Cuáles son los <em>requisitos</em> de un apóstol?</h2>
-      <p class="lede rv" data-d="2">
-        No los define una convención, un seminario ni una imposición de manos. Los define la
-        Escritura. Y la Escritura exige <strong>tres cosas</strong> — las tres imposibles para
-        cualquier persona viva hoy.
-      </p>
-    </div>
+    <div class="kicker rv">La pregunta que pocos hacen</div>
+    <h2 class="rv" data-d="1">¿Cuáles son los <b>requisitos</b> de un apóstol?</h2>
+    <p class="lede rv" data-d="2">
+      No los define una convención, un seminario ni una imposición de manos. Los define la Escritura.
+      Y la Escritura exige <b>tres cosas</b> — las tres imposibles para cualquier persona viva hoy.
+    </p>
+  </div>
+</section>
 
-    <!-- Requisito I -->
-    <div class="req">
-      <div class="req-illu illu rv">
-        <img src="img/llamado.jpg" alt="Los discípulos escuchando a Jesús">
-      </div>
+<!-- Requisito I -->
+<div class="req req--crimson">
+  <span class="ghost">I</span>
+  <div class="wrap">
+    <div class="req-grid">
       <div>
-        <div class="req-num rv">I</div>
-        <h3 class="rv" data-d="1">Haber sido <em>testigo ocular</em> de Cristo después de su resurrección</h3>
-        <p class="req-arg rv" data-d="2">
+        <span class="num rv">Requisito I</span>
+        <h3 class="rv" data-d="1">Haber sido <b>testigo ocular</b> de Cristo después de su resurrección</h3>
+        <p class="arg rv" data-d="2">
           Este fue el criterio de Pedro para llenar la vacante de Judas: el sustituto tenía que
-          <strong>haber visto al Señor resucitado</strong>. Sin ese testimonio presencial, no hay apostolado.
+          <b>haber visto al Señor resucitado</b>. Sin ese testimonio presencial, no hay apostolado.
         </p>
-        <div class="verse rv" data-d="2"><span class="vref">Hechos 1:22</span><span class="vtext">«…comenzando desde el bautismo de Juan hasta el día en que de entre nosotros fue recibido arriba, <strong>uno sea hecho testigo con nosotros, de su resurrección</strong>.»</span></div>
-        <div class="verse rv" data-d="3"><span class="vref">Hechos 10:39-41</span><span class="vtext">«Y nosotros somos testigos de todas las cosas que Jesús hizo en la tierra de Judea y en Jerusalén; a quien mataron colgándole en un madero. A éste levantó Dios al tercer día, e hizo que se manifestase; no a todo el pueblo, sino <strong>a los testigos que Dios había ordenado de antemano, a nosotros que comimos y bebimos con él después que resucitó</strong> de los muertos.»</span></div>
-        <div class="verse rv" data-d="3"><span class="vref">1 Corintios 9:1</span><span class="vtext">«¿No soy apóstol? ¿No soy libre? <strong>¿No he visto a Jesús el Señor nuestro?</strong> ¿No sois vosotros mi obra en el Señor?»</span></div>
+        <div class="vc rv" data-d="2"><span class="ref">Hechos 1:22</span><span class="txt">«…comenzando desde el bautismo de Juan hasta el día en que de entre nosotros fue recibido arriba, <b>uno sea hecho testigo con nosotros, de su resurrección</b>.»</span></div>
+        <div class="vc rv" data-d="3"><span class="ref">1 Corintios 9:1</span><span class="txt">«¿No soy apóstol? ¿No soy libre? <b>¿No he visto a Jesús el Señor nuestro?</b> ¿No sois vosotros mi obra en el Señor?»</span></div>
       </div>
-    </div>
-
-    <!-- Requisito II -->
-    <div class="req">
-      <div class="req-illu illu rv">
-        <img src="img/senales.jpg" alt="Pedro sana al cojo en la puerta del templo">
-      </div>
-      <div>
-        <div class="req-num rv">II</div>
-        <h3 class="rv" data-d="1">Poder comprobar su apostolado con <em>señales y milagros</em></h3>
-        <p class="req-arg rv" data-d="2">
-          Las señales no eran un espectáculo: eran las <strong>credenciales del oficio</strong>.
-          Pablo las llama, literalmente, «las señales de apóstol». Donde no hay señales de apóstol,
-          no hay apóstol.
-        </p>
-        <div class="verse rv" data-d="2"><span class="vref">Hechos 2:43</span><span class="vtext">«Y sobrevino temor a toda persona; y <strong>muchas maravillas y señales eran hechas por los apóstoles</strong>.»</span></div>
-        <div class="verse rv" data-d="3"><span class="vref">Hechos 5:12</span><span class="vtext">«Y <strong>por la mano de los apóstoles se hacían muchas señales y prodigios</strong> en el pueblo; y estaban todos unánimes en el pórtico de Salomón.»</span></div>
-        <div class="verse rv" data-d="3"><span class="vref">2 Corintios 12:12</span><span class="vtext">«Con todo, <strong>las señales de apóstol</strong> han sido hechas entre vosotros en toda paciencia, por señales, prodigios y milagros.»</span></div>
-        <div class="verse rv" data-d="3"><span class="vref">Hebreos 2:3-4</span><span class="vtext">«¿Cómo escaparemos nosotros, si descuidamos una salvación tan grande? La cual, habiendo sido anunciada primeramente por el Señor, nos fue confirmada por los que oyeron, <strong>testificando Dios juntamente con ellos, con señales y prodigios y diversos milagros</strong> y repartimientos del Espíritu Santo según su voluntad.»</span></div>
-      </div>
-    </div>
-
-    <!-- Requisito III -->
-    <div class="req">
-      <div class="req-illu illu rv">
-        <img src="img/matias.jpg" alt="Los apóstoles echando suertes para elegir a Matías">
-      </div>
-      <div>
-        <div class="req-num rv">III</div>
-        <h3 class="rv" data-d="1">Haber sido <em>escogido personalmente</em> por el Señor Jesucristo</h3>
-        <p class="req-arg rv" data-d="2">
-          Ni congregación, ni concilio, ni otro apóstol: <strong>Cristo mismo eligió a cada uno</strong>.
-          Hasta para llenar la vacante de Judas, la iglesia oró y echó suertes — porque la elección
-          era del Señor, no de ellos.
-        </p>
-        <div class="verse rv" data-d="2"><span class="vref">Marcos 3:14</span><span class="vtext">«Y <strong>estableció a doce</strong>, para que estuviesen con él, y para enviarlos a predicar.»</span></div>
-        <div class="verse rv" data-d="3"><span class="vref">Lucas 6:13</span><span class="vtext">«Y cuando era de día, <strong>llamó a sus discípulos, y escogió a doce de ellos</strong>, a los cuales también llamó apóstoles.»</span></div>
-        <div class="verse rv" data-d="3"><span class="vref">Hechos 1:24</span><span class="vtext">«Y orando, dijeron: <strong>Tú, Señor, que conoces los corazones de todos, muestra cuál de estos dos has escogido</strong>.»</span></div>
-        <div class="verse rv" data-d="3"><span class="vref">Gálatas 1:1</span><span class="vtext">«Pablo, apóstol (<strong>no de hombres ni por hombre</strong>, sino por Jesucristo y por Dios el Padre que lo resucitó de los muertos).»</span></div>
+      <div class="rv" data-d="2">
+        <img class="img" src="img/d-testigo.jpg" alt="El Cristo resucitado apareciéndose a sus discípulos">
+        <div class="cap">«A nosotros que comimos y bebimos con él después que resucitó» — Hechos 10:41</div>
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- Requisito II -->
+<div class="req req--navy">
+  <span class="ghost">II</span>
+  <div class="wrap">
+    <div class="req-grid">
+      <div class="rv" data-d="2" style="order:2">
+        <img class="img" src="img/d-senales.jpg" alt="Pedro sana al cojo en la puerta del templo">
+        <div class="cap">«Muchas maravillas y señales eran hechas por los apóstoles» — Hechos 2:43</div>
+      </div>
+      <div style="order:1">
+        <span class="num rv">Requisito II</span>
+        <h3 class="rv" data-d="1">Poder comprobar su apostolado con <b>señales y milagros</b></h3>
+        <p class="arg rv" data-d="2">
+          Las señales no eran un espectáculo: eran las <b>credenciales del oficio</b>.
+          Pablo las llama, literalmente, «las señales de apóstol». Donde no hay señales de apóstol,
+          no hay apóstol.
+        </p>
+        <div class="vc rv" data-d="2"><span class="ref">Hechos 2:43</span><span class="txt">«Y sobrevino temor a toda persona; y <b>muchas maravillas y señales eran hechas por los apóstoles</b>.»</span></div>
+        <div class="vc rv" data-d="3"><span class="ref">2 Corintios 12:12</span><span class="txt">«Con todo, <b>las señales de apóstol</b> han sido hechas entre vosotros en toda paciencia, por señales, prodigios y milagros.»</span></div>
+        <div class="vc rv" data-d="3"><span class="ref">Hebreos 2:3-4</span><span class="txt">«…nos fue confirmada por los que oyeron, <b>testificando Dios juntamente con ellos, con señales y prodigios y diversos milagros</b> y repartimientos del Espíritu Santo según su voluntad.»</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Requisito III -->
+<div class="req req--gold">
+  <span class="ghost">III</span>
+  <div class="wrap">
+    <div class="req-grid">
+      <div>
+        <span class="num rv">Requisito III</span>
+        <h3 class="rv" data-d="1">Haber sido <b>escogido personalmente</b> por el Señor Jesucristo</h3>
+        <p class="arg rv" data-d="2">
+          Ni congregación, ni concilio, ni otro apóstol: <b>Cristo mismo eligió a cada uno</b>.
+          Hasta para llenar la vacante de Judas, la iglesia oró y echó suertes — porque la elección
+          era del Señor, no de ellos.
+        </p>
+        <div class="vc rv" data-d="2"><span class="ref">Lucas 6:13</span><span class="txt">«Y cuando era de día, <b>llamó a sus discípulos, y escogió a doce de ellos</b>, a los cuales también llamó apóstoles.»</span></div>
+        <div class="vc rv" data-d="3"><span class="ref">Hechos 1:24</span><span class="txt">«Y orando, dijeron: <b>Tú, Señor, que conoces los corazones de todos, muestra cuál de estos dos has escogido</b>.»</span></div>
+        <div class="vc rv" data-d="3"><span class="ref">Gálatas 1:1</span><span class="txt">«Pablo, apóstol (<b>no de hombres ni por hombre</b>, sino por Jesucristo y por Dios el Padre que lo resucitó de los muertos).»</span></div>
+      </div>
+      <div class="rv" data-d="2">
+        <img class="img" src="img/d-eleccion.jpg" alt="Los apóstoles echando suertes para elegir a Matías">
+        <div class="cap">«Y les echaron suertes, y la suerte cayó sobre Matías» — Hechos 1:26</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ============ EL ÚLTIMO ============ -->
 <section class="ultimo" id="ultimo">
   <div class="wrap">
-    <div class="section-head">
-      <div class="kicker rv">El cerrojo</div>
-      <h2 class="display rv" data-d="1">Pablo fue el <em>último</em> en ver a Cristo resucitado</h2>
-      <p class="lede rv" data-d="2">
-        El requisito de testigo ocular no quedó abierto. Pablo mismo registra la lista completa
-        de apariciones del Cristo resucitado — y se coloca al final, como el último de todos.
-      </p>
-    </div>
+    <div class="kicker rv">El cerrojo</div>
+    <h2 class="rv" data-d="1">Pablo fue el <b>último</b> en ver a Cristo resucitado</h2>
+    <p class="lede rv" data-d="2">
+      El requisito de testigo ocular no quedó abierto. Pablo mismo registra la lista completa de
+      apariciones del Cristo resucitado — y se coloca al final, <b>como el último de todos</b>.
+    </p>
     <div class="ultimo-grid">
-      <div>
-        <div class="illu rv" style="aspect-ratio:16/11">
-          <img src="img/damasco.jpg" alt="La conversión de Pablo en el camino a Damasco">
-        </div>
-        <div class="illu-cap" style="color:rgba(246,239,226,.6)">«Repentinamente le rodeó un resplandor de luz del cielo» — Hechos 9:3</div>
+      <div class="rv">
+        <img class="img" src="img/d-damasco.jpg" alt="Saulo cae del caballo ante la luz del cielo en el camino a Damasco">
+        <div class="cap">«Repentinamente le rodeó un resplandor de luz del cielo» — Hechos 9:3</div>
         <p class="ultimo-arg rv" data-d="2">
-          Pablo no era de los doce. Fue llamado <strong>después</strong> de la ascensión, en el
-          camino a Damasco. Pero mira cómo fue elegido: <span class="gd">Cristo mismo</span> le
-          apareció, lo derribó con luz del cielo, y lo llamó
-          <span class="gd">«instrumento escogido»</span> (Hechos 9:15). Cumplió los tres requisitos
-          — y él mismo cerró la lista: <span class="gd">«al último de todos… me apareció a mí»</span>.
+          Pablo no era de los doce. Fue llamado <b>después</b> de la ascensión, en el camino a Damasco.
+          Pero mira cómo fue elegido: <span class="gd">Cristo mismo</span> le apareció, lo derribó con
+          luz del cielo, y lo llamó <span class="gd">«instrumento escogido»</span> (Hechos 9:15).
+          Cumplió los tres requisitos — y él mismo cerró la lista:
+          <span class="gd">«al último de todos… me apareció a mí»</span>.
         </p>
       </div>
       <div>
         <div class="timeline rv" data-d="1">
-          <div class="tl-item"><span class="tl-ref">1 Co 15:5</span><span class="tl-txt">«…apareció a <strong>Cefas</strong>, y después a <strong>los doce</strong>.»</span></div>
-          <div class="tl-item"><span class="tl-ref">1 Co 15:6</span><span class="tl-txt">«Después apareció a <strong>más de quinientos hermanos</strong> a la vez, de los cuales muchos viven aún, y otros ya duermen.»</span></div>
-          <div class="tl-item"><span class="tl-ref">1 Co 15:7</span><span class="tl-txt">«Después apareció a <strong>Jacobo</strong>; después a <strong>todos los apóstoles</strong>.»</span></div>
-          <div class="tl-item"><span class="tl-ref">1 Co 15:8</span><span class="tl-txt">«Y <strong>al último de todos</strong>, como a un abortivo, <strong>me apareció a mí</strong>.»</span></div>
+          <div class="tl"><span class="ref">1 Co 15:5</span><span class="txt">«…apareció a <b>Cefas</b>, y después a <b>los doce</b>.»</span></div>
+          <div class="tl"><span class="ref">1 Co 15:6</span><span class="txt">«Después apareció a <b>más de quinientos hermanos</b> a la vez, de los cuales muchos viven aún, y otros ya duermen.»</span></div>
+          <div class="tl"><span class="ref">1 Co 15:7</span><span class="txt">«Después apareció a <b>Jacobo</b>; después a <b>todos los apóstoles</b>.»</span></div>
+          <div class="tl"><span class="ref">1 Co 15:8</span><span class="txt">«Y <b>al último de todos</b>, como a un abortivo, <b>me apareció a mí</b>.»</span></div>
         </div>
         <div class="tl-final rv" data-d="2">
-          <p>«Y <strong>al último de todos</strong>, como a un abortivo, me apareció a mí.»<br>
-          <span style="font-family:var(--label);font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--gold-soft);font-style:normal">1 CORINTIOS 15:8 · RVR1960</span></p>
+          <p>«Y al último de todos, como a un abortivo, me apareció a mí.»</p>
+          <span class="ref">1 Corintios 15:8 · RVR1960</span>
         </div>
         <p class="ultimo-arg rv" data-d="3">
-          Pablo no dice «el penúltimo». No dice «uno más en la fila». Dice
-          <strong>«el último de todos»</strong>. Si el requisito de haber visto al Cristo resucitado
-          se agotó en Pablo, <span class="gd">el oficio apostólico está cerrado</span> — y ninguna
-          «unción» moderna puede reabrirlo.
+          Pablo no dice «el penúltimo». No dice «uno más en la fila». Dice <b>«el último de todos»</b>.
+          Si el requisito de haber visto al Cristo resucitado se agotó en Pablo,
+          <span class="gd">el oficio apostólico está cerrado</span> — y ninguna «unción» moderna puede reabrirlo.
         </p>
       </div>
     </div>
@@ -641,79 +677,86 @@ footer{background:#1f1811;color:rgba(246,239,226,.7);padding:clamp(50px,8vh,80px
 <!-- ============ EFESIOS 4:11 ============ -->
 <section class="efesios" id="efesios">
   <div class="wrap">
-    <div class="ef-top">
-      <div>
-        <div class="kicker rv">El versículo que usan para justificarse</div>
-        <h2 class="display rv" data-d="1">«Y él mismo constituyó a unos, <em>apóstoles</em>…»</h2>
-        <p class="lede rv" data-d="2">
-          Efesios 4:11. Lo citan en cada «consagración apostólica.» Pero cortan el versículo en dos —
-          y esconden lo que sigue.
-        </p>
-      </div>
-      <div class="rv" data-d="2">
-        <div class="illu" style="aspect-ratio:16/11">
-          <img src="img/pablo-escribiendo.jpg" alt="Pablo escribiendo sus epístolas">
-        </div>
-        <div class="illu-cap" style="color:rgba(246,239,226,.6)">Pablo, escribiendo a las iglesias — el apóstol que cerró la lista</div>
-      </div>
-    </div>
+    <div class="kicker rv">El versículo que usan para justificarse</div>
+    <h2 class="rv" data-d="1">«Y él mismo constituyó a unos, <b>apóstoles</b>…»</h2>
+    <p class="lede rv" data-d="2">
+      Efesios 4:11. Lo citan en cada «consagración apostólica.» Pero cortan el versículo en dos —
+      y esconden lo que sigue.
+    </p>
 
     <div class="ef-cards rv" data-d="2">
       <div class="ef-card theirs">
-        <span class="ef-tag">Lo que citan ellos</span>
+        <span class="ef-tag">✂ Lo que citan ellos</span>
         <p class="ef-quote">«Y él mismo constituyó a unos, apóstoles; a otros, profetas; a otros, evangelistas; a otros, pastores y maestros…»</p>
-        <span class="ef-foot">EFESIOS 4:11 — CORTADO AQUÍ ✂</span>
+        <span class="ef-foot">Efesios 4:11 — cortado aquí</span>
       </div>
       <div class="ef-card truth">
-        <span class="ef-tag">Lo que dice el texto completo</span>
+        <span class="ef-tag">✓ Lo que dice el texto completo</span>
         <p class="ef-quote">«…a fin de perfeccionar a los santos para la obra del ministerio, para la edificación del cuerpo de Cristo, <span class="gold">hasta que todos lleguemos</span> a la unidad de la fe y del conocimiento del Hijo de Dios…»</p>
-        <span class="ef-foot">EFESIOS 4:12-13 — EL «HASTA» QUE ESCONDEN</span>
+        <span class="ef-foot">Efesios 4:12-13 — el «hasta» que esconden</span>
       </div>
     </div>
 
     <p class="ef-arg rv" data-d="2">
       Ese <span class="gd">«hasta»</span> lo cambia todo. Los dones de Efesios 4:11 no son una lista
-      de oficios que se repiten en cada generación: fueron dados para el período
-      <strong>fundacional</strong> — <span class="gd">hasta</span> que la iglesia llegara a la madurez.
-      Citar el versículo 11 sin el 13 es como citar «y les dio de comer» y esconder «y quedaron saciados.»
+      de oficios que se repiten en cada generación: fueron dados para el período <b>fundacional</b> —
+      <span class="gd">hasta</span> que la iglesia llegara a la madurez. Citar el versículo 11 sin el 13
+      es como citar «y les dio de comer» y esconder «y quedaron saciados.»
     </p>
 
-    <div class="ef-pablo-head rv">
+    <div class="ef-sub rv">
       <div class="kicker">«¿Y Pablo? Él tampoco era de los 12»</div>
-      <h3>Sí. Y por eso mismo fue <em>el último</em></h3>
+      <h3>Sí. Y por eso mismo fue <b>el último</b></h3>
     </div>
-    <div class="ef-pablo-grid rv" data-d="1">
-      <div class="ef-pcell"><span class="lab">Cristo lo eligió personalmente</span><p>«Ve, porque instrumento escogido me es éste, para llevar mi nombre en presencia de los gentiles…»</p><span class="ref">HECHOS 9:15</span></div>
-      <div class="ef-pcell"><span class="lab">Vio al Señor resucitado</span><p>«El Dios de nuestros padres te ha escogido para que conozcas su voluntad, y veas al Justo, y oigas la voz de su boca.»</p><span class="ref">HECHOS 22:14</span></div>
-      <div class="ef-pcell"><span class="lab">No recibió el evangelio de hombres</span><p>«…yo ni lo recibí ni lo aprendí de hombre alguno, sino por revelación de Jesucristo.»</p><span class="ref">GÁLATAS 1:12</span></div>
-      <div class="ef-pcell"><span class="lab">Apartado desde el vientre</span><p>«…Dios, que me apartó desde el vientre de mi madre, y me llamó por su gracia…»</p><span class="ref">GÁLATAS 1:15</span></div>
+    <div class="ef-pgrid rv" data-d="1">
+      <div class="ef-pcell"><span class="lab">Cristo lo eligió personalmente</span><p>«Ve, porque instrumento escogido me es éste, para llevar mi nombre en presencia de los gentiles…»</p><span class="ref">Hechos 9:15</span></div>
+      <div class="ef-pcell"><span class="lab">Vio al Señor resucitado</span><p>«El Dios de nuestros padres te ha escogido para que conozcas su voluntad, y veas al Justo, y oigas la voz de su boca.»</p><span class="ref">Hechos 22:14</span></div>
+      <div class="ef-pcell"><span class="lab">No recibió el evangelio de hombres</span><p>«…yo ni lo recibí ni lo aprendí de hombre alguno, sino por revelación de Jesucristo.»</p><span class="ref">Gálatas 1:12</span></div>
+      <div class="ef-pcell"><span class="lab">Apartado desde el vientre</span><p>«…Dios, que me apartó desde el vientre de mi madre, y me llamó por su gracia…»</p><span class="ref">Gálatas 1:15</span></div>
     </div>
 
     <p class="ef-arg rv" data-d="2">
-      Pablo cumplió los <strong>tres requisitos</strong>: vio a Cristo resucitado (Hechos 9:3-6),
-      hizo señales de apóstol (2 Corintios 12:12), y fue escogido por Cristo mismo —
-      <span class="gd">«no de hombres ni por hombre»</span> (Gálatas 1:1). Y él mismo cerró la lista:
-      <span class="gd">«al último de todos… me apareció a mí»</span> (1 Corintios 15:8).
-      Pablo no fue un precedente para apóstoles nuevos: <strong>fue el cerrojo.</strong>
+      Pablo cumplió los <b>tres requisitos</b>: vio a Cristo resucitado (Hechos 9:3-6), hizo señales
+      de apóstol (2 Corintios 12:12), y fue escogido por Cristo mismo — <span class="gd">«no de hombres
+      ni por hombre»</span> (Gálatas 1:1). Pablo no fue un precedente para apóstoles nuevos:
+      <b>fue el cerrojo.</b>
     </p>
 
-    <div class="ef-others-head rv">
+    <div class="ef-pablo rv" data-d="2">
+      <div>
+        <img src="img/d-pablo.jpg" alt="Pablo escribe sus epístolas a la luz de una lámpara de aceite">
+        <div class="cap">«…escribiendo estas cosas para que sepáis cómo debes conducirte» — 1 Timoteo 3:15</div>
+      </div>
+      <div>
+        <div class="kicker">El que cerró la lista</div>
+        <h3 style="font-family:var(--display);font-weight:800;font-size:clamp(26px,3.6vw,42px);letter-spacing:-.02em;line-height:1.05;margin-top:12px">
+          Pablo no dejó el oficio <b style="color:var(--gold-bright)">abierto</b>. Lo dejó <b style="color:var(--gold-bright)">cerrado</b>.
+        </h3>
+        <p style="font-size:17px;line-height:1.75;color:rgba(246,242,233,.85);margin-top:16px;max-width:56ch">
+          El que más escribió sobre el apostolado fue también el que se declaró
+          <b style="color:var(--paper)">«el último de todos»</b>. Sus cartas — las que hoy se usan
+          para reclamar el título — son las mismas que registran que la lista terminó con él.
+        </p>
+      </div>
+    </div>
+
+    <div class="ef-sub rv">
       <div class="kicker">¿Y los otros «apóstoles» de la Biblia?</div>
-      <h3>Cada caso <em>confirma</em> la regla</h3>
+      <h3>Cada caso <b>confirma</b> la regla</h3>
     </div>
     <div class="rv" data-d="1">
-      <div class="ef-other"><span class="vref">Hechos 1:26</span><span class="vtext"><strong>Matías</strong> — Cumplía Hechos 1:22: estuvo con ellos desde el bautismo de Juan. La iglesia oró y echó suertes porque <span class="said">la elección era del Señor</span>, no de ellos.</span></div>
-      <div class="ef-other"><span class="vref">Hechos 14:14</span><span class="vtext"><strong>Bernabás</strong> — Estuvo con los apóstoles desde el principio (Hechos 4:36-37, 9:27). Testigo ocular del ministerio de Cristo.</span></div>
-      <div class="ef-other"><span class="vref">Gálatas 1:19</span><span class="vtext"><strong>Jacobo, hermano del Señor</strong> — Vio a Cristo resucitado (1 Corintios 15:7). Testigo ocular.</span></div>
-      <div class="ef-other"><span class="vref">2 Corintios 8:23</span><span class="vtext"><strong>«Mensajeros de las iglesias»</strong> — Aquí «apóstol» se usa en su sentido griego original: <span class="said">enviado, mensajero</span>. No es el oficio apostólico de los 12 + Pablo.</span></div>
+      <div class="ef-other"><span class="ref">Hechos 1:26</span><span class="txt"><b>Matías</b> — Cumplía Hechos 1:22: estuvo con ellos desde el bautismo de Juan. La iglesia oró y echó suertes porque <b>la elección era del Señor</b>, no de ellos.</span></div>
+      <div class="ef-other"><span class="ref">Hechos 14:14</span><span class="txt"><b>Bernabás</b> — Estuvo con los apóstoles desde el principio (Hechos 4:36-37, 9:27). Testigo ocular del ministerio de Cristo.</span></div>
+      <div class="ef-other"><span class="ref">Gálatas 1:19</span><span class="txt"><b>Jacobo, hermano del Señor</b> — Vio a Cristo resucitado (1 Corintios 15:7). Testigo ocular.</span></div>
+      <div class="ef-other"><span class="ref">2 Corintios 8:23</span><span class="txt"><b>«Mensajeros de las iglesias»</b> — Aquí «apóstol» se usa en su sentido griego original: <b>enviado, mensajero</b>. No es el oficio apostólico de los 12 + Pablo.</span></div>
     </div>
 
     <p class="ef-close rv" data-d="2">
-      <strong>Ninguno</strong> fue «ungido» por otro hombre en una plataforma. Todos fueron llamados
-      por Cristo o cumplían los requisitos de testigo ocular. Y los cimientos están completos:
+      <b>Ninguno</b> fue «ungido» por otro hombre en una plataforma. Todos fueron llamados por Cristo
+      o cumplían los requisitos de testigo ocular. Y los cimientos están completos:
       <span class="gd">«los doce nombres de los doce apóstoles del Cordero»</span> (Apocalipsis 21:14).
-      Número fijo. Cerrado. <strong>Si alguien hoy te dice que Efesios 4:11 le da derecho al título
-      de apóstol, pregúntale por qué no te cita también el versículo 13.</strong>
+      Número fijo. Cerrado. <b>Si alguien hoy te dice que Efesios 4:11 le da derecho al título de
+      apóstol, pregúntale por qué no te cita también el versículo 13.</b>
     </p>
   </div>
 </section>
@@ -721,113 +764,78 @@ footer{background:#1f1811;color:rgba(246,239,226,.7);padding:clamp(50px,8vh,80px
 <!-- ============ POR QUÉ HOY NO ============ -->
 <section class="porque" id="porque">
   <div class="wrap">
-    <div class="porque-grid">
-      <div class="porque-sticky">
-        <div class="kicker rv">Para el que busca el título</div>
-        <h2 class="display rv" data-d="1">¿Por qué <em>hoy</em> no te pueden ungir apóstol?</h2>
-        <p class="lede rv" data-d="2">
-          Hoy abundan los pastores que quieren <strong>un título por encima de los demás pastores</strong>:
-          se hacen llamar «apóstoles», buscan que se les rinda el trato del oficio más alto, y reciben
-          «unciones apostólicas» de manos de otros hombres. Este estudio es para ustedes.
-          <strong>No es un ataque: es un espejo.</strong>
-        </p>
-      </div>
-      <div>
-        <div class="razon rv">
-          <div class="razon-n">1</div>
-          <div>
-            <h4>Porque el oficio era <em>fundacional</em> — y un fundamento se pone una sola vez</h4>
-            <p>La iglesia fue edificada <strong>sobre</strong> el fundamento de los apóstoles y profetas, siendo la principal piedra del ángulo Jesucristo mismo. No se pone fundamento dos veces.</p>
-            <span class="si-ref">Efesios 2:20</span>
-          </div>
-        </div>
-        <div class="razon rv" data-d="1">
-          <div class="razon-n">2</div>
-          <div>
-            <h4>Porque el <em>último testigo</em> ya fue llamado — y lo dijo él mismo</h4>
-            <p>El requisito de haber visto al Señor resucitado se agotó en Pablo: <strong>«al último de todos… me apareció a mí.»</strong> La lista de apariciones que legitiman el oficio está cerrada.</p>
-            <span class="si-ref">1 Corintios 15:8</span>
-          </div>
-        </div>
-        <div class="razon rv" data-d="1">
-          <div class="razon-n">3</div>
-          <div>
-            <h4>Porque los requisitos <em>no se votan</em>, no se negocian y no se cambian</h4>
-            <p>La fe fue dada <strong>una vez</strong> a los santos: no hay revelación nueva que abra de nuevo lo que la Escritura cerró. Ninguna «nueva unción» puede derogar un requisito bíblico.</p>
-            <span class="si-ref">Judas 1:3 · Hebreos 1:1-2</span>
-          </div>
-        </div>
-        <div class="razon rv" data-d="2">
-          <div class="razon-n">4</div>
-          <div>
-            <h4>Porque el título <em>no se toma</em>: se recibe — y solo de Cristo</h4>
-            <p>Ni congregación, ni concilio, ni otro «apóstol» puede otorgar el oficio: el oficio solo lo otorga el Señor Jesucristo, y Él ya escogió a los Suyos.</p>
-            <span class="si-ref">Gálatas 1:1 · Hechos 1:24</span>
-          </div>
-        </div>
-        <div class="razon rv" data-d="2">
-          <div class="razon-n">5</div>
-          <div>
-            <h4>Porque buscar <em>títulos de grandeza</em> es contrario al evangelio</h4>
-            <p>Cristo reprendió exactamente esa ambición: no busquéis que os llamen con títulos de superioridad, porque <strong>el que se enaltece será humillado, y el que se humilla será enaltecido.</strong></p>
-            <span class="si-ref">Mateo 23:8-12</span>
-          </div>
-        </div>
-        <div class="razon rv" data-d="3">
-          <div class="razon-n">6</div>
-          <div>
-            <h4>Porque la iglesia tiene el deber de <em>probarlos</em> — y los ha hallado mentirosos</h4>
-            <p>La iglesia de Éfeso <strong>probó a los que se dicen ser apóstoles, y no lo son, y los halló mentirosos.</strong> Y Pablo no anduvo con rodeos: existen <strong>falsos apóstoles</strong> — y su fin será conforme a sus obras. Reclamar el título sin los requisitos no es un exceso de fe: la Escritura lo llama mentira y disfraz.</p>
-            <span class="si-ref">Apocalipsis 2:2 · 2 Corintios 11:13-15</span>
-          </div>
-        </div>
-        <div class="razon rv" data-d="3">
-          <div class="razon-n">7</div>
-          <div>
-            <h4>Porque el <em>pastorado bíblico</em> ya es un llamado glorioso — no necesita un título mayor</h4>
-            <p>Apacentad la grey de Dios, <strong>no como teniendo señorío sobre los que están a vuestro cuidado, sino siendo ejemplos de la grey.</strong> El pastor fiel no necesita llamarse apóstol: necesita ser hallado fiel.</p>
-            <span class="si-ref">1 Pedro 5:1-3</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="kicker rv">Para el que busca el título</div>
+    <h2 class="rv" data-d="1">¿Por qué <b>hoy</b> no te pueden ungir apóstol?</h2>
+    <p class="lede rv" data-d="2">
+      Hoy abundan los pastores que quieren <b>un título por encima de los demás pastores</b>: se hacen
+      llamar «apóstoles», buscan que se les rinda el trato del oficio más alto, y reciben «unciones
+      apostólicas» de manos de otros hombres. Este estudio es para ustedes. <b>No es un ataque: es un espejo.</b>
+    </p>
+
+    <div class="razon rv"><span class="n">1</span><div>
+      <h4>Porque el oficio era <b>fundacional</b> — y un fundamento se pone una sola vez</h4>
+      <p>La iglesia fue edificada <b>sobre</b> el fundamento de los apóstoles y profetas, siendo la principal piedra del ángulo Jesucristo mismo. No se pone fundamento dos veces.</p>
+      <span class="si">Efesios 2:20</span>
+    </div></div>
+    <div class="razon rv" data-d="1"><span class="n">2</span><div>
+      <h4>Porque el <b>último testigo</b> ya fue llamado — y lo dijo él mismo</h4>
+      <p>El requisito de haber visto al Señor resucitado se agotó en Pablo: <b>«al último de todos… me apareció a mí.»</b> La lista de apariciones que legitiman el oficio está cerrada.</p>
+      <span class="si">1 Corintios 15:8</span>
+    </div></div>
+    <div class="razon rv" data-d="1"><span class="n">3</span><div>
+      <h4>Porque los requisitos <b>no se votan</b>, no se negocian y no se cambian</h4>
+      <p>La fe fue dada <b>una vez</b> a los santos: no hay revelación nueva que abra de nuevo lo que la Escritura cerró. Ninguna «nueva unción» puede derogar un requisito bíblico.</p>
+      <span class="si">Judas 1:3 · Hebreos 1:1-2</span>
+    </div></div>
+    <div class="razon rv" data-d="2"><span class="n">4</span><div>
+      <h4>Porque el título <b>no se toma</b>: se recibe — y solo de Cristo</h4>
+      <p>Ni congregación, ni concilio, ni otro «apóstol» puede otorgar el oficio: el oficio solo lo otorga el Señor Jesucristo, y Él ya escogió a los Suyos.</p>
+      <span class="si">Gálatas 1:1 · Hechos 1:24</span>
+    </div></div>
+    <div class="razon rv" data-d="2"><span class="n">5</span><div>
+      <h4>Porque buscar <b>títulos de grandeza</b> es contrario al evangelio</h4>
+      <p>Cristo reprendió exactamente esa ambición: no busquéis que os llamen con títulos de superioridad, porque <b>el que se enaltece será humillado, y el que se humilla será enaltecido.</b></p>
+      <span class="si">Mateo 23:8-12</span>
+    </div></div>
+    <div class="razon rv" data-d="3"><span class="n">6</span><div>
+      <h4>Porque la iglesia tiene el deber de <b>probarlos</b> — y los ha hallado mentirosos</h4>
+      <p>La iglesia de Éfeso <b>probó a los que se dicen ser apóstoles, y no lo son, y los halló mentirosos.</b> Y Pablo no anduvo con rodeos: existen <b>falsos apóstoles</b> — y su fin será conforme a sus obras. Reclamar el título sin los requisitos no es un exceso de fe: la Escritura lo llama mentira y disfraz.</p>
+      <span class="si">Apocalipsis 2:2 · 2 Corintios 11:13-15</span>
+    </div></div>
+    <div class="razon rv" data-d="3"><span class="n">7</span><div>
+      <h4>Porque el <b>pastorado bíblico</b> ya es un llamado glorioso — no necesita un título mayor</h4>
+      <p>Apacentad la grey de Dios, <b>no como teniendo señorío sobre los que están a vuestro cuidado, sino siendo ejemplos de la grey.</b> El pastor fiel no necesita llamarse apóstol: necesita ser hallado fiel.</p>
+      <span class="si">1 Pedro 5:1-3</span>
+    </div></div>
   </div>
 </section>
 
 <!-- ============ LA PRUEBA ============ -->
 <section class="prueba" id="prueba">
   <div class="wrap">
-    <div class="section-head">
-      <div class="kicker rv">Aplicación directa</div>
-      <h2 class="display rv" data-d="1">La prueba: ¿los cumple tu <em>«apóstol»</em>?</h2>
-      <p class="lede rv" data-d="2">
-        Marca cada casilla solo si el candidato puede comprobarlo con evidencia bíblica — como la
-        exigía la iglesia de Éfeso. <strong>La carga de la prueba no es tuya: es de él.</strong>
-      </p>
-    </div>
-    <label class="check rv">
-      <input type="checkbox">
-      <span class="box"></span>
+    <div class="kicker rv">Aplicación directa</div>
+    <h2 class="rv" data-d="1">La prueba: ¿los cumple tu <b>«apóstol»</b>?</h2>
+    <p class="lede rv" data-d="2">
+      Marca cada casilla solo si el candidato puede comprobarlo con evidencia bíblica — como la exigía
+      la iglesia de Éfeso. <b>La carga de la prueba no es tuya: es de él.</b>
+    </p>
+    <label class="check rv"><input type="checkbox"><span class="box"></span>
       <span class="c-body">
-        <span class="c-title">Requisito I — <em>Testigo ocular</em></span>
+        <span class="c-title">Requisito I — <b>Testigo ocular</b></span>
         <span class="c-desc">¿Vio personalmente a Cristo resucitado, como Pedro, Jacobo y Pablo?</span>
         <span class="c-ref">Hechos 1:22 · 1 Corintios 9:1</span>
       </span>
     </label>
-    <label class="check rv" data-d="1">
-      <input type="checkbox">
-      <span class="box"></span>
+    <label class="check rv" data-d="1"><input type="checkbox"><span class="box"></span>
       <span class="c-body">
-        <span class="c-title">Requisito II — <em>Señales de apóstol</em></span>
+        <span class="c-title">Requisito II — <b>Señales de apóstol</b></span>
         <span class="c-desc">¿Puede comprobar su apostolado con señales, prodigios y milagros hechos por su mano?</span>
         <span class="c-ref">2 Corintios 12:12</span>
       </span>
     </label>
-    <label class="check rv" data-d="2">
-      <input type="checkbox">
-      <span class="box"></span>
+    <label class="check rv" data-d="2"><input type="checkbox"><span class="box"></span>
       <span class="c-body">
-        <span class="c-title">Requisito III — <em>Escogido por Cristo</em></span>
+        <span class="c-title">Requisito III — <b>Escogido por Cristo</b></span>
         <span class="c-desc">¿Fue escogido personalmente por el Señor Jesucristo — no de hombres ni por hombre?</span>
         <span class="c-ref">Gálatas 1:1 · Hechos 1:24</span>
       </span>
@@ -836,7 +844,7 @@ footer{background:#1f1811;color:rgba(246,239,226,.7);padding:clamp(50px,8vh,80px
       <h3>Ningún hombre vivo hoy puede marcar las tres casillas.</h3>
       <p>Y si no puede marcarlas, no es apóstol — sin importar cuántas «unciones» haya recibido,
       cuántos lo llamen así, o cuántas iglesias lo consagren. La Escritura ya lo dijo:
-      <strong>«los has hallado mentirosos.»</strong></p>
+      <b>«los has hallado mentirosos.»</b></p>
     </div>
   </div>
 </section>
@@ -844,34 +852,31 @@ footer{background:#1f1811;color:rgba(246,239,226,.7);padding:clamp(50px,8vh,80px
 <!-- ============ ADVERTENCIA ============ -->
 <section class="advertencia" id="advertencia">
   <div class="wrap">
-    <div class="section-head">
-      <div class="kicker rv">La advertencia final</div>
-      <h2 class="display rv" data-d="1">Sirven de <em>tropiezo</em> a los que quieren ser salvos</h2>
-    </div>
+    <div class="kicker rv">La advertencia final</div>
+    <h2 class="rv" data-d="1">Sirven de <b>tropiezo</b> a los que quieren ser salvos</h2>
     <div class="adv-grid">
       <div>
-        <div class="verse rv"><span class="vref">2 Corintios 11:13-15</span><span class="vtext">«Porque éstos son <strong>falsos apóstoles, obreros fraudulentos</strong>, que se disfrazan como apóstoles de Cristo. Y no es maravilla, porque el mismo Satanás se disfraza como ángel de luz. Así que, no es extraño si también sus ministros se disfrazan como ministros de justicia; <strong>cuyo fin será conforme a sus obras</strong>.»</span></div>
-        <div class="verse rv" data-d="1"><span class="vref">Apocalipsis 2:2</span><span class="vtext">«Yo conozco tus obras, y tu arduo trabajo y paciencia; y que no puedes soportar a los malos, y <strong>has probado a los que se dicen ser apóstoles, y no lo son, y los has hallado mentirosos</strong>.»</span></div>
+        <div class="vc rv"><span class="ref">2 Corintios 11:13-15</span><span class="txt">«Porque éstos son <b>falsos apóstoles, obreros fraudulentos</b>, que se disfrazan como apóstoles de Cristo. Y no es maravilla, porque el mismo Satanás se disfraza como ángel de luz. Así que, no es extraño si también sus ministros se disfrazan como ministros de justicia; <b>cuyo fin será conforme a sus obras</b>.»</span></div>
+        <div class="vc rv" data-d="1"><span class="ref">Apocalipsis 2:2</span><span class="txt">«Yo conozco tus obras, y tu arduo trabajo y paciencia; y que no puedes soportar a los malos, y <b>has probado a los que se dicen ser apóstoles, y no lo son, y los has hallado mentirosos</b>.»</span></div>
       </div>
       <div>
-        <div class="verse rv"><span class="vref">1 Corintios 10:32-33</span><span class="vtext">«No seáis tropiezo ni a judíos, ni a gentiles, ni a la iglesia de Dios; como también yo en todas las cosas agrado a todos, no procurando mi propio beneficio, sino el de muchos, <strong>para que sean salvos</strong>.»</span></div>
-        <div class="verse rv" data-d="1"><span class="vref">1 Corintios 8:9</span><span class="vtext">«Pero mirad que esta libertad vuestra <strong>no venga a ser tropezadero para los débiles</strong>.»</span></div>
+        <div class="vc rv"><span class="ref">1 Corintios 10:32-33</span><span class="txt">«No seáis tropiezo ni a judíos, ni a gentiles, ni a la iglesia de Dios; como también yo en todas las cosas agrado a todos, no procurando mi propio beneficio, sino el de muchos, <b>para que sean salvos</b>.»</span></div>
+        <div class="vc rv" data-d="1"><span class="ref">1 Corintios 8:9</span><span class="txt">«Pero mirad que esta libertad vuestra <b>no venga a ser tropezadero para los débiles</b>.»</span></div>
         <p class="adv-arg rv" data-d="2">
           Cada título reclamado sin respaldo bíblico es una <span class="gd">piedra de tropiezo</span>
           en el camino de los sencillos que quieren ser salvos. El rebaño no necesita apóstoles nuevos:
-          necesita <strong>pastores fieles</strong> que apacienten la grey de Dios siendo ejemplos,
-          no teniendo señorío.
+          necesita <b>pastores fieles</b> que apacienten la grey de Dios siendo ejemplos, no teniendo señorío.
         </p>
       </div>
     </div>
-    <div class="pastor-call rv" data-d="2">
+    <div class="pastor rv" data-d="2">
       <h3>Si eres pastor y buscas el título de apóstol…</h3>
       <p>
         El pastorado bíblico ya es un llamado glorioso. No necesitas un título mayor para servir a
-        Cristo con autoridad: necesitas <strong>ser hallado fiel</strong>. Deja que el título de
-        apóstol descanse donde la Escritura lo dejó — con los que vieron al Señor resucitado.
+        Cristo con autoridad: necesitas <b>ser hallado fiel</b>. Deja que el título de apóstol descanse
+        donde la Escritura lo dejó — con los que vieron al Señor resucitado.
       </p>
-      <div class="verse"><span class="vref">1 Pedro 5:1-3</span><span class="vtext">«Apacentad la grey de Dios que está entre vosotros, cuidando de ella, no por fuerza, sino voluntariamente; no por ganancia deshonesta, sino con ánimo pronto; <strong>no como teniendo señorío sobre los que están a vuestro cuidado, sino siendo ejemplos de la grey</strong>.»</span></div>
+      <div class="vc"><span class="ref">1 Pedro 5:1-3</span><span class="txt">«Apacentad la grey de Dios que está entre vosotros, cuidando de ella, no por fuerza, sino voluntariamente; no por ganancia deshonesta, sino con ánimo pronto; <b>no como teniendo señorío sobre los que están a vuestro cuidado, sino siendo ejemplos de la grey</b>.»</span></div>
     </div>
   </div>
 </section>
@@ -881,8 +886,8 @@ footer{background:#1f1811;color:rgba(246,239,226,.7);padding:clamp(50px,8vh,80px
   <div class="wrap">
     <div class="f-grid">
       <div>
-        <div class="f-title">¿Qué es un <em>Apóstol</em>?</div>
-        <p>Estudio bíblico sobre el oficio apostólico según las Escrituras. Cada una de las referencias de este sitio fue verificada versículo por versículo contra el texto de la <strong>Reina-Valera 1960</strong>: Hechos 1:22 · 10:39-41 · 2:43 · 5:12 · 9:3-6 · 9:15 · 22:14 · 1 Corintios 9:1 · 15:5-8 · 10:32-33 · 8:9 · 2 Corintios 11:13-15 · 12:12 · 8:23 · Hebreos 2:3-4 · 1:1-2 · Marcos 3:14 · Lucas 6:13 · Gálatas 1:1 · 1:12 · 1:15 · 1:19 · Efesios 2:20 · 4:11-13 · Mateo 23:8-12 · Apocalipsis 2:2 · 21:14 · Judas 1:3 · 1 Pedro 5:1-3 · 2 Timoteo 3:16-17.</p>
+        <div class="f-title">¿QUÉ ES UN <b>APÓSTOL</b>?</div>
+        <p>Expediente doctrinal sobre el oficio apostólico según las Escrituras. Cada una de las referencias de este sitio fue verificada versículo por versículo contra el texto de la <b>Reina-Valera 1960</b>: Hechos 1:22 · 10:39-41 · 2:43 · 5:12 · 9:3-6 · 9:15 · 22:14 · 1 Corintios 9:1 · 15:5-8 · 10:32-33 · 8:9 · 2 Corintios 11:13-15 · 12:12 · 8:23 · Hebreos 2:3-4 · 1:1-2 · Marcos 3:14 · Lucas 6:13 · Gálatas 1:1 · 1:12 · 1:15 · 1:19 · Efesios 2:20 · 4:11-13 · Mateo 23:8-12 · Apocalipsis 2:2 · 21:14 · Judas 1:3 · 1 Pedro 5:1-3 · 2 Timoteo 3:16-17.</p>
       </div>
       <div>
         <div class="f-note">Texto bíblico</div>
@@ -892,16 +897,19 @@ footer{background:#1f1811;color:rgba(246,239,226,.7);padding:clamp(50px,8vh,80px
       </div>
     </div>
     <div class="f-bottom">
-      <span>¿Qué es un Apóstol? · Estudio Bíblico · RVR1960</span>
+      <span>¿Qué es un Apóstol? · Expediente doctrinal · RVR1960</span>
       <a class="f-top" href="#top">↑ Volver arriba</a>
     </div>
   </div>
 </footer>
 
 <script>
-// nav shadow on scroll
-const nav = document.getElementById('nav');
-addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+// progress bar
+const bar = document.getElementById('progress');
+addEventListener('scroll', () => {
+  const h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, {passive:true});
 
 // scroll reveal
 const io = new IntersectionObserver(entries => {
