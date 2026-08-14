@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La iglesia y el dinero — No todo es de Dios · RVR1960</title>
+<meta name="description" content="Concilios, diezmo obligatorio y competencia por recaudar: qué dice — y qué no dice — la Biblia Reina-Valera 1960. El único concilio bíblico quitó cargas; no las impuso.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5EEDF;
+  --cream-2:#EDE2C8;
+  --ink:#2E2114;
+  --ink-soft:#5C4A36;
+  --ink-faint:rgba(46,33,20,.16);
+  --sky:#2E8DBA;
+  --sky-light:#57A9CC;
+  --teal:#3E89A0;
+  --terra:#C25E22;
+  --brick:#9A4330;
+  --ochre:#D2A45F;
+  --green:#6E9A3F;
+  --night:#221812;
+  --display:'Fraunces',Georgia,serif;
+  --sans:'Satoshi',system-ui,-apple-system,sans-serif;
+  --verse:'Newsreader',Georgia,serif;
+  --shadow:7px 7px 0 rgba(46,33,20,.9);
+  --shadow-sm:4px 4px 0 rgba(46,33,20,.85);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--terra);color:var(--cream)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:var(--terra)}
+
+/* ══ NAV ══ */
+.nav{position:fixed;top:18px;right:clamp(16px,3.5vw,44px);z-index:50;display:flex;align-items:center;gap:clamp(12px,2vw,22px);
+  padding:9px 12px 9px clamp(16px,2.2vw,26px);border-radius:999px;
+  background:var(--cream);border:2px solid var(--ink);box-shadow:var(--shadow-sm);transition:transform .35s,box-shadow .35s}
+.nav.scrolled{transform:translateY(-2px);box-shadow:6px 6px 0 rgba(46,33,20,.9)}
+.nav a{font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:color .25s;white-space:nowrap}
+.nav a:hover{color:var(--terra)}
+.nav .home{color:var(--teal)}
+
+main{position:relative;z-index:5}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
+
+/* ══ HERO ═ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#3E89A0 0%,#2E8DBA 60%,#57A9CC 100%);padding:clamp(110px,16vh,170px) 0 clamp(70px,10vh,110px)}
+.hero .wrap{position:relative;z-index:2}
+.hero .kicker{display:inline-block;font-weight:900;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);
+  background:var(--terra);border:2px solid var(--ink);border-radius:999px;padding:8px 20px;box-shadow:var(--shadow-sm);margin-bottom:26px}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(40px,7vw,84px);line-height:1.04;letter-spacing:-.02em;color:var(--cream);text-shadow:4px 4px 0 rgba(46,33,20,.85);max-width:14ch}
+.hero h1 em{font-style:italic;color:var(--ochre)}
+.hero .lead{max-width:640px;margin-top:22px;font-size:clamp(16px,2vw,19px);color:var(--cream);text-shadow:1px 1px 0 rgba(46,33,20,.5)}
+.hero .lead b{color:var(--ochre)}
+.hero .anchor{margin-top:30px;display:inline-block;max-width:560px;font-family:var(--verse);font-style:italic;font-size:clamp(17px,2.2vw,21px);
+  line-height:1.55;color:var(--ink);background:var(--cream);border:2px solid var(--ink);border-radius:14px;box-shadow:var(--shadow);padding:20px 26px}
+.hero .anchor cite{display:block;margin-top:10px;font-family:var(--sans);font-style:normal;font-weight:900;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra)}
+/* monedas cayendo de fondo */
+.coin{position:absolute;z-index:1;border-radius:50%;background:var(--ochre);border:3px solid var(--ink);opacity:.5;animation:fall linear infinite}
+.coin::after{content:"";position:absolute;inset:22%;border-radius:50%;border:2px solid rgba(46,33,20,.5)}
+@keyframes fall{from{transform:translateY(-12vh) rotate(0)}to{transform:translateY(112vh) rotate(340deg)}}
+
+/* ══ SECCIONES ══ */
+section.block{padding:clamp(64px,10vh,110px) 0}
+section.block:nth-of-type(even){background:var(--cream-2)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px}
+.sec-head .n{font-family:var(--display);font-weight:900;font-style:italic;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--terra);text-shadow:3px 3px 0 rgba(46,33,20,.85)}
+.sec-head .kick{font-weight:900;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+h2.title{font-family:var(--display);font-weight:900;font-size:clamp(30px,4.6vw,50px);line-height:1.08;letter-spacing:-.015em;margin-bottom:18px}
+h2.title em{font-style:italic;color:var(--terra)}
+p.big{font-size:clamp(16px,2vw,19px);color:var(--ink-soft);max-width:760px}
+p.big b{color:var(--ink)}
+
+/* versículo */
+.verse{margin:26px 0;background:var(--cream);border:2px solid var(--ink);border-left:8px solid var(--terra);border-radius:12px;
+  box-shadow:var(--shadow-sm);padding:20px 26px}
+section.block:nth-of-type(even) .verse{background:var(--cream)}
+.verse p{font-family:var(--verse);font-style:italic;font-size:clamp(17px,2.1vw,20px);line-height:1.6;color:var(--ink)}
+.verse cite{display:block;margin-top:10px;font-family:var(--sans);font-style:normal;font-weight:900;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra)}
+.verse.teal{border-left-color:var(--teal)}
+.verse.teal cite{color:var(--teal)}
+
+/* ilustración */
+.fig{margin:30px 0;border:2px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:var(--cream)}
+.fig img{display:block;width:100%;height:auto}
+.fig figcaption{padding:14px 22px;font-family:var(--verse);font-style:italic;font-size:15px;color:var(--ink-soft);border-top:2px solid var(--ink);background:var(--cream-2)}
+.fig figcaption b{color:var(--terra);font-family:var(--sans);font-style:normal;font-weight:900;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-right:8px}
+/* placeholder ilustración pendiente */
+.fig-ph{margin:30px 0;border:2px dashed var(--ink-faint);border-radius:16px;min-height:220px;display:flex;align-items:center;justify-content:center;
+  background:repeating-linear-gradient(45deg,transparent 0 14px,rgba(46,33,20,.045) 14px 28px)}
+.fig-ph span{font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);padding:10px 20px}
+
+/* dos columnas: dice / añadieron */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,30px);margin:28px 0}
+.duo .col{border:2px solid var(--ink);border-radius:14px;box-shadow:var(--shadow-sm);padding:24px 26px;background:var(--cream)}
+.duo .col h3{font-family:var(--display);font-weight:900;font-size:clamp(19px,2.2vw,24px);margin-bottom:12px}
+.duo .col.yes{background:#EAF0DC;border-top:8px solid var(--green)}
+.duo .col.no{background:#F3E0D3;border-top:8px solid var(--brick)}
+.duo .col ul{list-style:none;display:grid;gap:10px}
+.duo .col li{font-size:15px;color:var(--ink-soft);padding-left:26px;position:relative}
+.duo .col li::before{position:absolute;left:0;top:1px;font-weight:900}
+.duo .col.yes li::before{content:"✓";color:var(--green)}
+.duo .col.no li::before{content:"✕";color:var(--brick)}
+
+/* caja honestidad */
+.honest{margin:30px 0;background:var(--night);color:#D8C9A8;border-radius:14px;border:2px solid var(--ink);box-shadow:var(--shadow);padding:26px 30px}
+.honest h3{font-family:var(--display);font-weight:900;color:var(--ochre);font-size:clamp(18px,2.2vw,23px);margin-bottom:10px}
+.honest p{font-size:15.5px}
+.honest b{color:var(--cream)}
+
+/* checklist bereano */
+.check{display:grid;gap:16px;margin:28px 0;counter-reset:q}
+.check .item{display:flex;gap:18px;align-items:flex-start;background:var(--cream);border:2px solid var(--ink);border-radius:14px;box-shadow:var(--shadow-sm);padding:20px 24px}
+.check .item .q{counter-increment:q;flex:0 0 auto;width:44px;height:44px;border-radius:12px;border:2px solid var(--ink);background:var(--ochre);
+  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-style:italic;font-size:20px;color:var(--ink)}
+.check .item .q::before{content:counter(q)}
+.check .item h4{font-family:var(--display);font-weight:900;font-size:18px;margin-bottom:4px}
+.check .item p{font-size:14.5px;color:var(--ink-soft)}
+.check .item p i{font-family:var(--verse);color:var(--teal)}
+
+/* ══ BANDA FINAL ══ */
+.final{position:relative;background:var(--night);color:var(--cream-2);padding:clamp(70px,11vh,120px) 0;overflow:hidden;text-align:center}
+.final .stars{position:absolute;inset:0;pointer-events:none}
+.final .stars i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--ochre);opacity:0;animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:0}50%{opacity:.9}}
+.final .wrap{position:relative;z-index:2}
+.final h2{font-family:var(--display);font-weight:900;font-size:clamp(32px,5vw,56px);color:var(--cream);letter-spacing:-.015em}
+.final h2 em{font-style:italic;color:var(--ochre)}
+.final .verse{background:transparent;border:0;box-shadow:none;max-width:640px;margin:26px auto 0}
+.final .verse p{color:#D8C9A8;font-size:clamp(18px,2.3vw,22px)}
+.final .verse cite{color:var(--ochre)}
+.final .cta{display:inline-block;margin-top:34px;font-weight:900;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cream);background:var(--terra);border:2px solid var(--ochre);border-radius:10px;padding:14px 26px;text-decoration:none;box-shadow:var(--shadow-sm);transition:background .25s,transform .25s}
+.final .cta:hover{background:var(--brick);transform:translateY(-2px)}
+
+footer{background:#1A120C;color:#8A7358;padding:36px clamp(22px,5vw,56px);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12.5px;letter-spacing:.04em}
+footer b{color:var(--ochre)}
+footer a{color:var(--ochre)}
+
+/* reveals */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.coin{display:none}}
+@media(max-width:820px){
+  .duo{grid-template-columns:1fr}
+  .nav a:not(.home):not(.solid){display:none}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="nav" id="nav">
+  <a class="home" href="../">← Todos los estudios</a>
+  <a href="#concilio">El Concilio</a>
+  <a href="#dinero">El Dinero</a>
+  <a href="#discernir">Discernir</a>
+</nav>
+
+<main>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Estudio 02 · RVR1960</span>
+    <h1>La iglesia <em>y el dinero</em></h1>
+    <p class="lead">Concilios, diezmo obligatorio y competencia por recaudar. Lo que tú viste tiene nombre en la Biblia — y también tiene respuesta. <b>Empezamos por el único concilio que registra la Escritura.</b></p>
+    <blockquote class="anchor">
+      «Porque ha parecido bien al Espíritu Santo, y a nosotros, no imponeros ninguna carga más que estas cosas necesarias.»
+      <cite>Hechos 15:28 · Reina-Valera 1960</cite>
+    </blockquote>
+  </div>
+</header>
+
+<!-- ══════════ 01 · EL ÚNICO CONCILIO ══════════ -->
+<section class="block" id="concilio">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="n">01</span><span class="kick">El único concilio</span></div>
+    <h2 class="title rv">El concilio que <em>quitó</em> cargas</h2>
+    <p class="big rv">Algunos llegaron de Judea enseñando algo nuevo: <b>«si no haces esto, no puedes ser salvo»</b>. No era un detalle — era poner precio a la gracia. La iglesia no se calló: subió el caso a Jerusalén, a los apóstoles y ancianos.</p>
+
+    <div class="verse rv">
+      <p>«Entonces algunos que venían de Judea enseñaban a los hermanos: Si no os circuncidáis conforme al rito de Moisés, no podéis ser salvos.»</p>
+      <cite>Hechos 15:1</cite>
+    </div>
+
+    <p class="big rv">Y esto es lo que decidió el único concilio de la Biblia. Léelo despacio, porque es la vara con la que se mide todo concilio de hoy:</p>
+
+    <div class="verse rv">
+      <p>«Ahora, pues, ¿por qué tentáis a Dios, poniendo sobre la cerviz de los discípulos un yugo que ni nuestros padres ni nosotros hemos podido llevar? Antes creemos que por la gracia del Señor Jesús seremos salvos, de igual modo que ellos.»</p>
+      <cite>Hechos 15:10-11 · Pedro, en el concilio</cite>
+    </div>
+
+    <div class="verse teal rv">
+      <p>«Así, pues, los que fueron enviados descendieron a Antioquía, y reuniendo a la congregación, entregaron la carta; habiendo leído la cual, se regocijaron por la consolación.»</p>
+      <cite>Hechos 15:30-31</cite>
+    </div>
+
+    <p class="big rv">El resultado del concilio bíblico no fue miedo, ni cuotas, ni membresías condicionadas: fue <b>gozo</b>. Y las iglesias «eran confirmadas en la fe, y aumentaban en número cada día» (Hechos 16:5).</p>
+
+    <div class="honest rv">
+      <h3>La vara de Hechos 15</h3>
+      <p>La Biblia no condena que las iglesias se reúnan y acuerden — <b>Hechos 15 existe</b>. Lo que condena es el espíritu contrario: el concilio bíblico <b>quitó un yugo</b>; cualquier sistema que <b>imponga cargas</b> — cuotas obligatorias, salvación por requisitos, lealtad a una sede — opera en dirección opuesta al Espíritu Santo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 02 · LA ESTRUCTURA ══════════ -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="n">02</span><span class="kick">La estructura original</span></div>
+    <h2 class="title rv">Muchas iglesias, <em>una sola Cabeza</em></h2>
+    <p class="big rv">En el Nuevo Testamento no existe una sede central que cobre tributo a las congregaciones. Cada iglesia local tenía sus propios ancianos, puestos por el Espíritu, responsables directamente ante Cristo.</p>
+
+    <div class="verse rv">
+      <p>«Y constituyeron ancianos en cada iglesia, y habiendo orado con ayunos, los encomendaron al Señor en quien habían creído.»</p>
+      <cite>Hechos 14:23</cite>
+    </div>
+
+    <div class="verse rv">
+      <p>«Y él es la cabeza del cuerpo que es la iglesia, él que es el principio, el primogénito de entre los muertos, para que en todo tenga la preeminencia.»</p>
+      <cite>Colosenses 1:18</cite>
+    </div>
+
+    <p class="big rv">Y el requisito que la Biblia pone a todo el que supervisa iglesias aparece una y otra vez, como un tambor: <b>«no codicioso de ganancias deshonestas»</b> (1 Timoteo 3:3, Tito 1:7), <b>«no por ganancia deshonesta, sino con ánimo pronto; no como teniendo señorío sobre los que están a vuestro cuidado, sino siendo ejemplos de la grey»</b> (1 Pedro 5:2-3).</p>
+
+    <div class="honest rv">
+      <h3>Pregunta honesta</h3>
+      <p>Si el Nuevo Testamento muestra iglesias locales con ancianos propios y <b>una sola Cabeza</b>, ¿de dónde sale la pirámide donde las congregaciones compiten por recaudar y rinden cuentas a una sede? De la Biblia, no.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 03 · EL DIEZMO ══════════ -->
+<section class="block" id="dinero">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="n">03</span><span class="kick">El diezmo</span></div>
+    <h2 class="title rv">Lo que dice — y lo que <em>le añadieron</em></h2>
+    <p class="big rv">Este es el versículo que más se usa para exigir el diezmo. Léelo completo, con su contexto:</p>
+
+    <div class="verse rv">
+      <p>«¿Robará el hombre a Dios? Pues vosotros me habéis robado. Y dijisteis: ¿En qué te hemos robado? En vuestros diezmos y ofrendas… Traed todos los diezmos al alfolí y haya alimento en mi casa…»</p>
+      <cite>Malaquías 3:8-10</cite>
+    </div>
+
+    <p class="big rv">El <b>alfolí</b> era el almacén del templo: el diezmo de Israel sostenía a los levitas, que no tenían heredad. Era la economía del pacto antiguo, para la nación de Israel bajo la ley. Jesús lo mencionó una sola vez — y fue para reprender a los que lo usaban de pretexto:</p>
+
+    <div class="verse rv">
+      <p>«¡Ay de vosotros, escribas y fariseos, hipócritas! porque diezmáis la menta y el eneldo y el comino, y dejáis lo más importante de la ley: la justicia, la misericordia y la fe.»</p>
+      <cite>Mateo 23:23</cite>
+    </div>
+
+    <p class="big rv">¿Y qué manda el Nuevo Testamento sobre dar? Esto:</p>
+
+    <div class="duo rv">
+      <div class="col yes">
+        <h3>Lo que SÍ manda el NT</h3>
+        <ul>
+          <li>Dar con alegría, no por obligación — «Dios ama al dador alegre» (2 Corintios 9:7).</li>
+          <li>Dar según lo que se tiene, no según lo que no se tiene (2 Corintios 8:12).</li>
+          <li>Dar según haya prosperado cada uno (1 Corintios 16:2).</li>
+          <li>Dar en secreto, sin trompeta (Mateo 6:3-4).</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h3>Lo que le AÑADIERON</h3>
+        <ul>
+          <li>Membresía condicionada al pago del diezmo.</li>
+          <li>Maldición anunciada al que no paga.</li>
+          <li>Competencia entre iglesias por quién recauda más.</li>
+          <li>El evangelio convertido en nómina.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="verse teal rv">
+      <p>«Reteniéndola, ¿no se te quedaba a ti? y vendida, ¿no estaba en tu poder? ¿Por qué pusiste esto en tu corazón? No has mentido a los hombres, sino a Dios.»</p>
+      <cite>Hechos 5:4 · Pedro a Ananías</cite>
+    </div>
+
+    <p class="big rv">El pecado de Ananías no fue dar poco — fue <b>mentir</b>. Pedro es claro: el dinero <b>era suyo</b>. En la iglesia del Nuevo Testamento, la ofrenda obligatoria no existe: lo obligatorio mata la alegría, y sin alegría no es ofrenda.</p>
+
+    <div class="honest rv">
+      <h3>Para que no digan que exageramos</h3>
+      <p>La Biblia <b>no dice que dar sea malo</b> — al contrario. Dice que Dios ama al dador <b>alegre</b>. Lo que la Biblia condena es al dador triste y forzado… que es exactamente lo que produce el diezmo obligatorio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 04 · LA VIUDA ══════════ -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="n">04</span><span class="kick">La viuda y los que la devoran</span></div>
+    <h2 class="title rv">Jesús puso las dos escenas <em>juntas a propósito</em></h2>
+
+    <figure class="fig rv">
+      <img src="../img/viuda.jpg" alt="La viuda pobre echa sus dos monedas en el arca del templo mientras los ricos echan bolsas de monedas" loading="lazy">
+      <figcaption><b>Marcos 12</b> «Ésta, de su pobreza echó todo lo que tenía, todo su sustento.»</figcaption>
+    </figure>
+
+    <p class="big rv">En el mismo capítulo, versículos seguidos, Jesús hace dos cosas: primero <b>condena</b> a los líderes religiosos que «devoran las casas de las viudas, y por pretexto hacen largas oraciones» (Marcos 12:40); e inmediatamente después se sienta frente al arca y <b>mira</b> cómo una viuda pobre echa todo su sustento.</p>
+
+    <div class="verse rv">
+      <p>«¡Ay de vosotros, escribas y fariseos, hipócritas! porque devoráis las casas de las viudas, y como pretexto hacéis largas oraciones; por esto recibiréis mayor condenación.»</p>
+      <cite>Mateo 23:14</cite>
+    </div>
+
+    <p class="big rv">Jesús alabó <b>el corazón de ella</b> — nunca alabó al sistema que vivía de gente como ella. La viuda dio con libertad y amor; el sistema de entonces la dejó con «todo su sustento» en el arca. Si tu familia está en un sistema así, Jesús ya vio la escena — y ya dijo de qué lado está.</p>
+  </div>
+</section>
+
+<!-- ══════════ 05 · QUÉ PESA MÁS ══════════ -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="n">05</span><span class="kick">La competencia por recaudar</span></div>
+    <h2 class="title rv">¿Qué pesa más?</h2>
+
+    <figure class="fig rv">
+      <img src="../img/balanza.jpg" alt="Una balanza antigua: en un platillo un corazón que brilla, en el otro un montón de monedas que lo hunde" loading="lazy">
+      <figcaption><b>1 Timoteo 6:10</b> «El amor del dinero es la raíz de todos los males.»</figcaption>
+    </figure>
+
+    <p class="big rv">Eso que has escuchado — iglesias compitiendo por quién recauda más de los hermanos — la Biblia lo describe con una palabra exacta: <b>mercadería</b>.</p>
+
+    <div class="verse rv">
+      <p>«Y por avaricia harán mercadería de vosotros con palabras fingidas. Sobre los tales ya de largo tiempo la condenación no se tarda, y su perdición no se duerme.»</p>
+      <cite>2 Pedro 2:3</cite>
+    </div>
+
+    <div class="verse rv">
+      <p>«Porfías de hombres corruptos de entendimiento y privados de la verdad, que tienen la piedad por granjería: apártate de los tales… Porque el amor del dinero es la raíz de todos los males: el cual codiciando algunos, se descaminaron de la fe, y fueron traspasados de muchos dolores.»</p>
+      <cite>1 Timoteo 6:5, 10</cite>
+    </div>
+
+    <div class="verse rv">
+      <p>«¡Ay de ellos! porque han seguido el camino de Caín, y se lanzaron por lucro en el error de Balaam, y perecieron en la contradicción de Coré.»</p>
+      <cite>Judas 1:11</cite>
+    </div>
+
+    <p class="big rv">Y el Antiguo Testamento lo dijo de los pastores que cobran pero no cuidan: <b>«¡Ay de los pastores de Israel, que se apacientan a sí mismos! ¿No apacientan los pastores a los rebaños?»</b> (Ezequiel 34:2). Cuando Pedro vio a alguien tratando de comprar el poder de Dios con dinero, su respuesta fue: <b>«Tu dinero perezca contigo, porque has pensado que el don de Dios se obtiene con dinero»</b> (Hechos 8:20).</p>
+  </div>
+</section>
+
+<!-- ══════════ 06 · DIÓTREFES ══════════ -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="n">06</span><span class="kick">Títulos, sillas y expulsiones</span></div>
+    <h2 class="title rv">Diótrefes <em>vive</em></h2>
+    <p class="big rv">«Si no pagas, no eres miembro. Si cuestionas, te expulsan.» Esa táctica tiene nombre en la Biblia: <b>Diótrefes</b>, el primer líder que usó la membresía como arma.</p>
+
+    <div class="verse rv">
+      <p>«Yo he escrito a la iglesia; pero Diótrefes, al cual le gusta tener el primer lugar entre ellos, no nos recibe… y no contento con estas cosas, no recibe a los hermanos, y a los que quieren recibirlos se lo prohíbe, y los expulsa de la iglesia.»</p>
+      <cite>3 Juan 1:9-10</cite>
+    </div>
+
+    <p class="big rv">Y Jesús fue directo contra el amor al primer lugar y al título:</p>
+
+    <div class="verse rv">
+      <p>«Pero vosotros no queráis que os llamen Rabí; porque uno es vuestro Maestro, el Cristo, y todos vosotros sois hermanos… El que es el mayor de vosotros, sea vuestro siervo.»</p>
+      <cite>Mateo 23:8, 11</cite>
+    </div>
+
+    <div class="verse rv">
+      <p>«Sabéis que los gobernantes de las naciones se enseñorean de ellas, y los que son grandes ejercen sobre ellas potestad. Mas entre vosotros no será así.»</p>
+      <cite>Mateo 20:25-26</cite>
+    </div>
+
+    <div class="honest rv">
+      <h3>Entre vosotros no será así</h3>
+      <p>No es pecado que una iglesia tenga orden y liderazgo — la Biblia lo establece. El pecado es el <b>señorío</b>: el líder que expulsa, condiciona y cobra lealtad como si la grey fuera suya. La grey es de Dios (1 Pedro 5:2).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 07 · DISCERNIR ══════════ -->
+<section class="block" id="discernir">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="n">07</span><span class="kick">El filtro bereano</span></div>
+    <h2 class="title rv">Cómo discernir, <em>sin miedo y sin pleito</em></h2>
+    <p class="big rv">Los bereanos eran «más nobles» por una sola razón: <b>escudriñaban las Escrituras cada día para ver si estas cosas eran así</b> (Hechos 17:11). Ese es tu permiso bíblico para preguntar. Antes de hacerte miembro de cualquier sistema, pasa todo por este filtro:</p>
+
+    <div class="check rv">
+      <div class="item"><span class="q"></span><div>
+        <h4>¿Predican gracia o requisitos?</h4>
+        <p>Si la salvación o la bendición dependen de cumplir cuotas, es otro evangelio — y Pablo dijo <i>«sea anatema»</i> (Gálatas 1:8-9).</p>
+      </div></div>
+      <div class="item"><span class="q"></span><div>
+        <h4>¿El dar es alegre o forzado?</h4>
+        <p>¿Hay libertad y transparencia, o hay miedo, maldición y presión? <i>«Dios ama al dador alegre»</i> (2 Corintios 9:7).</p>
+      </div></div>
+      <div class="item"><span class="q"></span><div>
+        <h4>¿Los líderes sirven o se enseñorean?</h4>
+        <p>¿Puedes preguntar sin ser señalado? ¿O cuestionar es «rebelión»? <i>«No como teniendo señorío… sino siendo ejemplos»</i> (1 Pedro 5:3).</p>
+      </div></div>
+      <div class="item"><span class="q"></span><div>
+        <h4>¿A dónde va el dinero?</h4>
+        <p>Por sus frutos los conoceréis (Mateo 7:16-20). ¿Se apacienta al rebaño, o el rebaño apacienta al pastor? (Ezequiel 34).</p>
+      </div></div>
+      <div class="item"><span class="q"></span><div>
+        <h4>¿Tienen apariencia de piedad… o eficacia de ella?</h4>
+        <p>«Tendrán apariencia de piedad, pero negarán la eficacia de ella; a éstos evita» (2 Timoteo 3:5).</p>
+      </div></div>
+    </div>
+
+    <div class="verse teal rv">
+      <p>«Amados, no creáis a todo espíritu, sino probad los espíritus si son de Dios; porque muchos falsos profetas han salido por el mundo.»</p>
+      <cite>1 Juan 4:1</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CIERRE ══════════ -->
+<section class="final">
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="rv">La iglesia verdadera <em>no cobra cuota</em></h2>
+    <div class="verse rv">
+      <p>«Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar… porque mi yugo es fácil, y ligera mi carga.»</p>
+      <cite>Mateo 11:28, 30</cite>
+    </div>
+    <div class="verse rv">
+      <p>«Porque donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos.»</p>
+      <cite>Mateo 18:20</cite>
+    </div>
+    <p class="big rv" style="max-width:640px;margin:20px auto 0;color:#D8C9A8">Si te hicieron sentir que tu lugar en la familia de Dios depende de un pago, recuerda esto: <b style="color:var(--cream)">tú perteneces a Cristo, y él ya lo pagó todo.</b> No necesitas membrecía en ningún concilio para estar en la iglesia verdadera.</p>
+    <a class="cta" href="../apostoles/">Siguiente estudio: ¿Qué es un Apóstol? →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span><b>La iglesia y el dinero</b> · Estudio 02 · <a href="../">← No todo es de Dios</a></span>
+  <span>Texto <b>Reina-Valera 1960</b> · Cada cita verificada</span>
+</footer>
+
+<script>
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* progreso + nav */
+(function(){
+  const bar=document.getElementById('progress'),nav=document.getElementById('nav');
+  let ticking=false;
+  function onScroll(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(()=>{
+      const h=document.documentElement,max=h.scrollHeight-innerHeight,y=h.scrollTop;
+      bar.style.width=(max>0?(y/max)*100:0)+'%';
+      nav.classList.toggle('scrolled',y>40);
+      ticking=false;
+    });
+  }
+  addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+
+/* reveals */
+(function(){
+  const els=[...document.querySelectorAll('.rv')];
+  if(!('IntersectionObserver' in window)||reduceMotion){els.forEach(e=>e.classList.add('on'));return;}
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
+})();
+
+/* monedas cayendo en el hero */
+(function(){
+  if(reduceMotion)return;
+  const hero=document.querySelector('.hero');
+  for(let i=0;i<10;i++){
+    const c=document.createElement('span');
+    c.className='coin';
+    const s=10+Math.random()*16;
+    c.style.width=s+'px';c.style.height=s+'px';
+    c.style.left=(4+Math.random()*92)+'%';
+    c.style.animationDuration=(7+Math.random()*8)+'s';
+    c.style.animationDelay=(-Math.random()*12)+'s';
+    hero.appendChild(c);
+  }
+})();
+
+/* estrellas del cierre */
+(function(){
+  const box=document.getElementById('stars');
+  for(let i=0;i<46;i++){
+    const s=document.createElement('i');
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*100+'%';
+    s.style.animationDelay=(Math.random()*3.2)+'s';
+    s.style.animationDuration=(2.4+Math.random()*2.4)+'s';
+    box.appendChild(s);
+  }
+})();
+
+if(document.fonts&&document.fonts.load){
+  document.fonts.load('900 16px Satoshi');
+  document.fonts.load('600 48px Fraunces');
+}
+</script>
+</body>
+</html>
