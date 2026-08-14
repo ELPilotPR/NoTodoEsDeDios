@@ -74,9 +74,8 @@ body{
 .card:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 rgba(46,33,20,.9)}
 .card .num{position:absolute;top:16px;left:20px;z-index:2;font-family:var(--display);font-weight:900;font-style:italic;
   font-size:clamp(46px,5vw,64px);line-height:1;color:var(--cream);text-shadow:3px 3px 0 rgba(46,33,20,.9)}
-.card .fig{height:clamp(190px,22vw,240px);position:relative;overflow:hidden;border-bottom:2px solid var(--ink);
-  display:flex;align-items:center;justify-content:center}
-.card .fig svg{width:100%;height:100%;display:block}
+.card .fig{height:clamp(190px,22vw,240px);position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+.card .fig img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .card .body{padding:clamp(22px,3vw,30px);flex:1;display:flex;flex-direction:column;gap:12px}
 .card .body h3{font-family:var(--display);font-weight:900;font-size:clamp(24px,2.6vw,30px);line-height:1.12;letter-spacing:-.01em}
 .card .body p{color:var(--ink-soft);font-size:15px;flex:1}
@@ -143,22 +142,8 @@ footer b{color:var(--ochre)}
       <!-- ESTUDIO 01: APÓSTOLES -->
       <a class="card rv" href="apostoles/">
         <span class="num">01</span>
-        <div class="fig" aria-hidden="true">
-          <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
-            <rect width="400" height="220" fill="#2E8DBA"/>
-            <ellipse cx="200" cy="330" rx="330" ry="180" fill="#57A9CC" opacity=".55"/>
-            <circle cx="200" cy="52" r="30" fill="#F5EEDF" opacity=".92"/>
-            <circle cx="200" cy="52" r="42" fill="#F5EEDF" opacity=".22"/>
-            <!-- silueta: hombre sentado escribiendo -->
-            <g stroke="#2E2114" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-              <ellipse cx="200" cy="176" rx="86" ry="14" fill="#2E2114" opacity=".18" stroke="none"/>
-              <path d="M168 168 q-4 -40 10 -52 q-14 -22 2 -34 q16 -12 30 4 q10 12 0 30 q16 10 14 52 z" fill="#C25E22"/>
-              <path d="M196 96 q6 14 22 18 l18 40 -14 8 -16 -36" fill="#D2A45F"/>
-              <path d="M226 150 l42 -10 8 10 -46 14z" fill="#F5EEDF"/>
-            </g>
-            <!-- pluma -->
-            <path d="M262 96 q26 -24 34 -50 q-2 34 -26 58z" fill="#F5EEDF" stroke="#2E2114" stroke-width="4"/>
-          </svg>
+        <div class="fig">
+          <img src="apostoles/img/hero.jpg" alt="Pablo escribiendo bajo el cielo abierto" loading="lazy">
         </div>
         <div class="body">
           <h3>¿Qué es un Apóstol?</h3>
@@ -172,30 +157,8 @@ footer b{color:var(--ochre)}
       <div class="card soon rv">
         <span class="num">02</span>
         <span class="badge-soon">Próximamente</span>
-        <div class="fig" aria-hidden="true">
-          <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice">
-            <rect width="400" height="220" fill="#3E89A0"/>
-            <ellipse cx="200" cy="340" rx="340" ry="190" fill="#2E8DBA" opacity=".5"/>
-            <!-- balanza -->
-            <g stroke="#2E2114" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-              <path d="M200 54 v96" fill="none"/>
-              <path d="M120 74 h160" fill="none"/>
-              <path d="M200 54 q0 -12 0 -12" fill="none"/>
-              <circle cx="200" cy="44" r="9" fill="#D2A45F"/>
-              <!-- platillo izq -->
-              <path d="M120 74 l-16 44 h32z" fill="none"/>
-              <path d="M88 122 q16 22 48 0z" fill="#F5EEDF"/>
-              <!-- platillo der -->
-              <path d="M280 74 l-16 44 h32z" fill="none"/>
-              <path d="M248 122 q16 22 48 0z" fill="#C25E22"/>
-              <!-- monedas -->
-              <circle cx="266" cy="116" r="7" fill="#D2A45F"/>
-              <circle cx="280" cy="110" r="7" fill="#D2A45F"/>
-              <circle cx="273" cy="122" r="7" fill="#D2A45F"/>
-              <!-- base -->
-              <path d="M186 150 h28 l8 14 h-44z" fill="#D2A45F"/>
-            </g>
-          </svg>
+        <div class="fig">
+          <img src="img/viuda.jpg" alt="La viuda pobre echa sus dos monedas en el arca del templo mientras los ricos echan bolsas" loading="lazy">
         </div>
         <div class="body">
           <h3>La iglesia y el dinero</h3>
