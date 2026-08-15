@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los reglamentos hablan por sí solos — No todo es de Dios</title>
+<meta name="description" content="Estudio 03: documentos públicos reales — cuotas obligatorias del ministro, diezmos de misioneros y el control de templos al desafiliarse. Cada cita con su página, su enlace oficial y su versículo de contraste en Reina-Valera 1960.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5EEDF;--cream-2:#EDE2C8;--ink:#2E2114;--ink-soft:#5C4A36;--ink-faint:rgba(46,33,20,.16);
+  --sky:#2E8DBA;--teal:#3E89A0;--terra:#C25E22;--brick:#9A4330;--ochre:#D2A45F;--green:#6E9A3F;--night:#221812;
+  --display:'Fraunces',Georgia,serif;--sans:'Satoshi',system-ui,-apple-system,sans-serif;--verse:'Newsreader',Georgia,serif;
+  --shadow:7px 7px 0 rgba(46,33,20,.9);--shadow-sm:4px 4px 0 rgba(46,33,20,.85);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--terra);color:var(--cream)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:var(--terra)}
+.nav{position:fixed;top:18px;right:clamp(16px,3.5vw,44px);z-index:50;display:flex;align-items:center;gap:clamp(12px,2vw,22px);
+  padding:9px 12px 9px clamp(16px,2.2vw,26px);border-radius:999px;background:var(--cream);border:2px solid var(--ink);box-shadow:var(--shadow-sm)}
+.nav a{font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav a:hover{color:var(--terra)}
+.nav .home{color:var(--teal)}
+main{position:relative;z-index:5}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#2E8DBA 0%,#57A9CC 55%,#8FC6DD 100%)}
+.hero-img{display:block;position:relative;width:100%;height:auto;z-index:0}
+.hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(46,141,186,.42) 0%,rgba(46,141,186,.16) 26%,rgba(46,141,186,0) 46%),
+             linear-gradient(to top,var(--cream) 4%,rgba(245,238,223,.55) 16%,transparent 34%)}
+.hero-content{position:absolute;top:0;left:0;right:0;z-index:3;text-align:center;padding:clamp(56px,8vh,84px) clamp(20px,4vw,52px) 0}
+.plate{display:inline-block;max-width:680px;margin:0 auto;position:relative}
+.plate::before{content:"";position:absolute;inset:-48px -64px -34px;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 30%,rgba(255,250,238,.92) 0%,rgba(255,250,238,.55) 42%,rgba(255,250,238,0) 78%)}
+.eyebrow{font-weight:900;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.eyebrow::before{content:"";width:40px;height:3px;background:var(--terra)}
+.plate .eyebrow{justify-content:center}
+.plate .eyebrow::after{content:"";width:40px;height:3px;background:var(--terra)}
+.plate h1{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.6vw,54px);line-height:1.06;letter-spacing:-.01em;color:var(--ink)}
+.plate h1 .q{color:var(--terra)}
+.plate .thesis{margin:14px auto 0;font-size:clamp(14px,1.8vw,17px);font-weight:500;line-height:1.6;color:var(--ink-soft);max-width:54ch}
+.plate .thesis b{color:var(--ink);font-weight:900}
+.scrollcue{position:absolute;left:clamp(22px,5vw,56px);bottom:30px;z-index:3;display:flex;align-items:center;gap:12px;
+  font-weight:900;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);
+  background:var(--cream);border:2px solid var(--ink);box-shadow:var(--shadow-sm);padding:9px 16px;animation:bob 2.4s ease-in-out infinite}
+.scrollcue b{font-weight:400;font-size:15px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+.block{position:relative;padding:clamp(80px,13vh,150px) 0;background:var(--cream)}
+.block.alt{background:var(--cream-2)}
+.block .num{position:absolute;top:clamp(36px,7vh,76px);right:clamp(10px,4vw,56px);z-index:0;
+  font-family:var(--display);font-weight:600;font-size:clamp(110px,18vw,220px);line-height:1;
+  color:transparent;-webkit-text-stroke:2px rgba(46,33,20,.13);user-select:none;pointer-events:none}
+.block .wrap{position:relative;z-index:1}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.6vw,52px);line-height:1.12;color:var(--ink);letter-spacing:-.01em;max-width:22ch}
+h2 .t{color:var(--terra)}
+.lead{color:var(--ink-soft);font-size:17px;max-width:64ch;margin-top:20px}
+.lead b{color:var(--ink);font-weight:900}
+
+/* tarjeta de documento */
+.doc{background:#FBF6EA;border:3px solid var(--ink);box-shadow:var(--shadow);max-width:860px;margin:44px 0;
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+.doc:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 rgba(46,33,20,.9)}
+.doc-head{padding:26px 32px 20px;border-bottom:2.5px solid var(--ink);background:var(--cream-2);display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;justify-content:space-between}
+.doc-head h3{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.6vw,27px);color:var(--ink)}
+.doc-head .org{font-weight:900;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+.doc-body{padding:28px 32px 30px;display:grid;gap:20px}
+.doc-label{font-weight:900;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:8px}
+.doc-quote{font-family:var(--verse);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);
+  border-left:4px solid var(--ochre);padding-left:18px}
+.doc-quote b{font-style:normal;font-weight:600;color:var(--ink)}
+.doc-quote .pg{display:inline-block;font-family:var(--sans);font-style:normal;font-weight:900;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:3px 10px;margin-left:8px;vertical-align:2px}
+.doc-verse{background:var(--cream);border:2.5px solid var(--ink);box-shadow:var(--shadow-sm);padding:18px 22px}
+.doc-verse .t{font-family:var(--verse);font-style:italic;font-size:16px;color:var(--ink-soft)}
+.doc-verse .t b{font-style:normal;font-weight:600;color:var(--terra)}
+.doc-verse .ref{display:inline-block;margin-top:10px;font-weight:900;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:5px 14px}
+.doc-q{font-size:16.5px;font-weight:700;color:var(--ink);border-left:10px solid var(--brick);padding-left:18px}
+.doc-link{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;font-weight:900;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cream);background:var(--sky);border:2.5px solid var(--ink);box-shadow:var(--shadow-sm);padding:11px 22px;text-decoration:none;transition:background .25s,transform .25s}
+.doc-link:hover{background:var(--teal);transform:translate(-2px,-2px)}
+
+.warn{background:#FBF6EA;border:3px solid var(--ink);border-left:10px solid var(--brick);box-shadow:var(--shadow);padding:34px 38px;margin-top:36px;max-width:800px}
+.warn.good{border-left-color:var(--green)}
+.warn .kind{display:inline-block;font-weight:900;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--cream);background:var(--teal);border:2px solid var(--ink);padding:3px 12px;margin-bottom:12px}
+.warn h3{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.6vw,26px);color:var(--ink);margin-bottom:10px}
+.warn .t{font-size:16px;line-height:1.7;color:var(--ink-soft)}
+.warn .t b{color:var(--ink);font-weight:900}
+
+.dark{position:relative;background:var(--night);color:#E8DCC4;padding:clamp(90px,14vh,160px) 0;overflow:hidden}
+.dark .stars{position:absolute;inset:0;pointer-events:none;z-index:0}
+.dark .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#F5EEDF;animation:twinkle 3.2s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.12}50%{opacity:.85}}
+.dark .wrap{position:relative;z-index:1}
+.dark .eyebrow{color:var(--ochre)}
+.dark .eyebrow::before{background:var(--ochre)}
+.dark .big{font-family:var(--display);font-weight:600;font-size:clamp(32px,5.6vw,62px);line-height:1.1;color:var(--cream);letter-spacing:-.01em;max-width:20ch}
+.dark .big i{font-style:normal;color:var(--ochre)}
+.dark .p{color:#C9B795;max-width:60ch;margin-top:24px;font-size:17px}
+.dark .p b{color:var(--cream);font-weight:900}
+.dark .verse{position:relative;background:rgba(245,238,223,.05);border:2.5px solid rgba(245,238,223,.4);box-shadow:7px 7px 0 rgba(0,0,0,.5);padding:28px 32px 24px;max-width:720px;margin:32px 0}
+.dark .verse::before{content:"";position:absolute;left:-2.5px;top:-2.5px;bottom:-2.5px;width:8px;background:var(--ochre);border:2.5px solid rgba(245,238,223,.4);border-left:none}
+.dark .verse .t{font-family:var(--verse);font-style:italic;font-size:19px;line-height:1.7;color:#D8C9A8}
+.dark .verse .t b{font-style:normal;font-weight:600;color:var(--ochre)}
+.dark .ref{display:inline-block;margin-top:16px;font-weight:900;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--night);background:var(--ochre);border:2px solid var(--ochre);padding:6px 16px}
+.dark .cta{display:inline-block;margin-top:30px;font-weight:900;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);background:var(--terra);border:2px solid var(--ochre);padding:14px 26px;text-decoration:none;box-shadow:var(--shadow-sm)}
+.dark .cta:hover{background:var(--brick)}
+
+footer{background:#1A120C;color:#8A7358;padding:36px clamp(22px,5vw,56px);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12.5px;letter-spacing:.04em}
+footer b{color:var(--ochre)}
+footer a{color:var(--ochre)}
+
+.rv{opacity:0;transform:translateY(42px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.scrollcue{animation:none}}
+@media(max-width:820px){
+  .nav{padding:7px 9px;gap:10px}
+  .nav a{font-size:10px;letter-spacing:.1em}
+  .nav a:not(.home){display:none}
+  .hero{min-height:100svh}
+  .hero-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+  .hero-content{padding-top:clamp(72px,11vh,100px)}
+  .doc-head,.doc-body{padding-left:22px;padding-right:22px}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="nav" id="nav">
+  <a class="home" href="../">← Todos los estudios</a>
+  <a href="#doc1">Cuota del 10%</a>
+  <a href="#doc2">Misiones</a>
+  <a href="#doc3">Los templos</a>
+</nav>
+
+<main>
+
+<header class="hero">
+  <img class="hero-img" src="../img/balanza.jpg" alt="Una balanza antigua con un corazón en un platillo y monedas en el otro">
+  <div class="hero-veil"></div>
+  <div class="hero-content">
+    <div class="plate">
+      <span class="eyebrow">Estudio 03 · Documentos públicos</span>
+      <h1>Los reglamentos <span class="q">hablan por sí solos</span></h1>
+      <p class="thesis">Este estudio no cita opiniones: cita <b>documentos públicos reales</b>. Cada tarjeta trae la cita textual con su página, el enlace a la fuente oficial y el versículo de contraste en RVR1960. <b>Tú haces la comparación.</b></p>
+    </div>
+  </div>
+  <div class="scrollcue"><b>↓</b> lee los documentos</div>
+</header>
+
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow rv">Cómo leer este estudio</span>
+    <h2 class="rv">Hechos, <span class="t">no opiniones</span></h2>
+    <p class="lead rv">Aquí no se acusa a nadie de delitos ni se atribuyen motivaciones. Se hace algo más sencillo y más fuerte: <b>se cita el reglamento</b>. Lo que el documento exige, se escribe como está; lo que la Biblia dice, se pone al lado; y la pregunta queda sobre la mesa. Si un documento no pudo verificarse directamente, <b>no entra en este estudio</b>.</p>
+    <div class="warn good rv">
+      <span class="kind">Método</span>
+      <h3>La regla de la casa</h3>
+      <p class="t">«El documento exige…» «El reglamento establece…» «La RVR1960 dice…» «El pasaje no menciona…» — y cuando toca interpretar: «Este estudio concluye…» Así nadie puede decir que inventamos: <b>todo tiene fuente pública y página</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="doc1">
+  <span class="num">01</span>
+  <div class="wrap">
+    <span class="eyebrow rv">Documento 1 · Estatutos en español</span>
+    <h2 class="rv">La cuota del ministro: <span class="t">10% de todos los ingresos</span></h2>
+    <div class="doc rv">
+      <div class="doc-head">
+        <h3>Estatutos del Distrito Central (edición en español, 2022)</h3>
+        <span class="org">Distrito Central · Asambleas de Dios</span>
+      </div>
+      <div class="doc-body">
+        <div>
+          <span class="doc-label">Lo que el documento establece · págs. 17-18</span>
+          <p class="doc-quote">«Sección 2. Cuotas del Ministro (Diezmo). a. Todos los ministros (ministro certificado-licencia-ordenada) están obligados a apoyar al Distrito mensualmente con una cuota del ministro (diezmo) del <b>10% de sus ingresos ministeriales</b>.»<span class="pg">pág. 17</span></p>
+          <p class="doc-quote" style="margin-top:14px">«Se requiere que todos los Pastores Principales apoyen mensualmente al Distrito con una cuota del ministro (diezmo) del <b>10% de sus ingresos de todas las fuentes</b>.»<span class="pg">pág. 17-18</span></p>
+        </div>
+        <div class="doc-verse">
+          <p class="t">«Cada uno dé como propuso en su corazón: <b>no con tristeza, ni por necesidad, porque Dios ama al dador alegre.</b>»</p>
+          <span class="ref">2 Corintios 9:7 · RVR1960</span>
+        </div>
+        <p class="doc-q">Si un reglamento exige un porcentaje mensual para conservar la credencial ministerial, ¿sigue siendo una ofrenda voluntaria o se ha convertido en una cuota institucional?</p>
+        <a class="doc-link" href="https://cddcag.org/wp-content/uploads/2024/03/Central-District-Bylaws-Spanish-2022.pdf" target="_blank" rel="noopener noreferrer">Ver documento oficial ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="doc2">
+  <span class="num">02</span>
+  <div class="wrap">
+    <span class="eyebrow rv">Documento 2 · Manual de misioneros</span>
+    <h2 class="rv">La mitad del diezmo, <span class="t">para el departamento</span></h2>
+    <div class="doc rv">
+      <div class="doc-head">
+        <h3>Manual del Misionero y Asociado de Carrera (otoño 2025)</h3>
+        <span class="org">Asambleas de Dios · Misiones EE. UU.</span>
+      </div>
+      <div class="doc-body">
+        <div>
+          <span class="doc-label">Lo que el documento establece · pág. 11 (original en inglés)</span>
+          <p class="doc-quote">«One-half of the tithes of missionaries is designated to their respective departments.» — <b>La mitad de los diezmos de los misioneros se destina a sus respectivos departamentos.</b><span class="pg">pág. 11</span></p>
+          <p class="doc-quote" style="margin-top:14px">«…chaplain trainees, and military seminarians shall contribute one-half of their tithe from their income earned from chaplaincy services to Chaplaincy Ministries.» — <b>Los capellanes contribuyen con la mitad de su diezmo</b> del ingreso por sus servicios de capellanía.<span class="pg">pág. 11</span></p>
+          <p class="doc-quote" style="margin-top:10px;font-size:14px">Las frases en español son traducción de este estudio; el texto oficial es el inglés citado.</p>
+        </div>
+        <div class="doc-verse">
+          <p class="t">«Porque si primero hay la voluntad dispuesta, será acepta <b>según lo que uno tiene, no según lo que no tiene.</b>»</p>
+          <span class="ref">2 Corintios 8:12 · RVR1960</span>
+        </div>
+        <p class="doc-q">Cuando el reglamento decide de antemano qué parte del diezmo pertenece a la estructura, ¿quién está proponiendo en su corazón: el que da, o el que cobra?</p>
+        <a class="doc-link" href="https://usmissions.ag.org/-/media/USMissionsV2/Missionaries/US-Missions-Missionary-and-Career-Associate-ManualFall2025.pdf" target="_blank" rel="noopener noreferrer">Ver documento oficial ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="doc3">
+  <span class="num">03</span>
+  <div class="wrap">
+    <span class="eyebrow rv">Documento 3 · Sentencia en Puerto Rico</span>
+    <h2 class="rv">El templo que <span class="t">se queda</span></h2>
+    <div class="doc rv">
+      <div class="doc-head">
+        <h3>Sentencia KLAN202400217 · Tribunal de Apelaciones</h3>
+        <span class="org">Poder Judicial de Puerto Rico · 10 oct 2024</span>
+      </div>
+      <div class="doc-body">
+        <div>
+          <span class="doc-label">Lo que la sentencia documenta · págs. 5-6</span>
+          <p class="doc-quote">La sentencia cita la carta del 25 de octubre de 2023 dirigida al pastor de la congregación de Barrio Piedra Gorda, Camuy, exigiendo que «conforme a la constitución y el Reglamento vigente, <b>entregara los bienes muebles e inmuebles retenidos</b>».<span class="pg">pág. 5</span></p>
+          <p class="doc-quote" style="margin-top:14px">Y reproduce la posición de la organización: que la congregación local no tiene «la facultad de apropiarse ni adueñarse de las propiedades (<b>templos, solares, cuentas bancarias, vehículos, mobiliario</b>, entre otros), ya que son patrimonio de la Organización».<span class="pg">pág. 6</span></p>
+          <p class="doc-quote" style="margin-top:10px;font-size:14px">Este estudio describe una estructura jurídica documentada y una decisión judicial. No afirma delitos que la sentencia no establezca.</p>
+        </div>
+        <div class="doc-verse">
+          <p class="t">«…no como teniendo señorío sobre los que están a vuestro cuidado, <b>sino siendo ejemplos de la grey.</b>»</p>
+          <span class="ref">1 Pedro 5:3 · RVR1960</span>
+        </div>
+        <p class="doc-q">Si una congregación construyó y sostuvo un templo con las ofrendas de sus miembros, ¿comprendían esos miembros que al desafiliarse el control podía permanecer en manos de la organización?</p>
+        <a class="doc-link" href="https://dts.poderjudicial.pr/ta/2024/KLAN202400217-10102024.PDF" target="_blank" rel="noopener noreferrer">Ver sentencia oficial ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow rv">Para terminar</span>
+    <h2 class="big rv">La pregunta que el concilio <i>debe contestar</i></h2>
+    <div class="verse rv">
+      <p class="t">«Procurando hacer las cosas honradamente, <b>no sólo delante del Señor sino también delante de los hombres.</b>»</p>
+      <span class="ref">2 Corintios 8:21</span>
+    </div>
+    <p class="p rv">Nada de lo citado aquí condena a los hermanos que aman a Jesús dentro de esas congregaciones — <b>su fe es real y es suya</b>. Lo que estos documentos muestran es la estructura: cuotas obligatorias, credenciales atadas a pagos y templos que no siguen al rebaño. La Biblia propone lo contrario: dar con alegría, sostener sin explotar y liderar siendo ejemplo. <b>Examinadlo todo; retened lo bueno.</b></p>
+    <a class="cta rv" href="../concilios/">← Volver al Estudio 02: La iglesia y el dinero</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span><b>Los reglamentos hablan por sí solos</b> · Estudio 03 · <a href="../">← No todo es de Dios</a></span>
+  <span>Citas bíblicas según la <b>Reina-Valera 1960</b> · Documentos institucionales enlazados a sus fuentes públicas</span>
+</footer>
+
+<script>
+(function(){
+  const bar=document.getElementById('progress');
+  addEventListener('scroll',()=>{
+    const h=document.documentElement,max=h.scrollHeight-innerHeight;
+    bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+  },{passive:true});
+})();
+(function(){
+  const els=[...document.querySelectorAll('.rv')];
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('on'));return;}
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(e=>io.observe(e));
+})();
+(function(){
+  const box=document.getElementById('stars');
+  for(let i=0;i<46;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*3.2)+'s';s.style.animationDuration=(2.4+Math.random()*2.4)+'s';box.appendChild(s);}
+})();
+</script>
+</body>
+</html>
